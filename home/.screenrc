@@ -1,0 +1,6 @@
+# use backtick ` as escape modifier key
+escape ``
+
+# switch windows left and right
+bindkey ^[j prev # alt+j previous window
+bindkey ^[k next # alt+k next window
