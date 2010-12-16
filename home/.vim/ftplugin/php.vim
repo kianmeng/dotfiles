@@ -1,6 +1,9 @@
 " .vim/ftplugin/php.vim by Tobias Schlitt <toby@php.net>.
 " No copyright, feel free to use this, as you like.
 
+" update taglist when you save a php file
+autocmd BufWritePost *.php :TlistUpdate
+
 " Including PDV
 source ~/.vim/bundle/phpdoc/php-doc.vim
 
