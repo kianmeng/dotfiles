@@ -34,3 +34,6 @@ set tags=tags;
 nmap <leader>t :TlistToggle<CR>
 nmap <leader>f <C-]>
 nmap <leader>g <C-T>
+
+" command-t
+nmap <Leader>d :CommandT<CR>

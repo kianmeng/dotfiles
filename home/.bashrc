@@ -14,3 +14,5 @@ if [ -d ~/.bash.d ]; then
   done
   unset f
 fi
+
+export PATH=~/bin:$PATH
