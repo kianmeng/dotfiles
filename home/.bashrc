@@ -16,8 +16,10 @@ if [ -d ~/.bash.d ]; then
 fi
 
 export PATH=~/bin:$PATH
+export HISTCONTROL=ignoreboth
+export HISTSIZE=100000000000
 
-PROMPT="[\[\e[34m\]\u@\h\[\e[0m\]]-[\[\e[32m\]\w\[\e[0m\]]\n"
+PROMPT="[\[\e[34m\]\u@\h\[\e[0m\]][\[\e[32m\]\w\[\e[0m\]]\n"
 if [ $(id -u) -eq 0 ]; then
     PS1="${PROMPT}# "
 else
