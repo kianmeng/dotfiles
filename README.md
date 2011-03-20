@@ -8,6 +8,9 @@ use it
 Please **BACKUP** your existing dot files before you clone the repo. The safest
 way is to create a fresh new user account to try it out. 
 
-* gem install homesick
-* homesick clone https://github.com/kenmin/dotfiles.git
-* homesick symlink dotfiles
+* sudo apt-get install rubygems exuberant-ctags
+* sudo gem install homesick
+* /var/lib/gems/1.8/bin/homesick clone https://github.com/kenmin/dotfiles.git
+* /var/lib/gems/1.8/bin/homesick symlink dotfiles
+* cd ~/.homesick/repos/dotfiles
+* git submodule update --init --recursive
