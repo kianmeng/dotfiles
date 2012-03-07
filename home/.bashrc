@@ -1,3 +1,8 @@
+# Start tmux on every shell login. Add this before aliases declaration
+# @see https://wiki.archlinux.org/index.php/Tmux
+[[ $TERM != "screen" ]] && tmux && exit
+
+
 # Load all the aliases or functions when you starts bash. 
 # To see all aliases, type alias. 
 # To see all functions, type declare -f. 
