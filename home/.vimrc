@@ -4,16 +4,24 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 filetype plugin indent on
 
-" tab settings
+
+" tab settings 
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set number
 
-" status
+" status with required setttings for vim-powerline
 set ruler
-set laststatus=2
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
+let g:Powerline_symbols = 'fancy'
+
+" install the ubuntu mono font for vim-powerline
+" @see https://github.com/scotu/ubuntu-mono-powerline
+set guifont=Ubuntu\ Mono\ 12
 
 " search
 set incsearch 

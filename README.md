@@ -1,16 +1,22 @@
-about
+About
 -----
 A collection of configuration files for the typical console programs bash, vim,
-screen, and misc. 
+screen, tmux, and misc. 
 
-use it
-------
+Install
+-------
 Please **BACKUP** your existing dot files before you clone the repo. The safest
-way is to create a fresh new user account to try it out. 
+way is to create a fresh new user account to try it out. By default it should
+works in Ubuntu 12.04 Precise Pangolin.
 
-* sudo apt-get install rubygems exuberant-ctags
+* sudo apt-get install git rubygems exuberant-ctags
 * sudo gem install homesick
-* /var/lib/gems/1.8/bin/homesick clone https://github.com/kenmin/dotfiles.git
-* /var/lib/gems/1.8/bin/homesick symlink dotfiles
+* homesick clone https://github.com/kianmeng/dotfiles.git
+* homesick symlink dotfiles
 * cd ~/.homesick/repos/dotfiles
 * git submodule update --init --recursive
+
+Fonts
+-----
+The vim-powerline needs Ubuntu Mono font
+$ mkdir ~/.fonts && cd ~/.fonts/ && git clone https://github.com/scotu/ubuntu-mono-powerline.git && cd ~

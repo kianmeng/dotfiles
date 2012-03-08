@@ -1,7 +1,12 @@
-# Start tmux on every shell login. Add this before aliases declaration
-# @see https://wiki.archlinux.org/index.php/Tmux
-[[ $TERM != "screen" ]] && tmux && exit
+# for tmux: export 256color
+# @see https://wiki.archlinux.org/index.php/Tmux#Setting_the_correct_term
+[ -n "$TMUX" ] && export TERM=screen-256color
 
+# Start tmux on every shell login. Add this before aliases declaration
+# http://bionicraptor.co/2011/07/24/how-to-automatically-launch-tmux/
+if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+    tmux attach || tmux new; exit
+fi
 
 # Load all the aliases or functions when you starts bash. 
 # To see all aliases, type alias. 
