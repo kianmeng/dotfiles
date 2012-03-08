@@ -13,3 +13,6 @@
 [submodule "home/.vim/bundle/taglist"]
 	path = home/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "home/.vim/bundle/powerline"]
+	path = home/.vim/bundle/powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
