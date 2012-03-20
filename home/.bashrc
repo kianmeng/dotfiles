@@ -35,3 +35,7 @@ if [ $(id -u) -eq 0 ]; then
 else
     PS1="${PROMPT}$ "
 fi
+
+DOTY="`date +%j`"
+NUMBER="`wget -qO- http://numbersapi.com/$DOTY`"
+echo $NUMBER
