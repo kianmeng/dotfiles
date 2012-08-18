@@ -36,6 +36,8 @@ else
     PS1="${PROMPT}$ "
 fi
 
+export MYSQL_PS1="\u@\h [\d]> "
+
 DOTY="`date +%j`"
 NUMBER="`wget -qO- http://numbersapi.com/$DOTY`"
 echo $NUMBER
