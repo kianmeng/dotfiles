@@ -52,8 +52,12 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" sudo write
+ca w!! w !sudo tee >/dev/null "%"
+
 " switch between paste and no paste mode fast and go into insert mode after
 " that
+" see http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 nnoremap <leader>p :set invpaste paste?<CR>
 set pastetoggle=<leader>p
 set showmode
