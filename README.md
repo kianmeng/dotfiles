@@ -20,7 +20,7 @@ Fonts
 -----
 The vim-powerline needs Ubuntu Mono font
 
-* $ mkdir ~/.fonts 
+* mkdir ~/.fonts 
 * cd ~/.fonts/ 
 * git clone https://github.com/scotu/ubuntu-mono-powerline.git 
 * cd ~
