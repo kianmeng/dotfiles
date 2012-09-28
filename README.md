@@ -19,4 +19,8 @@ works in Ubuntu 12.04 Precise Pangolin.
 Fonts
 -----
 The vim-powerline needs Ubuntu Mono font
-$ mkdir ~/.fonts && cd ~/.fonts/ && git clone https://github.com/scotu/ubuntu-mono-powerline.git && cd ~
+
+* $ mkdir ~/.fonts 
+* cd ~/.fonts/ 
+* git clone https://github.com/scotu/ubuntu-mono-powerline.git 
+* cd ~
