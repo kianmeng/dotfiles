@@ -1,7 +1,6 @@
 " pathogen plugin initialization
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
+syntax on
 filetype plugin indent on
 
 " tab settings 
@@ -72,7 +71,7 @@ set pastetoggle=<leader>p
 set showmode
 
 " color scheme
-colorscheme desert
+colorscheme default
 
 " wild menu. more options shown in command mode
 set wildmenu
@@ -104,3 +103,11 @@ augroup END
 " Flying is faster than cycling
 " @see http://of-vim-and-vigor.blogspot.com/p/vim-vigor-comic.html
 nnoremap <leader>l :ls<CR>:b<space>
+
+" Auto reload ~/.vimrc file upon saving
+" @see http://vim.wikia.com/wiki/Change_vimrc_with_auto_reload
+autocmd BufWritePost .vimrc source %
+
+" Short to lauch several conque term tabs
+nnoremap <leader>csb :ConqueTermTab bash<CR>
+nnoremap <leader>csm :ConqueTermTab mysql -u root -p<CR>
