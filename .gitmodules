@@ -10,9 +10,11 @@
 [submodule "home/.vim/bundle/conque-shell"]
 	path = home/.vim/bundle/conque-shell
 	url = https://github.com/vim-scripts/Conque-Shell.git
+    ignore = dirty
 [submodule "home/.vim/bundle/taglist"]
 	path = home/.vim/bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim.git
+    ignore = dirty
 [submodule "home/.vim/bundle/powerline"]
 	path = home/.vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
