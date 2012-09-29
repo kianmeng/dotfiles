@@ -12,6 +12,7 @@ set expandtab
 set number
 
 " status with required setttings for vim-powerline
+" @see https://github.com/Lokaltog/vim-powerline
 set ruler
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
@@ -32,15 +33,23 @@ imap jj <esc>
 nmap ; :
 
 " nerdtree
+" @see https://github.com/scrooloose/nerdtree
 nmap <leader>n :NERDTreeToggle<CR>
 
 " ctags
+" $ apt-get install exuberant-ctags
+"
 " the ; search for tags file from current directory till parent directory
 " resursively until it finds a tags file
 set tags=tags;
 nmap <leader>t :TlistToggle<CR>
 nmap <leader>f <C-]>
 nmap <leader>g <C-T>
+
+" tagbar
+let g:tagbar_usearrows = 1
+nnoremap <leader>b :TagbarToggle<CR>
+
 
 " command-t
 nmap <Leader>d :CommandT<CR>
@@ -68,28 +77,6 @@ colorscheme desert
 set wildmenu
 set wildmode=list:longest,full
 
-" FocusMode or Dark Room mode
-" @see http://paulrouget.com/e/vimdarkroom/
-function! ToggleFocusMode()
-  if (&foldcolumn != 12)
-    set laststatus=0
-    set numberwidth=10
-    set foldcolumn=12
-    set noruler
-    hi FoldColumn ctermbg=none
-    hi LineNr ctermfg=0 ctermbg=none
-    hi NonText ctermfg=0
-  else
-    set laststatus=2
-    set numberwidth=4
-    set foldcolumn=0
-    set ruler
-    execute 'colorscheme ' . g:colors_name
-  endif
-endfunc
-nnoremap <F12> :call ToggleFocusMode()<cr>
-
-
 " Last file position
 " @see http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
 "
@@ -112,10 +99,6 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
-
-" tagbar
-let g:tagbar_usearrows = 1
-nnoremap <leader>l :TagbarToggle<CR>
 
 " Flying is faster than cycling
 " @see http://of-vim-and-vigor.blogspot.com/p/vim-vigor-comic.html
