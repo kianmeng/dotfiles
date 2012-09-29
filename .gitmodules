@@ -30,3 +30,6 @@
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
