@@ -116,3 +116,7 @@ augroup END
 " tagbar
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
+
+" Flying is faster than cycling
+" @see http://of-vim-and-vigor.blogspot.com/p/vim-vigor-comic.html
+nnoremap <leader>l :ls<CR>:b<space>
