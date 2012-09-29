@@ -33,3 +33,6 @@
 [submodule "home/.vim/bundle/syntastic"]
 	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "home/.vim/bundle/ack"]
+	path = home/.vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git
