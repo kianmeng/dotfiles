@@ -1,6 +1,7 @@
 # directory
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # file listing
 alias ls='ls --color --group-directories-first -p';
