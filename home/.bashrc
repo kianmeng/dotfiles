@@ -64,3 +64,7 @@ repeat() {
         "$@"
     done
 }
+
+# enable vi input mode
+# press ESC, j or k to scroll history, i to insert
+set -o vi
