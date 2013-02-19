@@ -5,4 +5,7 @@ alias apti='sudo apt-get -y install'
 alias aptr='sudo apt-get -y remove'
 alias aptar='sudo apt-get -y autoremove'
 alias apts='apt-cache search'
-alias aptf='apt-file search'
+
+alias aptfu='apt-file update'
+alias aptfs='apt-file search'
+alias aptfl='apt-file list'
