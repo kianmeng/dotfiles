@@ -33,15 +33,3 @@
 [submodule "home/.vim/bundle/ack"]
 	path = home/.vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "home/.vim/bundle/vim-snipmate"]
-	path = home/.vim/bundle/vim-snipmate
-	url = git://github.com/garbas/vim-snipmate.git
-[submodule "home/.vim/bundle/tlib_vim"]
-	path = home/.vim/bundle/tlib_vim
-	url = https://github.com/tomtom/tlib_vim.git
-[submodule "home/.vim/bundle/vim-addon-mw-utils"]
-	path = home/.vim/bundle/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "home/.vim/bundle/snipmate-snippets"]
-	path = home/.vim/bundle/snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
