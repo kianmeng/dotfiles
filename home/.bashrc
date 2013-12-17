@@ -51,10 +51,6 @@ export LESS="-iMSx4 -rRFX"
 export MYSQL_PS1="\u@\h [\d]> "
 export PAGER=less
 
-# golang path
-export GOROOT=$HOME/project/go
-export PATH=$PATH:$GOROOT/bin
-
 # repeat a command n times
 repeat() {
     n=$1
@@ -68,3 +64,5 @@ repeat() {
 # enable vi input mode
 # press ESC, j or k to scroll history, i to insert
 set -o vi
+
+export EDITOR=vi
