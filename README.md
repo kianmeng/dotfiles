@@ -15,6 +15,7 @@ works in Ubuntu 12.04 Precise Pangolin.
 * homesick symlink dotfiles
 * cd ~/.homesick/repos/dotfiles
 * git submodule update --init --recursive
+* git submodule foreach git pull origin master
 
 Fonts
 -----
