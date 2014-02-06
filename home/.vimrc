@@ -29,8 +29,7 @@ set incsearch
 set hlsearch
 
 " keybindings
-" let mapleader = ","
-let mapleader = " "
+let mapleader = ","
 imap jj <esc>
 nmap ; :
 
