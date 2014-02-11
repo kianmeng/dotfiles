@@ -15,6 +15,7 @@ works for Ubuntu 12.04 and later release.
 * homesick symlink dotfiles
 * cd ~/.homesick/repos/dotfiles
 * git submodule update --init --recursive
+* sudo apt-file update
 
 Fonts
 -----
