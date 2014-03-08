@@ -1,8 +1,4 @@
-# typical git usage
-alias gpom='git push origin master'
-alias gitcm='git commit -m'
-alias gitsm='git status -s | grep -v ??'
-alias gitdiff='git diff --color'
-
-# for pushing to octopress' source branch
-alias gpos='git push origin source'
+# see http://nuclearsquid.com/writings/git-tricks-tips-workflows/
+# autocomplete for 'g' as well
+alias g='git'
+complete -o default -o nospace -F _git g

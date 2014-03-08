@@ -1,27 +1,26 @@
-# include what you want
-
+# exports
 export PATH=$PATH:$HOME/bin
+export HISTCONTROL=ignoreboth
+export HISTSIZE=100000000000
 
 # add this to the .bashrc: . $HOME/.bashrc.load
-
-####
 # put any bash customizations in here
 
 # for tmux: export 256color
 # @see https://wiki.archlinux.org/index.php/Tmux#Setting_the_correct_term
 [ -n "$TMUX" ] && export TERM=screen-256color
 
-# Start tmux on every shell login. Add this before aliases declaration
+# start tmux on every shell login. Add this before aliases declaration
 # http://bionicraptor.co/2011/07/24/how-to-automatically-launch-tmux/
 if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
     tmux attach || tmux new; exit
 fi
 
-# Load all the aliases or functions when you starts bash. 
-# To see all aliases, type alias. 
-# To see all functions, type declare -f. 
+# load all the aliases or functions when you starts bash. 
+# to see all aliases, type alias. 
+# to see all functions, type declare -f. 
 #
-# To add a new alias/functions, 
+# to add a new alias/functions, 
 # 1. create a new filename in ~/.bash.d/name_of_the_category.sh 
 # 2. add your own aliases or functions and save the file
 # 3. reload bash by typing source .bashrc
@@ -34,15 +33,18 @@ if [ -d ~/.bash.d ]; then
   unset f
 fi
 
-export PATH=~/bin:$PATH
-export HISTCONTROL=ignoreboth
-export HISTSIZE=100000000000
+
+# add to bash prompt and show pending changes
+# see http://www.bramschoenmakers.nl/en/node/624
+export GIT_PS1_SHOWDIRTYSTATE=1
+GIT_BRANCH="\033[01;33m\]$(__git_ps1)\[\033[01;34m\]"
 
 PROMPT="[\[\e[34m\]\u@\h\[\e[0m\]][\[\e[32m\]\w\[\e[0m\]]\n"
 if [ $(id -u) -eq 0 ]; then
-    PS1="${PROMPT}# "
+    PS1="${GIT_BRANCH}${PROMPT}# "
 else
-    PS1="${PROMPT}$ "
+    PS1="${GIT_BRANCH}${PROMPT}\$ "
+    PS1="${GIT_BRANCH}${PROMPT}\$ "
 fi
 
 # less config
@@ -59,16 +61,6 @@ export LESS="-iMSx4 -rRFX"
 # mysql prompt setting
 export MYSQL_PS1="\u@\h [\d]> "
 export PAGER=less
-
-# repeat a command n times
-repeat() {
-    n=$1
-    shift
-    while [ $(( n -= 1 )) -ge 0 ]
-    do
-        "$@"
-    done
-}
 
 # enable vi input mode
 # press ESC, j or k to scroll history, i to insert

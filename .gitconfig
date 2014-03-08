@@ -1,9 +1,58 @@
+# inspired by:
+# http://wiki.gnome.org/Git/Tips
+# http://oli.jp/2012/git-powerup
+# http://mislav.uniqpath.com/2010/07/git-tips
+# http://jeremyherve.com/2012/09/23/my-gitconfig-file
+# http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks
+# https://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git
+
 [user]
 	name = Kian-Meng, Ang
 	email = kianmeng@users.noreply.github.com
 
 [alias]
+    # common
+	ci = commit
     br = branch -ar
-    co = checkout
-    url = remote -v
+	co = checkout
+    df = diff --word-diff
     cf = config --list --global
+    cm = commit -m
+    up = pull --rebase
+    url = remote -v
+
+    # status
+    ss = status -sb
+    st = status
+
+    # colourful log
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ll = log --oneline --decorate --graph -n 15
+    lla = log --oneline --decorate --graph -n 15 --all
+    stat-by-author = shortlog -sn
+    
+    # opss, undo
+    reword = commit --amend
+	unstage = reset HEAD --
+
+    # push
+    pom = push origin master
+    pos = push origin source # octopress
+
+    # when i last did something?
+    last = log -1 HEAD
+    last-fix = show :/fix
+    last-merge = show :/^Merge
+
+[color]
+	ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[core]
+	whitespace = trailing-space,space-before-tab
+    editor = vim
+
+[merge]
+	tool = meld
