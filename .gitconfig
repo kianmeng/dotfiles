@@ -6,3 +6,4 @@
     br = branch -ar
     co = checkout
     url = remote -v
+    cf = config --list --global
