@@ -1,0 +1,8 @@
+[user]
+	name = Kian-Meng, Ang
+	email = kianmeng@users.noreply.github.com
+
+[alias]
+    br = branch -ar
+    co = checkout
+    url = remote -v
