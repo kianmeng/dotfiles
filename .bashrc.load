@@ -1,3 +1,12 @@
+# include what you want
+
+export PATH=$PATH:$HOME/bin
+
+# add this to the .bashrc: . $HOME/.bashrc.load
+
+####
+# put any bash customizations in here
+
 # for tmux: export 256color
 # @see https://wiki.archlinux.org/index.php/Tmux#Setting_the_correct_term
 [ -n "$TMUX" ] && export TERM=screen-256color
