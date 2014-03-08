@@ -1,19 +1,17 @@
 About
 -----
 A collection of configuration files for the typical console programs bash, vim,
-screen, tmux, and misc. 
+screen, tmux, and misc. The dfm (dotfiles manager) is used to manage all the
+dotfiles.  See https://github.com/justone/dotfiles for full documentation.
 
 Install
 -------
-Please **BACKUP** your existing dot files before you clone the repo. The safest
-way is to create a fresh new user account to try it out. By default it should
-works for Ubuntu 12.04 / Debian 7 and later release.
+By default it should works for Ubuntu/Debian-based distos.
 
 * sudo apt-get install git rubygems exuberant-ctags xclip mercurial vim tmux screen source-highlight apt-file terminator
-* sudo gem install homesick
-* homesick clone https://github.com/kianmeng/dotfiles.git
-* homesick symlink dotfiles
-* cd ~/.homesick/repos/dotfiles
+* git clone https://github.com/kianmeng/dotfiles.git
+* cd dotfiles
+* ./bin/dfm install
 * git submodule update --init --recursive
 * sudo apt-file update
 
