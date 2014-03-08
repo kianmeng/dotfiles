@@ -9,11 +9,10 @@ Please **BACKUP** your existing dot files before you clone the repo. The safest
 way is to create a fresh new user account to try it out. By default it should
 works for Ubuntu 12.04 / Debian 7 and later release.
 
-* sudo apt-get install git rubygems exuberant-ctags xclip mercurial vim tmux screen source-highlight apt-file terminator
-* sudo gem install homesick
-* homesick clone https://github.com/kianmeng/dotfiles.git
-* homesick symlink dotfiles
-* cd ~/.homesick/repos/dotfiles
+* sudo apt-get install git stow exuberant-ctags xclip mercurial vim tmux screen source-highlight apt-file terminator
+* git clone https://github.com/kianmeng/dotfiles.git
+* cd dotfiles
+* stow -vv bash vim tmux screen
 * git submodule update --init --recursive
 * sudo apt-file update
 

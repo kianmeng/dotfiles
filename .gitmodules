@@ -1,35 +1,15 @@
-[submodule "home/.vim/bundle/nerdtree"]
-	path = home/.vim/bundle/nerdtree
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "home/.vim/bundle/supertab"]
-	path = home/.vim/bundle/supertab
+[submodule "vim/.vim/bundle/supertab"]
+	path = vim/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "home/.vim/bundle/command-t"]
-	path = home/.vim/bundle/command-t
+[submodule "vim/.vim/bundle/command-t"]
+	path = vim/.vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "home/.vim/bundle/conque-shell"]
-	path = home/.vim/bundle/conque-shell
-	url = https://github.com/vim-scripts/Conque-Shell.git
-    ignore = dirty
-[submodule "home/.vim/bundle/taglist"]
-	path = home/.vim/bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
-    ignore = dirty
-[submodule "home/.vim/bundle/powerline"]
-	path = home/.vim/bundle/powerline
+[submodule "vim/.vim/bundle/powerline"]
+	path = vim/.vim/bundle/powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "home/.vim/bundle/vim-indent-guides"]
-	path = home/.vim/bundle/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "home/.vim/bundle/markdown"]
-	path = home/.vim/bundle/markdown
+[submodule "vim/.vim/bundle/markdown"]
+	path = vim/.vim/bundle/markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "home/.vim/bundle/tagbar"]
-	path = home/.vim/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
-[submodule "home/.vim/bundle/syntastic"]
-	path = home/.vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "home/.vim/bundle/ack"]
-	path = home/.vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
