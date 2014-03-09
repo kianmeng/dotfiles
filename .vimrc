@@ -1,33 +1,50 @@
-" vundle intial settings
 " set the runtime path to include Vundle and initialize
-" let Vundle manage Vundle, required
-" see https://github.com/gmarik/Vundle.vim
 set nocompatible
 filetype off   
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-markdown'
 
-" nerdtree
+" vundle
+" @see https://github.com/gmarik/Vundle.vim
+" let Vundle manage Vundle, required
 "
+" install bundle
+" - launch vim and run :BundleInstall
+" - from command line: vim +BundleInstall +qall
+"
+Bundle 'gmarik/vundle'
+
+" vim-flake8
+" @see https://github.com/nvie/vim-flake8
+" sudo pip install flake8
+"
+Bundle 'nvie/vim-flake8'
+let g:flake8_builtins="_,apply"
+let g:flake8_ignore="E501,W293"
+let g:flake8_max_line_length=99
+let g:flake8_max_complexity=10
+autocmd BufWritePost *.py call Flake8()
+
+" nerdtree
 " @see https://github.com/scrooloose/nerdtree
+"
 Bundle 'scrooloose/nerdtree.git'
 nmap <leader>n :NERDTreeToggle<CR>
 
 " vim-powerline
-"
-" status with required setttings for vim-powerline
 " @see https://github.com/Lokaltog/vim-powerline
+" status with required setttings for vim-powerline
+"
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_symbols = 'fancy'
 
 " ubuntu-mono-powerline
-"
-" install the ubuntu mono font for vim-powerline
 " @see https://github.com/scotu/ubuntu-mono-powerline
+" install the ubuntu mono font for vim-powerline
+"
 Bundle 'scotu/ubuntu-mono-powerline'
 set guifont=Ubuntu\ Mono\ 12
 set ruler
@@ -43,7 +60,7 @@ nnoremap <leader>b :TagbarToggle<CR>
 
 " ctags
 "
-" $ apt-get install exuberant-ctags
+" apt-get install exuberant-ctags
 " the ; search for tags file from current directory till parent directory
 " resursively until it finds a tags file
 set tags=tags;
@@ -52,7 +69,7 @@ nmap <leader>f <C-]>
 nmap <leader>g <C-T>
 nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-
+" syntax
 syntax on
 filetype plugin indent on
 
@@ -154,14 +171,14 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" Flying is faster than cycling
+" flying is faster than cycling
 " @see http://of-vim-and-vigor.blogspot.com/p/vim-vigor-comic.html
 nnoremap <leader>l :ls<CR>:b<space>
 
-" Note: disable this as it freeze vim and make vim powerline looses color
-" Auto reload ~/.vimrc file upon saving
+" auto reload ~/.vimrc file upon saving
+" disable this as it freeze vim and make vim powerline looses color
 " @see http://vim.wikia.com/wiki/Change_vimrc_with_auto_reload
-autocmd BufWritePost .vimrc source %
+" autocmd BufWritePost .vimrc source %
 
 " Short to lauch several conque term tabs
 nnoremap <leader>csb :ConqueTermTab bash<CR>
