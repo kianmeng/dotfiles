@@ -35,16 +35,29 @@ fi
 
 
 # add to bash prompt and show pending changes
-# see http://www.bramschoenmakers.nl/en/node/624
-export GIT_PS1_SHOWDIRTYSTATE=1
-GIT_BRANCH="\033[01;33m\]$(__git_ps1)\[\033[01;34m\]"
+# see http://www.oliverdavies.co.uk/blog/2013/04/display-git-branch-or-tag-names-your-bash-prompt
+parse_git_branch () {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+parse_git_tag () {
+    git describe --tags 2> /dev/null
+}
+
+parse_git_branch_or_tag() {
+    local OUT="$(parse_git_branch)"
+    if [ "$OUT" == " ((no branch))" ]; then
+        OUT="($(parse_git_tag))";
+    fi
+    echo $OUT
+}
 
 PROMPT="[\[\e[34m\]\u@\h\[\e[0m\]][\[\e[32m\]\w\[\e[0m\]]\n"
 if [ $(id -u) -eq 0 ]; then
     PS1="${GIT_BRANCH}${PROMPT}# "
 else
-    PS1="${GIT_BRANCH}${PROMPT}\$ "
-    PS1="${GIT_BRANCH}${PROMPT}\$ "
+    PS1="$(parse_git_branch_or_tag)${PROMPT}\$ "
+    PS1="$(parse_git_branch_or_tag)${PROMPT}\$ "
 fi
 
 # less config
