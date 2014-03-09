@@ -12,7 +12,7 @@ By default it should works for Ubuntu/Debian-based distos.
 * git clone https://github.com/kianmeng/dotfiles.git
 * cd dotfiles
 * ./bin/dfm install
-* git submodule update --init --recursive
+* vim +BundleInstall +qall
 * sudo apt-file update
 
 Fonts
