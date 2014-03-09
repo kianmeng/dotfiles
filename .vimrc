@@ -4,6 +4,11 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" keybindings
+let mapleader = ","
+imap jj <esc>
+nmap ; :
+
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-markdown'
 
@@ -32,7 +37,7 @@ autocmd BufWritePost *.py call Flake8()
 " @see https://github.com/scrooloose/nerdtree
 "
 Bundle 'scrooloose/nerdtree.git'
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>nn :NERDTreeToggle<CR>
 
 " vim-powerline
 " @see https://github.com/Lokaltog/vim-powerline
@@ -53,10 +58,14 @@ set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
 set t_Co=256       " Tell terminal your console support 256 colors
 
-" tagbar
+" conque-shell
+" @see https://github.com/oplatek/Conque-Shell
+" Short to lauch several conque term tabs
 "
-let g:tagbar_usearrows = 1
-nnoremap <leader>b :TagbarToggle<CR>
+Bundle 'oplatek/Conque-Shell'
+nnoremap <leader>bb :ConqueTermTab bash<CR>
+nnoremap <leader>pp :ConqueTermTab psql -U kianmeng<CR>
+nnoremap <leader>mm :ConqueTermTab mysql -u root -p<CR>
 
 " ctags
 "
@@ -84,11 +93,6 @@ set showcmd
 " search
 set incsearch 
 set hlsearch
-
-" keybindings
-let mapleader = ","
-imap jj <esc>
-nmap ; :
 
 " see http://karmanebula.com/technically-borked/2013/12/16/leader-key-as-space-capslock-as-esc
 nnoremap <Leader>q :q<CR>
@@ -179,7 +183,3 @@ nnoremap <leader>l :ls<CR>:b<space>
 " disable this as it freeze vim and make vim powerline looses color
 " @see http://vim.wikia.com/wiki/Change_vimrc_with_auto_reload
 " autocmd BufWritePost .vimrc source %
-
-" Short to lauch several conque term tabs
-nnoremap <leader>csb :ConqueTermTab bash<CR>
-nnoremap <leader>csm :ConqueTermTab mysql -u root -p<CR>
