@@ -1,5 +1,58 @@
-" pathogen plugin initialization
-call pathogen#infect()
+" vundle intial settings
+" set the runtime path to include Vundle and initialize
+" let Vundle manage Vundle, required
+" see https://github.com/gmarik/Vundle.vim
+set nocompatible
+filetype off   
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-markdown'
+
+" nerdtree
+"
+" @see https://github.com/scrooloose/nerdtree
+Bundle 'scrooloose/nerdtree.git'
+nmap <leader>n :NERDTreeToggle<CR>
+
+" vim-powerline
+"
+" status with required setttings for vim-powerline
+" @see https://github.com/Lokaltog/vim-powerline
+Bundle 'Lokaltog/vim-powerline'
+let g:Powerline_symbols = 'fancy'
+
+" ubuntu-mono-powerline
+"
+" install the ubuntu mono font for vim-powerline
+" @see https://github.com/scotu/ubuntu-mono-powerline
+Bundle 'scotu/ubuntu-mono-powerline'
+set guifont=Ubuntu\ Mono\ 12
+set ruler
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
+set t_Co=256       " Tell terminal your console support 256 colors
+
+" tagbar
+"
+let g:tagbar_usearrows = 1
+nnoremap <leader>b :TagbarToggle<CR>
+
+" ctags
+"
+" $ apt-get install exuberant-ctags
+" the ; search for tags file from current directory till parent directory
+" resursively until it finds a tags file
+set tags=tags;
+nmap <leader>t :TlistToggle<CR>
+nmap <leader>f <C-]>
+nmap <leader>g <C-T>
+nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+
 syntax on
 filetype plugin indent on
 
@@ -10,19 +63,6 @@ set shiftwidth=4
 set expandtab
 set number
 set showcmd
-
-" status with required setttings for vim-powerline
-" @see https://github.com/Lokaltog/vim-powerline
-set ruler
-set nocompatible   " Disable vi-compatibility
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show unicode glyphs
-set t_Co=256       " Tell terminal your console support 256 colors
-let g:Powerline_symbols = 'fancy'
-
-" install the ubuntu mono font for vim-powerline
-" @see https://github.com/scotu/ubuntu-mono-powerline
-" set guifont=Ubuntu\ Mono\ 12
 
 " search
 set incsearch 
@@ -62,27 +102,7 @@ nnoremap <Leader>. 2<C-w>>
 nnoremap <Leader>- 2<C-w>-
 nnoremap <Leader>= 2<C-w>+
 
-" nerdtree
-" @see https://github.com/scrooloose/nerdtree
-nmap <leader>n :NERDTreeToggle<CR>
 
-" ctags
-" $ apt-get install exuberant-ctags
-"
-" the ; search for tags file from current directory till parent directory
-" resursively until it finds a tags file
-set tags=tags;
-nmap <leader>t :TlistToggle<CR>
-nmap <leader>f <C-]>
-nmap <leader>g <C-T>
-nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" tagbar
-let g:tagbar_usearrows = 1
-nnoremap <leader>b :TagbarToggle<CR>
-
-" command-t
-nmap <Leader>o :CommandT<CR>
 
 " block the usage of arrow keys
 nnoremap <Left> :echoe "Use h"<CR>
@@ -102,6 +122,7 @@ set pastetoggle=<leader>p
 set showmode
 
 " color scheme
+"
 " todo: vim-powerline will lost their color if new tab is created if you set
 " this up
 " colorscheme default
@@ -140,14 +161,8 @@ nnoremap <leader>l :ls<CR>:b<space>
 " Note: disable this as it freeze vim and make vim powerline looses color
 " Auto reload ~/.vimrc file upon saving
 " @see http://vim.wikia.com/wiki/Change_vimrc_with_auto_reload
-" autocmd BufWritePost .vimrc source %
+autocmd BufWritePost .vimrc source %
 
 " Short to lauch several conque term tabs
 nnoremap <leader>csb :ConqueTermTab bash<CR>
 nnoremap <leader>csm :ConqueTermTab mysql -u root -p<CR>
-
-" set list
-" set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
-" highlight current line
-" set cul
