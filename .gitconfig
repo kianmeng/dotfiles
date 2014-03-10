@@ -12,14 +12,22 @@
 
 [alias]
     # common
+    co = checkout
+    br = branch
 	ci = commit
-    br = branch -ar
-	co = checkout
-    df = diff --word-diff
-    cf = config --list --global
     cm = commit -m
-    up = pull --rebase
+    df = diff --word-diff
+
+    # edit/view this config file
+    cf = config --list --global
     ed = config --global --edit
+
+    # always rebase, no merging
+    ft = fetch
+    pl = pull
+    pr = pull --rebase
+    ps = push
+
     url = remote -v
 
     # status
@@ -50,6 +58,7 @@
     diff = auto
     status = auto
 	ui = auto
+    interactive = auto
 
 [core]
 	whitespace = trailing-space,space-before-tab
