@@ -19,6 +19,7 @@
     cf = config --list --global
     cm = commit -m
     up = pull --rebase
+    ed = config --global --edit
     url = remote -v
 
     # status
@@ -27,7 +28,7 @@
 
     # colourful log
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    ll = log --oneline --decorate --graph -n 15
+	ll = log --oneline --decorate --graph --all
     lla = log --oneline --decorate --graph -n 15 --all
     stat-by-author = shortlog -sn
     
@@ -45,10 +46,10 @@
     last-merge = show :/^Merge
 
 [color]
-	ui = auto
     branch = auto
     diff = auto
     status = auto
+	ui = auto
 
 [core]
 	whitespace = trailing-space,space-before-tab
