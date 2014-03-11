@@ -1,10 +1,11 @@
 # inspired by:
-# http://wiki.gnome.org/Git/Tips
-# http://oli.jp/2012/git-powerup
-# http://mislav.uniqpath.com/2010/07/git-tips
-# http://jeremyherve.com/2012/09/23/my-gitconfig-file
-# http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks
-# https://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git
+# [1]: http://wiki.gnome.org/Git/Tips
+# [2]: http://oli.jp/2012/git-powerup
+# [3]: http://mislav.uniqpath.com/2010/07/git-tips
+# [4]: http://jeremyherve.com/2012/09/23/my-gitconfig-file
+# [5]: http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks
+# [6]: http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git
+# [7]: http://stackoverflow.com/questions/11023194/git-vim-automatically-wrap-long-commit-messages
 
 [user]
 	name = Kian-Meng, Ang
@@ -19,14 +20,19 @@
     df = diff --word-diff
 
     # edit/view this config file
-    cf = config --list --global
+    cg = config --list --global
+    ca = config --global
     ed = config --global --edit
 
     # always rebase, no merging
     ft = fetch
     pl = pull
-    pr = pull --rebase
     ps = push
+
+    # on master branch, two steps
+    # git fetch origin
+    # git rebase origin/master [3]
+    pr = pull --rebase
 
     url = remote -v
 
@@ -62,7 +68,11 @@
 
 [core]
 	whitespace = trailing-space,space-before-tab
-    editor = vim
+    # automatically wrap long commit messges [6]
+    editor = vim '+set tw=72'
 
 [merge]
 	tool = meld
+
+[branch]
+	autosetuprebase = always
