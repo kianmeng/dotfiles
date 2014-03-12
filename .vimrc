@@ -94,37 +94,6 @@ set showcmd
 set incsearch 
 set hlsearch
 
-" see http://karmanebula.com/technically-borked/2013/12/16/leader-key-as-space-capslock-as-esc
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>e :e
-nnoremap <Leader>v :vsplit
-nnoremap <Leader>s :split
-nnoremap <Leader>p :CtrlP<CR>
-nnoremap <Leader>g :vimgrep
-nnoremap <Leader>c :copen<CR>
-nnoremap <Leader>C :cclose<CR>
-nnoremap <Leader>8 :set tw=80<CR>
-nnoremap <Leader>0 :set tw=0<CR>
-nnoremap <Leader>n :set invnumber<CR>
-nnoremap <Leader><TAB> <C-w><C-w>
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
-
-nnoremap <Leader>H <C-w>H
-nnoremap <Leader>J <C-w>J
-nnoremap <Leader>K <C-w>K
-nnoremap <Leader>L <C-w>L
-
-nnoremap <Leader>, 2<C-w><
-nnoremap <Leader>. 2<C-w>>
-nnoremap <Leader>- 2<C-w>-
-nnoremap <Leader>= 2<C-w>+
-
-
-
 " block the usage of arrow keys
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
