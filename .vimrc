@@ -67,20 +67,94 @@ nnoremap <leader>bb :ConqueTermTab bash<CR>
 nnoremap <leader>pp :ConqueTermTab psql -U kianmeng<CR>
 nnoremap <leader>mm :ConqueTermTab mysql -u root -p<CR>
 
-" ctags
+" tagbar
+" @see https://github.com/majutsushi/tagbar
 "
-" apt-get install exuberant-ctags
+" works for python
+"
+Bundle 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
+" add support for markdown files in tagbar.
+" @see http://github.com/jszakmeister/markdown2ctags
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '~/bin/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '|',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+
+" groovy
+let g:tagbar_type_groovy = {
+    \ 'ctagstype' : 'groovy',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'c:class',
+        \ 'i:interface',
+        \ 'f:function',
+        \ 'v:variables',
+    \ ]
+\ }
+
+" syntastic
+" @see https://github.com/scrooloose/syntastic
+" @see http://pear.phpmd.org
+"
+" Python
+" sudo apt-get install pylint
+"
+" PHP
+" sudo apt-get install php-pear
+"
+" sudo pear install PHP_CodeSniffer
+"
+" sudo pear channel-discover pear.phpmd.org
+" sudo pear channel-discover pear.pdepend.org
+" sudo pear install pear.pdepend.org/PHP_Depend
+" sudo pear install phpmd/PHP_PMD
+"
+Bundle 'scrooloose/syntastic.git'
+" overwrite by vim-flake8 plugin
+let g:syntastic_python_checkers = ['pylint', 'flake8']
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+
+Bundle 'taglist.vim'
+" taglist
+"
 " the ; search for tags file from current directory till parent directory
 " resursively until it finds a tags file
+"
+" works for php
+"
+" sudo apt-get install exuberant-ctags
+"
 set tags=tags;
 nmap <leader>t :TlistToggle<CR>
 nmap <leader>f <C-]>
 nmap <leader>g <C-T>
 nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+Bundle 'msanders/snipmate'
+" snipmate
+" @see https://github.com/msanders/snipmate.vim
+"
+
 " syntax
 syntax on
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " tab settings 
 set smartindent
