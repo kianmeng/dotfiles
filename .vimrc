@@ -9,7 +9,13 @@ let mapleader = ","
 imap jj <esc>
 nmap ; :
 
+" supertab
+" @see https://github.com/ervandew/supertab
+" @see http://vim.wikia.com/wiki/Omni_completion_popup_menu
 Bundle 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "context"
+
 Bundle 'tpope/vim-markdown'
 
 " vundle
@@ -149,6 +155,14 @@ Bundle 'msanders/snipmate'
 
 " syntax
 syntax on
+Bundle 'altercation/vim-colors-solarized'
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
+
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
