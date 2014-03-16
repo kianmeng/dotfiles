@@ -148,14 +148,19 @@ nmap <leader>f <C-]>
 nmap <leader>g <C-T>
 nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-Bundle 'msanders/snipmate'
-" snipmate
-" @see https://github.com/msanders/snipmate.vim
-"
-
 " syntax & color scheme
 syntax on
 filetype plugin indent on
+
+" color scheme
+"
+" todo: vim-powerline will lost their color if new tab is created if you set
+" this up
+" colorscheme default
+
+" wild menu. more options shown in command mode
+set wildmenu
+set wildmode=list:longest,full
 
 " omni complete
 set omnifunc=syntaxcomplete#Complete
@@ -192,16 +197,6 @@ ca w!! w !sudo tee >/dev/null "%"
 nnoremap <leader>p :set invpaste paste?<CR>
 set pastetoggle=<leader>p
 set showmode
-
-" color scheme
-"
-" todo: vim-powerline will lost their color if new tab is created if you set
-" this up
-" colorscheme default
-
-" wild menu. more options shown in command mode
-set wildmenu
-set wildmode=list:longest,full
 
 " Last file position
 " @see http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
