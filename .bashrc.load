@@ -3,19 +3,6 @@ export PATH=$PATH:$HOME/bin
 export HISTCONTROL=ignoreboth
 export HISTSIZE=100000000000
 
-# add this to the .bashrc: . $HOME/.bashrc.load
-# put any bash customizations in here
-
-# for tmux: export 256color
-# @see https://wiki.archlinux.org/index.php/Tmux#Setting_the_correct_term
-[ -n "$TMUX" ] && export TERM=screen-256color
-
-# start tmux on every shell login. Add this before aliases declaration
-# http://bionicraptor.co/2011/07/24/how-to-automatically-launch-tmux/
-if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach || tmux new; exit
-fi
-
 # load all the aliases or functions when you starts bash. 
 # to see all aliases, type alias. 
 # to see all functions, type declare -f. 
@@ -33,50 +20,16 @@ if [ -d ~/.bash.d ]; then
   unset f
 fi
 
-
-# add to bash prompt and show pending changes
-# see http://www.oliverdavies.co.uk/blog/2013/04/display-git-branch-or-tag-names-your-bash-prompt
-parse_git_branch () {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-parse_git_tag () {
-    git describe --tags 2> /dev/null
-}
-
-parse_git_branch_or_tag() {
-    local OUT="$(parse_git_branch)"
-    if [ "$OUT" == " ((no branch))" ]; then
-        OUT="($(parse_git_tag))";
-    fi
-    echo $OUT
-}
-
 PROMPT="[\[\e[34m\]\u@\h\[\e[0m\]][\[\e[32m\]\w\[\e[0m\]]\n"
 if [ $(id -u) -eq 0 ]; then
-    PS1="${GIT_BRANCH}${PROMPT}# "
+    PS1="$(parse_git_branch)${PROMPT}# "
 else
-    PS1="$(parse_git_branch_or_tag)${PROMPT}\$ "
-    PS1="$(parse_git_branch_or_tag)${PROMPT}\$ "
+    PS1="$(parse_git_branch)${PROMPT}\$ "
 fi
-
-# less config
-# 
-# source code highlighting
-# $ apt-get install source-highlight
-# see http://linux-tips.org/article/78/syntax-highlighting-in-less
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-
-# -rR option is tell less to interpret those color codes and escape sequences
-# see http://unix.stackexchange.com/questions/19317/can-less-retain-colored-output
-export LESS="-iMSx4 -rRFX"
-
-# mysql prompt setting
-export MYSQL_PS1="\u@\h [\d]> "
-export PAGER=less
 
 # enable vi input mode
 # press ESC, j or k to scroll history, i to insert
 set -o vi
 
+# default editor
 export EDITOR=vi
