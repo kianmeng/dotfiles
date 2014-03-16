@@ -153,17 +153,11 @@ Bundle 'msanders/snipmate'
 " @see https://github.com/msanders/snipmate.vim
 "
 
-" syntax
+" syntax & color scheme
 syntax on
-Bundle 'altercation/vim-colors-solarized'
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
-colorscheme solarized
-
 filetype plugin indent on
+
+" omni complete
 set omnifunc=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
