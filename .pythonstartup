@@ -1,0 +1,3 @@
+# two use modules for pretty print variables
+from pprint import pprint
+from awesome_print import ap
