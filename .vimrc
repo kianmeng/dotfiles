@@ -45,19 +45,13 @@ autocmd BufWritePost *.py call Flake8()
 Bundle 'scrooloose/nerdtree.git'
 nmap <leader>nn :NERDTreeToggle<CR>
 
-" vim-powerline
-" @see https://github.com/Lokaltog/vim-powerline
-" status with required setttings for vim-powerline
+" vim-airline
+" @see https://github.com/bling/vim-airline
+" @see https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation
 "
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
-
-" ubuntu-mono-powerline
-" @see https://github.com/scotu/ubuntu-mono-powerline
-" install the ubuntu mono font for vim-powerline
-"
-Bundle 'scotu/ubuntu-mono-powerline'
-set guifont=Ubuntu\ Mono\ 12
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+"set guifont=Ubuntu\ Mono\ 12
 set ruler
 set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
