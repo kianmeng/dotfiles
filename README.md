@@ -15,12 +15,4 @@ By default it should works for Ubuntu/Debian-based distos.
 * ./bin/dfm install
 * vim +BundleInstall +qall
 * sudo apt-file update
-
-Fonts
------
-The vim-powerline needs Ubuntu Mono font
-
-* mkdir ~/.fonts 
-* cd ~/.fonts/ 
-* git clone https://github.com/scotu/ubuntu-mono-powerline.git 
-* cd ~
+* fc-cache -vf ~/.fonts
