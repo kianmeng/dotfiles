@@ -22,3 +22,28 @@ alias rmpyc='find . -type f -name "*.pyc" -delete'
 
 # alias for nose testing command line
 alias nt='nosetests'
+
+# setup and check for virtualenvwrapper.sh
+# via http://virtualenvwrapper.readthedocs.org/en/latest/install.html
+# via http://mkelsey.com/2013/04/30/how-i-setup-virtualenv-and-virtualenvwrapper-on-my-mac
+WRAPPER_BIN=$(command -v virtualenvwrapper.sh)
+if [ -n "$WRAPPER_BIN" ] 
+then
+    # location of our virtual environment
+    export WORKON_HOME=$HOME/.virtualenvs
+
+    # location of our project folder
+    export PROJECT_HOME=$HOME/Projects
+
+    # ensure all new environments are isolated from the site-packages directory
+    export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+
+    # use the same directory for virtualenvs as virtualenvwrapper
+    export PIP_VIRTUALENV_BASE=$WORKON_HOME
+
+    # makes pip detect an active virtualenv and install to it
+    export PIP_RESPECT_VIRTUALENV=true
+    source $WRAPPER_BIN
+else
+    echo "Missing virtualenvwrapper.sh ! Please run : pip install virtualenvwrapper."
+fi
