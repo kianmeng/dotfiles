@@ -2,3 +2,9 @@
 # This hook is run after a new virtualenv is activated.
 
 pip install awesome_print
+
+# via http://virtualenvwrapper.readthedocs.org/en/latest/tips.html#creating-project-work-directories
+proj_name=$(basename $VIRTUAL_ENV)
+mkdir $PROJECT_HOME/$proj_name
+add2virtualenv $PROJECT_HOME/$proj_name
+cd $PROJECT_HOME/$proj_name
