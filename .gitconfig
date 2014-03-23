@@ -59,6 +59,11 @@
     last-fix = show :/fix
     last-merge = show :/^Merge
 
+    # opps, undo stuff
+    # via http://sethrobertson.github.io/GitFixUm/fixup.html
+    undo-merge = merge --abort
+    undo-rebase = rebase --abort
+
 [color]
     branch = auto
     diff = auto
