@@ -9,7 +9,7 @@ Install
 By default it should works for Ubuntu/Debian-based distos.
 
 * sudo apt-get install git git-sh tig meld exuberant-ctags xclip mercurial vim
-  tmux screen source-highlight apt-file terminator ack-grep ipython
+  tmux screen source-highlight apt-file terminator ack-grep ipython ncdu pydf
 * git clone https://github.com/kianmeng/dotfiles.git
 * cd dotfiles
 * ./bin/dfm install
