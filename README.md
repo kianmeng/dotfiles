@@ -8,4 +8,4 @@ Installation
 ------------
 By default it should works for Ubuntu/Debian-based distos.
 
-$ wget https://raw.githubusercontent.com/kianmeng/dotfiles/master/bootstrap.sh | bash -
+$ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bootstrap.sh | bash -
