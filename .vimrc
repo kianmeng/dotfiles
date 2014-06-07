@@ -1,3 +1,13 @@
+" auto install Vunde if not found, for fresh install.
+" @see http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+let iCanHazVundle=0
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle...\n"
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=1
+endif
+
 " set the runtime path to include Vundle and initialize
 set nocompatible
 filetype off   
@@ -223,3 +233,10 @@ nnoremap <leader>l :ls<CR>:b<space>
 " disable this as it freeze vim and make vim powerline looses color
 " @see http://vim.wikia.com/wiki/Change_vimrc_with_auto_reload
 " autocmd BufWritePost .vimrc source %
+
+" auto install Vunde if not found, for fresh install.
+" @see http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+if iCanHazVundle == 1
+    echo "Installing Bundles...\n"
+    :BundleInstall
+endif
