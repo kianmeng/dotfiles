@@ -4,16 +4,8 @@ A collection of configuration files for the typical console programs bash, vim,
 screen, tmux, and misc. The dfm (dotfiles manager) is used to manage all the
 dotfiles.  See https://github.com/justone/dotfiles for full documentation.
 
-Install
--------
+Installation
+------------
 By default it should works for Ubuntu/Debian-based distos.
 
-* sudo apt-get install git git-sh tig meld exuberant-ctags xclip mercurial vim
-  tmux screen source-highlight apt-file terminator ack-grep ipython ncdu pydf
-* git clone https://github.com/kianmeng/dotfiles.git
-* cd dotfiles
-* ./bin/dfm install
-* vim +BundleInstall +qall
-* sudo apt-file update
-* fc-cache -vf ~/.fonts
-* sudo pip install virtualenvwrapper
+$ wget https://raw.githubusercontent.com/kianmeng/dotfiles/bootstrap.sh | bash -
