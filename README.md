@@ -16,3 +16,4 @@ By default it should works for Ubuntu/Debian-based distos.
 * vim +BundleInstall +qall
 * sudo apt-file update
 * fc-cache -vf ~/.fonts
+* sudo pip install virtualenvwrapper
