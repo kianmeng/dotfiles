@@ -18,3 +18,15 @@ alias histg="history | grep"
 
 # what is my current ip
 alias myip="curl http://ipecho.net/plain; echo"
+
+# search Google from command line
+# gg term1 term2 termN
+# @see http://superuser.com/a/47216
+gg() {
+    search=""
+    echo "Googling: $@"
+    for term in $@; do
+        search="$search%20$term"
+    done
+    xdg-open "http://www.google.com/search?q=$search"
+}
