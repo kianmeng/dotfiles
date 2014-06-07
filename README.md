@@ -4,9 +4,10 @@ screen, tmux, and misc. The dfm (dotfiles manager) is used to manage all the
 dotfiles.  See https://github.com/justone/dotfiles for full documentation.
 
 ### Installation
-By default it should works for Ubuntu/Debian-based distos.
+By default it should works for Ubuntu/Debian-based distos. Use the bootstrap
+shell script to install all necessary packages.
 
-$ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bootstrap.sh | bash -
+$ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/bootstrap.sh | bash -
 
 ### Vim's Key Bindings
 | Shortcuts | Description                              |
