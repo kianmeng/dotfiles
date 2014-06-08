@@ -11,7 +11,7 @@ fi
 # wrapper for tmuxinator but with additional installation checking for fresh
 # new installation.
 #
-function tmuxinator(){
+function tmuxinator() {
     RUBY193_BIN=$(command -v `which ruby1.9.3`)
     if [ ! -n "$RUBY193_BIN" ]
     then
