@@ -28,5 +28,16 @@ gg() {
     for term in $@; do
         search="$search%20$term"
     done
-    sensible-browser "http://www.google.com/search?q=$search"
+    sensible-browser "https://www.google.com/search?q=$search"
+}
+
+# search Google Bookmark from command line
+# gb term1 term2 termN
+gb() {
+    search=""
+    echo "Search Google Bookmark: $@"
+    for term in $@; do
+        search="$search+$term"
+    done
+    sensible-browser "https://www.google.com/bookmarks/find?q=$search"
 }
