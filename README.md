@@ -9,8 +9,8 @@
 * By default it should works for Ubuntu/Debian-based distos. 
 * Use the bootstrap shell script to install all necessary packages.
 $ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/bootstrap.sh | bash -
-* If you need the latest Vim version under Debian, use the
-  bin/debian_75_build_vim.sh script to build the Deb packages.
+* If you need the latest Vim version under Debian/Ubuntu, use the
+  bin/build_latest_vim_deb.sh script to build the Debian packages.
 
 ### Vim's Key Bindings
 | Shortcuts | Description                              |
@@ -25,3 +25,7 @@ $ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/boots
 | ,pp       | Start PostgreSQL prompt in another tab.  |
 | ,mm       | Start MySQL prompt in another tab.       |
 | :w!!      | Save file with root privileges.          |
+
+### Miscellaneous 
+* In console, for quick access to regular accessed folders, just type z and
+  TAB.
