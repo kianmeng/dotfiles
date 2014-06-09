@@ -10,6 +10,13 @@ alias aptfu='apt-file update'
 alias aptfs='apt-file search'
 alias aptfl='apt-file list'
 
+# Debian wheezy-backport installation.
+# Make sure you've the backport setup properly.
+# $ sudo sh -c 'echo "deb http://cdn.debian.net/debian wheezy-backports main" \
+#    > /etc/apt/sources.list.d/wheezy-backport.list'
+#
+alias aptbi='apt-get -t wheezy-backports -y install'
+
 
 # Check if a program exists in the system. If not, install the necessary
 # packages.
