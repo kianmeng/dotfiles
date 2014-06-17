@@ -26,6 +26,24 @@ $ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/boots
 | ,mm       | Start MySQL prompt in another tab.       |
 | :w!!      | Save file with root privileges.          |
 
+### Tmux's Key Bindings
+| Shortcuts  | Description                              |
+|------------|------------------------------------------|
+| `          | Prefix key (backtick)                    |
+| ``         | Type backtick in console.                |
+| Alt+j      | Switch to left tab.                      |
+| Alt+k      | Switch to right tab.                     |
+| `\         | Split window vertically.                 |
+| `-         | Split window horizontally.               |
+| `j         | Move up to top window.                   |
+| `k         | Move down to down window.                |
+| `h         | Move to left window.                     |
+| `l         | Move to right window.                    |
+| `/         | Split a new window and man page for cmd. |
+| `~         | Split a new window and run htop.         |
+| `r         | Reload your .tmux.conf config file.      |
+| Shift+PgUp | Show previous page.                      |
+
 ### Miscellaneous 
 * In console, for quick access to regular accessed folders, just type z and
   TAB.
