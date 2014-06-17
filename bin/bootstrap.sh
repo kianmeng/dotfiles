@@ -18,7 +18,7 @@ echo "Update font cache...\n"
 fc-cache -vf ~/.fonts
 
 echo "Install essential Python modules...\n"
-sudo pip install awesome_print virtualenvwrapper
+sudo pip install awesome_print virtualenvwrapper flake8
 
 echo "Install all Vim's plugins...\n"
 vim +BundleInstall +qall
