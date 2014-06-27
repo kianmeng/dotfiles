@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Upgrade my debian wheezy kernel to 3.14-0.bpo.1-amd64 but kind of messed up
 # my Nvidia driver. Hence revert back to Nouveau driver instead but still needs
@@ -8,7 +8,7 @@
 # before the window manager start. 
 # @see https://wiki.archlinux.org/index.php/xprofile
 
-if [ "$HOSTNAME" == 'butterfly' ]; then
+if [ "$HOSTNAME" == butterfly ]; then
     xrandr --newmode "1280x1024"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync
     xrandr --addmode DVI-I-1 1280x1024
     xrandr --output VGA-1 --mode 1280x1024 --pos 0x0 --rotate normal --output TV-1 --off \
