@@ -7,6 +7,13 @@
 #
 export PYTHONSTARTUP=$HOME/.pythonstartup
 
+# disable .pyc or .pyo file creation, especially true for development machine
+# where we don't want some dangling references to deleted files.
+#
+# see http://stackoverflow.com/a/19353631
+# see https://docs.python.org/2/using/cmdline.html#envvar-PYTHONDONTWRITEBYTECODE
+export PYTHONDONTWRITEBYTECODE=1
+
 # ipython default data path
 # by default in my ubuntu 14.10, running ipython profile create will create the
 # profile data in $HOME/.config/ipython which is not suitable to be version
@@ -14,7 +21,6 @@ export PYTHONSTARTUP=$HOME/.pythonstartup
 #
 # see http://ipython.org/ipython-doc/dev/config/intro.html#profiles
 # see http://ipython.org/ipython-doc/dev/interactive/tutorial.html#startup-files
-#
 export IPYTHONDIR=$HOME/.ipython
 
 # remove all compiled python code recursively
