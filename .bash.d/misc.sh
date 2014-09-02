@@ -41,3 +41,6 @@ gb() {
     done
     sensible-browser "https://www.google.com/bookmarks/find?q=$search"
 }
+
+# default download to 4 connections
+alias download='aria2c -x 4'

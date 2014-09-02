@@ -5,7 +5,7 @@
 echo "Install essential packages...\n"
 sudo apt-get install git git-sh tig meld exuberant-ctags xclip mercurial vim \
     tmux screen source-highlight apt-file terminator ack-grep ipython ncdu pydf \
-    dstat htop speedometer
+    dstat htop speedometer aria2
 
 echo "Clone the dotfiles repository and create soft links...\n"
 git clone https://github.com/kianmeng/dotfiles.git
