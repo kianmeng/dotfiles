@@ -1,5 +1,4 @@
 # via https://www.digitalocean.com/community/articles/an-introduction-to-useful-bash-aliases-and-functions
-
 alias xclip='xclip -selection c'
 
 # since ack is kanji code converter and ack-grep is the actual program for
@@ -18,6 +17,10 @@ alias histg="history | grep"
 
 # what is my current ip
 alias myip="curl http://ipecho.net/plain; echo"
+
+# in Fedora, we need to declare this explicitly together with sensible-utils
+# package.
+export BROWSER='google-chrome'
 
 # search Google from command line
 # gg term1 term2 termN

@@ -8,8 +8,8 @@ if [[ $(python -mplatform | grep -i fedora) ]];
 then
     sudo yum install git tig meld ctags xclip mercurial vim \
         tmux screen source-highlight terminator dstat htop aria2 \
-	aria2 python-virtualenv python-virtualenvwrapper \
-        python-flake8 glances subversion
+	    aria2 python-virtualenv python-virtualenvwrapper \
+        python-flake8 glances subversion sensible-utils
 fi
 
 if [[ $(python -mplatform | grep -i ubuntu) ]];
