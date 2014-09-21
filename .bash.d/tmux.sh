@@ -1,3 +1,7 @@
+# Fix the issue of X session login failure where we only want to start tmux on
+# shell start.
+[[ $- != *i* ]] && return
+
 # for tmux: export 256color
 # @see https://wiki.archlinux.org/index.php/Tmux#Setting_the_correct_term
 [ -n "$TMUX" ] && export TERM=screen-256color
