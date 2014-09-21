@@ -47,3 +47,8 @@ gb() {
 
 # default download to 4 connections
 alias download='aria2c -x 4'
+
+# due to some idiotic reason, gnome3 hides the logout button if there're only
+# one user exists in the system causing unnecesary problems if you want to try
+# and switch to alternative window managers.
+alias logout='gnome-session-quit'
