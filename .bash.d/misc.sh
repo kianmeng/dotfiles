@@ -52,3 +52,13 @@ alias download='aria2c -x 4'
 # one user exists in the system causing unnecesary problems if you want to try
 # and switch to alternative window managers.
 alias logout='gnome-session-quit'
+
+# force quit of current session if gnome-session or other sessio manager is not
+# available. there is no accurate way to detect the current display manager,
+# hence i'll assume the default is gdm.
+# see http://askubuntu.com/a/92557
+DEFAULT_DM='xdm'
+[[ -n $(command -v gdm) ]] && DEFAULT_DM='gdm'
+[[ -n $(command -v kdm) ]] && DEFAULT_DM='kdm'
+[[ -n $(command -v lighdm) ]] && DEFAULT_DM='lightdm'
+alias forcelogout='sudo service $DEFAULT_DM restart'
