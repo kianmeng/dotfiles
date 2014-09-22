@@ -12,7 +12,7 @@ alias yumi='sudo yum install'
 alias yumri='sudo yum reinstall'
 alias yumdown='sudo yum downgrade'
 alias yumr='sudo yum remove'
-alias yums='sudo yum search'
+alias yums='sudo yum search all'
 alias yumif='sudo yum info'
 alias yumfs='sudo yum provides'
 
