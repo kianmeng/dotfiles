@@ -65,3 +65,6 @@ alias forcelogout='sudo service $DEFAULT_DM restart'
 
 # quick file server
 alias fileserver='python -m SimpleHTTPServer'
+
+# quick reload .bashrc
+alias reloadbash='. ~/.bashrc'
