@@ -68,3 +68,7 @@ alias fileserver='python -m SimpleHTTPServer'
 
 # quick reload .bashrc
 alias reloadbash='. ~/.bashrc'
+
+# toggle left or right-handed mouse pointer
+alias lhand='xmodmap -e "pointer = 3 2 1"'
+alias rhand='xmodmap -e "pointer = 1 2 3"'
