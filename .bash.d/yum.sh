@@ -24,3 +24,11 @@ alias yumgl='sudo yum grouplist'
 
 # repo-related
 alias yumrepo='sudo yum repolist all'
+
+# dnf
+alias dnfi='sudo dnf install'
+alias dnfri='sudo dnf reinstall'
+alias dnfr='sudo dnf erase'
+alias dnfif='sudo dnf info'
+alias dnfs='sudo dnf search'
+alias dnffs='sudo dnf provides'
