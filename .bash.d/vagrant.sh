@@ -32,3 +32,6 @@ alias vgstat='vagrant global-status'
 # vagrant homedir
 alias vgbox='cd $HOME/.vagrant.d/boxes'
 alias vghome='cd $HOME/.vagrant.d'
+
+# recompile the virtualbox kernel module upon kernel upgrade
+alias vboxdrv='sudo /etc/init.d/vboxdrv setup'
