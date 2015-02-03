@@ -1,7 +1,9 @@
 # exports
-export PATH=$PATH:$HOME/bin
 export HISTCONTROL=ignoreboth
 export HISTSIZE=100000000000
+if [[ ! "$PATH" =~ "$HOME/bin" ]]; then
+    export PATH=$PATH:$HOME/bin
+fi
 
 # load all the aliases or functions when you starts bash. 
 # to see all aliases, type alias. 
