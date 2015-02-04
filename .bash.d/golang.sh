@@ -7,6 +7,13 @@
 # document. Note that this must not be the sameath as your Go installation.
 # 
 # http://golang.org/doc/code.html
-export GOPATH=$HOME/Project/go
+export GOPATH=$HOME/Projects/go
+if [[ ! -d $GOPATH ]]; then
+    mkdir -p $GOPATH
+fi
+
+if [[ ! "$PATH" =~ "$GOPATH" ]]; then
+    export PATH=$PATH:$GOPATH/bin
+fi
 
 alias gofmt='gofmt -tabs=false -tabwidth=4 -w'
