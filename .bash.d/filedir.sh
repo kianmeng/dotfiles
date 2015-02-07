@@ -6,6 +6,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias mkdir="mkdir -pv"
 
+# strip trailing newline from the copied path so that it won't auto-run in the
+# terminal.
+# @see http://stackoverflow.com/a/15690006
+alias cpwd="pwd | tr -d '\n' | xclip"
+
 # file listing
 alias ls='ls --color --group-directories-first -p -CF';
 alias ll='ls -lh --color';
