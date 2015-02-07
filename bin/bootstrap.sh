@@ -9,14 +9,14 @@ then
     sudo yum install git tig meld ctags xclip mercurial vim \
         tmux screen source-highlight terminator dstat htop aria2 \
 	    aria2 python-virtualenv python-virtualenvwrapper \
-        python-flake8 glances subversion sensible-utils
+        python-flake8 glances subversion sensible-utils most
 fi
 
 if [[ $(python -mplatform | grep -i ubuntu) ]];
 then
     sudo apt-get install git git-sh tig meld exuberant-ctags xclip mercurial vim \
         tmux screen source-highlight apt-file terminator ack-grep ipython ncdu pydf \
-        dstat htop speedometer aria2 subversion
+        dstat htop speedometer aria2 subversion most
 
     echo -e "Update Deb packaing details...\n"
     sudo apt-file update
