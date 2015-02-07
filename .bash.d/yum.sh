@@ -27,6 +27,7 @@ alias yumrepo='sudo yum repolist all'
 
 # dnf
 alias dnfi='sudo dnf install'
+alias dnfu='sudo dnf update'
 alias dnfri='sudo dnf reinstall'
 alias dnfr='sudo dnf erase'
 alias dnfif='sudo dnf info'
