@@ -152,6 +152,8 @@ nmap <leader>f <C-]>
 nmap <leader>g <C-T>
 nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+Bundle 'ryanss/vim-hackernews'
+
 " syntax & color scheme
 syntax on
 filetype plugin indent on
