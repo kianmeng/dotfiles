@@ -21,6 +21,7 @@ alias yumgi='sudo yum groupinstall'
 alias yumgr='sudo yum groupremove'
 alias yumgu='sudo yum groupupdate'
 alias yumgl='sudo yum grouplist'
+alias yumgif='sudo yum groupinfo'
 
 # repo-related
 alias yumrepo='sudo yum repolist all'
