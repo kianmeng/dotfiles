@@ -5,6 +5,9 @@ alias yumsh='sudo yum shell'
 alias yumhist='sudo yum history'
 alias yumu='sudo yum update'
 alias yumcu='sudo yum check-update'
+# this will generate the debug file and let us debug all yum-related variables
+# @see http://unix.stackexchange.com/questions/19701/yum-how-can-i-view-variables-like-releasever-basearch-yum0
+alias yumdd='sudo yum-debug-dump'
 
 # common actions
 # alias may conflict with YUMI (Your Universal Multibot Integrator) tool
