@@ -44,6 +44,13 @@ $ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/boots
 | `r         | Reload your .tmux.conf config file.      |
 | Shift+PgUp | Show previous page.                      |
 
+### Bash's Key Bindings
+| Shortcuts  | Description                                       |
+|------------|---------------------------------------------------|
+| ESC        | Toggle Vi editing mode.                           |
+| j/k        | Scroll history forward or backward.               |
+| h/l        | Move cursor forward or backward in the line.      |
+
 ### Miscellaneous 
 * In console, for quick access to regular accessed folders, just type z and
   TAB.
