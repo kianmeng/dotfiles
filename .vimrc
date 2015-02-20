@@ -154,6 +154,13 @@ nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR
 
 Bundle 'ryanss/vim-hackernews'
 
+" ----
+" nimrod
+" syntax file for Nim programming language
+" @see https://github.com/zah/nimrod.vim/
+Bundle 'zah/nimrod.vim'
+" ----
+
 " syntax & color scheme
 syntax on
 filetype plugin indent on
