@@ -2,10 +2,6 @@
 export HISTCONTROL=ignoreboth
 export HISTSIZE=100000000000
 
-# color for manpages
-# @see http://serverfault.com/a/12391
-export PAGER="/usr/bin/most -s"
-
 if [[ ! "$PATH" =~ "$HOME/bin" ]]; then
     export PATH=$PATH:$HOME/bin
 fi

@@ -72,3 +72,8 @@ alias reloadbash='. ~/.bashrc'
 # toggle left or right-handed mouse pointer
 alias lhand='xmodmap -e "pointer = 3 2 1"'
 alias rhand='xmodmap -e "pointer = 1 2 3"'
+
+# color for manpages
+# @see http://serverfault.com/a/12391
+export PAGER="/usr/bin/most -s"
+
