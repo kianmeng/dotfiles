@@ -33,4 +33,4 @@ alias nimcvv='nim c -r --verbosity:2' # this will show the line of source with i
 alias nimcvvv='nim c -r --verbosity:3'
 
 # compile a release version which turn off checking and turn on optimization.
-alias nimcr='alias nim c -d:release'
+alias nimcr='nim c -d:release'
