@@ -7,6 +7,12 @@ export HISTSIZE=100000000000
 # default editor.
 export EDITOR=vi 
 
+# default project folder name.
+export PROJECT=$HOME/.project
+if [[ ! -d $PROJECT ]]; then
+    mkdir $PROJECT
+fi
+
 if [[ ! "$PATH" =~ "$HOME/bin" ]]; then
     export PATH=$PATH:$HOME/bin
 fi
