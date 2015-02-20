@@ -10,10 +10,6 @@ if [[ ! "$PATH" =~ "$HOME/bin" ]]; then
     export PATH=$PATH:$HOME/bin
 fi
 
-if [[ ! "$PATH" =~ "$HOME/Projects/Nim/bin" ]]; then
-    export PATH=$PATH:$HOME/Projects/Nim/bin
-fi
-
 # load all the aliases or functions when you starts bash. 
 # to see all aliases, type alias. 
 # to see all functions, type declare -f. 
