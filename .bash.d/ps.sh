@@ -6,7 +6,7 @@ alias ps='ps auxf'
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 # kill process forcefully
-alias fkill='kill -9'
+alias kill9='kill -9'
 
 # kill process by port number
 # @see http://unix.stackexchange.com/a/92721
