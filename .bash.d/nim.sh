@@ -34,3 +34,13 @@ alias nimcvvv='nim c -r --verbosity:3'
 
 # compile a release version which turn off checking and turn on optimization.
 alias nimcr='nim c -d:release'
+
+# nimble aliases
+alias nbit='nimble init'
+alias nbi='nimble install'
+alias nbu='nimble uninstall'
+alias nbup='nimble update'
+alias nbs='nimble search'
+alias nbb='nimble build'
+alias nbls='nimble list'
+alias nblsi='nimble list --installed'
