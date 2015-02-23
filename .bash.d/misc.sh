@@ -63,6 +63,9 @@ DEFAULT_DM='xdm'
 [[ -n $(command -v lighdm) ]] && DEFAULT_DM='lightdm'
 alias forcelogout='sudo service $DEFAULT_DM restart'
 
+# some weirdness in gnome in fedora 22 with missing lock icon button.
+alias lockscreen='xscreensaver-command --lock'
+
 # quick file server
 alias fileserver='python -m SimpleHTTPServer'
 
