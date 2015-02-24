@@ -45,3 +45,7 @@ alias dnfli='sudo dnf list installed'
 alias dnfla='sudo dnf list available'
 alias dnfle='sudo dnf list extras'
 alias dnflo='sudo dnf list obsoletes'
+
+# rpm
+alias rpmqa='rpm -qa'
+alias rpmqq='rpm -qa | grep'
