@@ -15,9 +15,12 @@ alias yumi='sudo yum install'
 alias yumri='sudo yum reinstall'
 alias yumdown='sudo yum downgrade'
 alias yumr='sudo yum remove'
-alias yums='sudo yum search all'
 alias yumif='sudo yum info'
-alias yumfs='sudo yum provides'
+# use which to provide the full path to the file
+# see http://lukas.zapletalovi.com/2011/06/my-yum-aliases.html
+alias yumfs='sudo yum provides $(which $1)'
+# Use -C to use cache to prevent download of metadata
+alias yums='sudo yum -C search all'
 
 # group-related
 alias yumgi='sudo yum groupinstall'
