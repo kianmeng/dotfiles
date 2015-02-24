@@ -80,3 +80,8 @@ alias rhand='xmodmap -e "pointer = 1 2 3"'
 # @see http://serverfault.com/a/12391
 export PAGER="/usr/bin/most -s"
 
+# sudo tail. 'nuff said.
+alias stail='sudo tail -f'
+
+# history and grep
+alias hgrep='history | grep'
