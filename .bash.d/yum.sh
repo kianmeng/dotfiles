@@ -11,8 +11,8 @@ alias yumdd='sudo yum-debug-dump'
 
 # common actions
 # alias may conflict with YUMI (Your Universal Multibot Integrator) tool
-alias yumi='sudo yum install'
-alias yumri='sudo yum reinstall'
+alias yumi='sudo yum install -y'
+alias yumri='sudo yum reinstall -y'
 alias yumdown='sudo yum downgrade'
 alias yumr='sudo yum remove'
 alias yumif='sudo yum info'
@@ -33,9 +33,9 @@ alias yumgif='sudo yum groupinfo'
 alias yumrepo='sudo yum repolist all'
 
 # dnf
-alias dnfi='sudo dnf install'
+alias dnfi='sudo dnf install -y'
 alias dnfu='sudo dnf update'
-alias dnfri='sudo dnf reinstall'
+alias dnfri='sudo dnf reinstall -y'
 alias dnfr='sudo dnf erase'
 alias dnfif='sudo dnf info'
 alias dnfs='sudo dnf search'
