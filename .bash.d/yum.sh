@@ -52,3 +52,10 @@ alias dnflo='sudo dnf list obsoletes'
 # rpm
 alias rpmqa='rpm -qa'
 alias rpmqq='rpm -qa | grep'
+
+# repoquery
+# from yum-utils
+alias repoql='repoquery -l'
+alias repoqi='repoquery -i'
+alias repoqf='repoquery -f'
+alias repoqs='repoquery --search --cache'
