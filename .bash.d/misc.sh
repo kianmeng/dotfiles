@@ -85,3 +85,6 @@ alias stail='sudo tail -f'
 
 # history and grep
 alias hgrep='history | grep'
+
+# screen dimention, for me to find the right resolution for wallpaper
+alias screensize='xdpyinfo | grep dimensions'
