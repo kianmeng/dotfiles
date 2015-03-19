@@ -175,6 +175,13 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " ----
 
+" ----
+"  vim bundle for racket lang
+" @see https://github.com/wlangstroth/vim-racket
+Bundle 'wlangstroth/vim-racket'
+" ----
+
+
 " syntax & color scheme
 syntax on
 filetype plugin indent on
