@@ -152,7 +152,11 @@ nmap <leader>f <C-]>
 nmap <leader>g <C-T>
 nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+" ----
+"  vim-hackernews
+" @see https://github.com/ryanss/vim-hackernews
 Bundle 'ryanss/vim-hackernews'
+" ----
 
 " ----
 " nimrod
