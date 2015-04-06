@@ -16,7 +16,8 @@ if [[ $(python -mplatform | grep -i ubuntu) ]];
 then
     sudo apt-get install git git-sh tig meld exuberant-ctags xclip mercurial vim \
         tmux screen source-highlight apt-file terminator ack-grep ipython ncdu pydf \
-        dstat htop speedometer aria2 subversion most i3-wm i3status i3lock
+        dstat htop speedometer aria2 subversion most i3-wm i3status i3lock \
+        fcitx fcitx-sunpinyin ttf-dejavu fonts-droid fonts-wqy-microhei fonts-cantarell
 
     echo -e "Update Deb packaing details...\n"
     sudo apt-file update

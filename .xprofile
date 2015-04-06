@@ -14,3 +14,9 @@ if [ "$HOSTNAME" == butterfly ]; then
     xrandr --output VGA-1 --mode 1280x1024 --pos 0x0 --rotate normal --output TV-1 --off \
         --output DVI-I-1 --mode 1280x1024x60.00 --pos 1280x0 --rotate normal
 fi
+
+# enable fcitx IME for i3 window manager
+export GTK_IM_MODULE=fcitx
+export QT4_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"

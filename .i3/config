@@ -117,3 +117,6 @@ bar {
         position top
         status_command i3status
 }
+
+# fcitx chinese input method
+exec --no-startup-id fcitx
