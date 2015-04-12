@@ -7,7 +7,7 @@
 # document. Note that this must not be the sameath as your Go installation.
 # 
 # http://golang.org/doc/code.html
-export GOPATH=$HOME/Projects/go
+export GOPATH=$HOME/$PROJECT/go
 if [[ ! -d $GOPATH ]]; then
     mkdir -p $GOPATH
 fi
