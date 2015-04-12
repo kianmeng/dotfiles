@@ -9,7 +9,8 @@ then
     sudo yum install -y git tig meld ctags xclip mercurial vim \
         tmux screen source-highlight terminator dstat htop aria2 \
 	    aria2 python-virtualenv python-virtualenvwrapper \
-        python-flake8 glances subversion sensible-utils most pass
+        python-flake8 glances subversion sensible-utils most pass \
+        google-noto-sans-simplified-chinese-fonts google-noto-sans-traditional-chinese-fonts
 fi
 
 if [[ $(python -mplatform | grep -i ubuntu) ]];
