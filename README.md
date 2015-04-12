@@ -11,6 +11,13 @@
 $ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/bootstrap.sh | bash -
 * If you need the latest Vim version under Debian/Ubuntu, use the
   bin/build_latest_vim_deb.sh script to build the Debian packages.
+* If you want to use [pass](http://passwordstore.org), the standard unix
+  password manager. Follow these steps:
+  * $ gpg --gen-key # generate the key
+  * $ gpg -k        # verify your generated key
+  * $ exec bash -l  # reload your bash
+  * $ pass init 11223344 # 11223344 is your gpg id
+  * $ pass generate test 12 # generate a test password
 
 ### Vim's Key Bindings
 | Shortcuts | Description                              |
