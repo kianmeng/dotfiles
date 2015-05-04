@@ -4,6 +4,9 @@ export HISTCONTROL=ignoreboth
 # almost infinity history size for self-analysis later.
 export HISTSIZE=100000000000 
 
+# add timestamp
+export HISTTIMEFORMAT="%F %T "
+
 # default editor.
 export EDITOR=vi 
 
