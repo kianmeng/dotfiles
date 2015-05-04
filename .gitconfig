@@ -12,12 +12,13 @@
 	email = kianmeng@users.noreply.github.com
 
 [alias]
-    # common
+    # common aliases which is similar to subversion
     co = checkout
     br = branch
 	ci = commit
     cm = commit -m
     df = diff --word-diff
+    up = rebase
 
     # edit/view this config file
     cg = config --list --global
