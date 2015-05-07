@@ -176,9 +176,15 @@ au Syntax * RainbowParenthesesLoadBraces
 " ----
 
 " ----
-"  vim bundle for racket lang
+" vim bundle for racket lang
 " @see https://github.com/wlangstroth/vim-racket
 Bundle 'wlangstroth/vim-racket'
+" ----
+
+" ----
+" vim bundle for vim-mkdir
+" @see https://github.com/pbrisbin/vim-mkdir
+Bundle 'pbrisbin/vim-mkdir'
 " ----
 
 
