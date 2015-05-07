@@ -187,6 +187,12 @@ Bundle 'wlangstroth/vim-racket'
 Bundle 'pbrisbin/vim-mkdir'
 " ----
 
+" ----
+" Fuzzy file, buffer, mru, tag, etc finder.
+" @see https://github.com/kien/ctrlp.vim
+Bundle 'kien/ctrlp.vim'
+nmap <leader>o :CtrlP<CR>
+" ----
 
 " syntax & color scheme
 syntax on
