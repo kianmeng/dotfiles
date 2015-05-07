@@ -17,6 +17,14 @@ alias ll='ls -lh --color';
 alias lsa='ls -ahCF';
 alias lla='ls -alh';
 
+# list and find files/folders
+# see http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
+lf() {
+  local p=$argv[-1]
+  [[ -d $p ]] && { argv[-1]=(); } || p='.'
+  find $p ! -type d | sed 's:^./::' | egrep "${@:-.}"
+}
+
 # search and replace
 # @see http://www.reddit.com/r/programming/comments/2tj6d6/findrep_easy_tool_to_find_and_replace/cnzy34o
 function findreplace { 
