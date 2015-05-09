@@ -194,6 +194,12 @@ Bundle 'kien/ctrlp.vim'
 nmap <leader>o :CtrlP<CR>
 " ----
 
+" ----
+" Vim plugins for Drupal
+" @see https://www.drupal.org/node/1389448#vundle
+Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
+" ----
+
 " syntax & color scheme
 syntax on
 filetype plugin indent on
