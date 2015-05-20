@@ -18,6 +18,7 @@ call vundle#rc()
 let mapleader = ","
 imap jj <esc>
 nmap ; :
+noremap ;; ;
 
 " supertab
 " @see https://github.com/ervandew/supertab
@@ -226,8 +227,13 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" misc settings
 set number
 set showcmd
+" prevent cursor stuck at top or bottom
+" @see https://news.ycombinator.com/item?id=9574469
+set scrolloff=6
 
 " search
 set incsearch 
@@ -239,13 +245,20 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" tab management
+" @see https://news.ycombinator.com/item?id=9574678
+nnoremap J :tabprevious<CR>
+nnoremap K :tabnext<CR>
+nnoremap N :tabnew<CR>
+nnoremap E :tabedit
+
 " sudo write
 " just type :w!! when edit file that need root privileges
 ca w!! w !sudo tee >/dev/null "%"
 
 " switch between paste and no paste mode fast and go into insert mode after
 " that
-" see http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+" @see http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
 nnoremap <leader>p :set invpaste paste?<CR>
 set pastetoggle=<leader>p
 set showmode
