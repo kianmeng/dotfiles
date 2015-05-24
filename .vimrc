@@ -211,10 +211,7 @@ syntax on
 filetype plugin indent on
 
 " color scheme
-"
-" todo: vim-powerline will lost their color if new tab is created if you set
-" this up
-" colorscheme default
+colorscheme default
 
 " wild menu. more options shown in command mode
 set wildmenu
