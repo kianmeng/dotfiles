@@ -240,6 +240,11 @@ set showcmd
 " @see https://news.ycombinator.com/item?id=9574469
 set scrolloff=6
 
+" ignore case when in ex (command) mode
+" @see http://stackoverflow.com/a/10308100
+set ignorecase
+set smartcase
+
 " search
 set incsearch 
 set hlsearch
