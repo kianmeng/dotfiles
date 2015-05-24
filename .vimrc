@@ -201,6 +201,11 @@ nmap <leader>o :CtrlP<CR>
 Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
 " ----
 
+" ----
+" No more :set paste !!!
+Bundle 'ConradIrwin/vim-bracketed-paste'
+" ----
+
 " syntax & color scheme
 syntax on
 filetype plugin indent on
