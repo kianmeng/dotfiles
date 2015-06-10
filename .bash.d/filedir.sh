@@ -13,9 +13,9 @@ alias cpwd="pwd | tr -d '\n' | xclip"
 
 # file listing
 alias ls='ls --color --group-directories-first -p -CF';
-alias ll='ls -lh --color';
-alias lsa='ls -ahCF';
-alias lla='ls -alh';
+alias ll='ls -lh --color --group-directories-first';
+alias lsa='ls -ahCF --group-directories-first';
+alias lla='ls -alh --group-directories-first';
 
 # list and find files/folders
 # see http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
