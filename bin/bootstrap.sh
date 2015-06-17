@@ -17,10 +17,10 @@ fi
 if [[ $(python -mplatform | grep -i ubuntu) ]];
 then
     sudo apt-get install -y git git-sh tig meld exuberant-ctags xclip mercurial vim \
-        tmux screen source-highlight apt-file terminator ack-grep ipython ncdu pydf \
+        tmux screen source-highlight terminator ack-grep ipython ncdu pydf \
         dstat htop speedometer aria2 subversion most i3-wm i3status i3lock \
-        fcitx fcitx-sunpinyin ttf-dejavu fonts-droid fonts-wqy-microhei fonts-cantarell \
-        shutter powertop silversearcher-ag apt-file pass libpython2.7-dev
+        ttf-dejavu fonts-droid fonts-cantarell \
+        shutter powertop silversearcher-ag pass 
 
 
     echo -e "Installing TLP...\n"
@@ -29,7 +29,11 @@ then
     sudo apt-get install tlp tlp-rdw
     sudo apt-get install tp-smapi-dkms acpi-call-dkms
 
+    echo -e "Install CJK-related packages...\n"
+    sudo apt-get install fonts-wqy-* fonts-arphic-* fcitx fcitx-sunpinyin
+
     echo -e "Update Deb packaging details...\n"
+    sudo apt-get install apt-file
     sudo apt-file update
 
     echo "Update font cache...\n"
