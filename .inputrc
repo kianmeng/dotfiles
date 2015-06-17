@@ -1,9 +1,14 @@
+# load the existing inputrc file.
+$include /etc/inputrc
+
+# make sure any programs that use readline library support vi mode.
+# @see https://news.ycombinator.com/item?id=9723743
+set editing-mode vi
+
 # tab auto-completion case-insensitive just to reduce a few key strokes.
 # @see http://askubuntu.com/a/87066
 # @see http://hiltmon.com/blog/2013/03/12/better-bash-shell-expansion/
 # @see http://www.reddit.com/r/commandline/comments/kbeoe/you_can_make_readline_and_bash_much_more_user/
-
-$include /etc/inputrc
 set completion-ignore-case on
 set mark-symlinked-directories on
 set show-all-if-ambiguous on
