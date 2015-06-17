@@ -88,3 +88,7 @@ alias hgrep='history | grep'
 
 # screen dimention, for me to find the right resolution for wallpaper
 alias screensize='xdpyinfo | grep dimensions'
+
+# download and convert youtube video to mp3.
+# @see http://askubuntu.com/a/178991
+alias ytmp3='youtube-dl --extract-audio --audio-format mp3'

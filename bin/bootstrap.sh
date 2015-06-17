@@ -11,7 +11,7 @@ then
 	    aria2 python-virtualenv python-virtualenvwrapper \
         python-flake8 glances subversion sensible-utils most pass \
         google-noto-sans-simplified-chinese-fonts google-noto-sans-traditional-chinese-fonts \
-        shutter powertop tlp tlp-rdw the_silver_searcher
+        shutter powertop tlp tlp-rdw the_silver_searcher youtube-dl
 fi
 
 if [[ $(python -mplatform | grep -i ubuntu) ]];
@@ -19,7 +19,7 @@ then
     sudo apt-get install -y git git-sh tig meld exuberant-ctags xclip mercurial vim \
         tmux screen source-highlight terminator ack-grep ipython ncdu pydf \
         dstat htop speedometer aria2 subversion most i3-wm i3status i3lock \
-        ttf-dejavu fonts-droid fonts-cantarell \
+        ttf-dejavu fonts-droid fonts-cantarell youtube-dl \
         shutter powertop silversearcher-ag pass 
 
 
