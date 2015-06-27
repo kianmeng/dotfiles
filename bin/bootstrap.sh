@@ -45,9 +45,12 @@ then
 fi
 
 echo "Clone the dotfiles repository and create soft links...\n"
+mkdir $HOME/Projects
+cd $HOME/Projects
 git clone https://github.com/kianmeng/dotfiles.git
 cd dotfiles
 ./bin/dfm install
+cd -
 
 echo -e "Install all Vim's plugins...\n"
 vim +BundleInstall +qall
