@@ -20,7 +20,7 @@ then
         tmux screen source-highlight terminator ack-grep ipython ncdu pydf \
         dstat htop speedometer aria2 subversion most i3-wm i3status i3lock \
         ttf-dejavu fonts-droid fonts-cantarell youtube-dl \
-        shutter powertop silversearcher-ag pass 
+        shutter powertop silversearcher-ag pass ppa-purge
 
 
     echo -e "Installing TLP...\n"
