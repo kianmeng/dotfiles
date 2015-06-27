@@ -11,7 +11,7 @@ export HISTTIMEFORMAT="%F %T "
 export EDITOR=vi 
 
 # default project folder name.
-export PROJECT=$HOME/.project
+export PROJECT=$HOME/Projects
 if [[ ! -d $PROJECT ]]; then
     mkdir $PROJECT
 fi
