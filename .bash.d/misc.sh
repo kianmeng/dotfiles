@@ -92,3 +92,10 @@ alias screensize='xdpyinfo | grep dimensions'
 # download and convert youtube video to mp3.
 # @see http://askubuntu.com/a/178991
 alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
+
+# sort and move images.
+alias imgsort='exiftool "-Directory<DateTimeOriginal" -d "%Y-%m-%d"'
+
+# ssh
+alias ssh='ssh -C'
+alias sshv='ssh -vvv'
