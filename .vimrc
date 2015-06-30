@@ -254,8 +254,8 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " tab management
 " @see https://news.ycombinator.com/item?id=9574678
-nnoremap J :tabprevious<CR>
-nnoremap K :tabnext<CR>
+nnoremap U :tabprevious<CR>
+nnoremap I :tabnext<CR>
 nnoremap N :tabnew<CR>
 nnoremap E :tabedit
 
