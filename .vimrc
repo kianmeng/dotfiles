@@ -44,10 +44,6 @@ Bundle 'gmarik/vundle'
 " sudo pip install flake8
 "
 Bundle 'nvie/vim-flake8'
-let g:flake8_builtins="_,apply"
-let g:flake8_ignore="E501,W293"
-let g:flake8_max_line_length=99
-let g:flake8_max_complexity=10
 autocmd BufWritePost *.py call Flake8()
 
 " nerdtree
