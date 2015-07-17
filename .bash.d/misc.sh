@@ -99,3 +99,8 @@ alias imgsort='exiftool "-Directory<DateTimeOriginal" -d "%Y-%m-%d"'
 # ssh
 alias ssh='ssh -C'
 alias sshv='ssh -vvv'
+
+# @see https://news.ycombinator.com/item?id=9869605
+alias c='clear'
+alias r='reset'
+alias q='exit'
