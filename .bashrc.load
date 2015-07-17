@@ -25,6 +25,10 @@ fi
 # to confirm the setting, run set -o | grep -E "(emacs|vi)"
 set -o vi
 
+# forget about typing cd ever again.
+# @see http://askubuntu.com/a/297987
+shopt -s autocd
+
 # load all the aliases or functions when you starts bash. 
 # to see all aliases, type alias. 
 # to see all functions, type declare -f. 
