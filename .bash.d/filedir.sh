@@ -34,3 +34,7 @@ function findreplace {
     fi
     find . -type f -print0 | xargs -0 sed -i "s/$1/$2/g"
 }
+
+# open any file or url in preferred application.
+# @see https://news.ycombinator.com/item?id=9869540
+alias open='xdg-open'
