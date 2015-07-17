@@ -38,3 +38,6 @@ function findreplace {
 # open any file or url in preferred application.
 # @see https://news.ycombinator.com/item?id=9869540
 alias open='xdg-open'
+
+# extract any archives file using single alias.
+alias xx='atool -x'
