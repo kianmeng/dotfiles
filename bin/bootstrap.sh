@@ -21,7 +21,7 @@ then
         dstat htop speedometer aria2 subversion most i3-wm i3status i3lock \
         ttf-dejavu fonts-droid fonts-cantarell youtube-dl \
         shutter powertop silversearcher-ag pass ppa-purge \
-        libimage-exiftool-perl
+        libimage-exiftool-perl ranger
 
     echo -e "Installing TLP...\n"
     sudo add-apt-repository ppa:linrunner/tlp
