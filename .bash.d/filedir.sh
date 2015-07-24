@@ -41,3 +41,6 @@ alias open='xdg-open'
 
 # extract any archives file using single alias.
 alias xx='atool -x'
+
+# i should have add this alias long ago
+alias rmrf='rm -rf'
