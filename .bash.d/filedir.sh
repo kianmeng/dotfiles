@@ -57,3 +57,6 @@ alias lsi='ls -il'
 function rminode() {
     find . -inum $1 -delete
 }
+
+# unrar does not work with xargs
+alias unrarall='for f in *.rar; do unrar e -y "$f"; done'
