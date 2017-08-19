@@ -1,12 +1,12 @@
 ## About
 * A collection of configuration files for the typical console programs bash,
-  vim, screen, tmux, and misc. 
+  vim, screen, tmux, and misc.
 
 * The dfm (dotfiles manager) is used to manage all the dotfiles.  See
   https://github.com/justone/dotfiles for full documentation.
 
 ### Installation
-* By default it should works for Ubuntu/Debian-based distos. 
+* By default it should works for Ubuntu/Debian-based distos.
 * Use the bootstrap shell script to install all necessary packages.
 $ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/bootstrap.sh | bash -
 * If you need the latest Vim version under Debian/Ubuntu, use the
@@ -58,6 +58,32 @@ $ wget -qO- https://raw.githubusercontent.com/kianmeng/dotfiles/master/bin/boots
 | j/k        | Scroll history forward or backward.               |
 | h/l        | Move cursor forward or backward in the line.      |
 
-### Miscellaneous 
+### Emacs Usages
+```
+$ e # start emacs in console skipping site lisp
+$ ec # start emacs in console
+$ ed # start emacs in console with debugging
+$ emacs # start emacs in GUI mode
+```
+
+Or through daemon mode.
+```
+$ emacsd # start daemon
+$ ecli # connect to emacs daemon
+$ emacsdkill # kill emacs daemon
+```
+
+Using these prefixes (C-x, C-w, and C-h), there will be a list of key bindings
+shown at the bottom.
+
+### Miscellaneous
 * In console, for quick access to regular accessed folders, just type z and
   TAB.
+
+## Inspired by
+
+- https://github.com/bling/dotemacs
+- https://github.com/bling/emacs-evil-bootstrap.git
+- https://github.com/nathantypanski/emacs.d
+- https://github.com/purcell/emacs.d
+- http://pages.sachachua.com/.emacs.d/Sacha.html

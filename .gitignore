@@ -24,4 +24,13 @@
 .z
 
 src/*
+auto-save-list
+elpa
+eshell/history
+ido.last
+save-place
+smex-items
+*~
+*.el~
 *.swp
+\#*
