@@ -5,15 +5,11 @@
 # To get started, create a workspace directory and set GOPATH accordingly. Your
 # workspace can be located wherever you like, but we'll use $HOME/go in this
 # document. Note that this must not be the sameath as your Go installation.
-# 
+#
 # http://golang.org/doc/code.html
-export GOPATH=$PROJECT/go
-if [[ ! -d $GOPATH ]]; then
-    mkdir -p $GOPATH
-fi
 
-if [[ ! "$PATH" =~ "$GOPATH" ]]; then
-    export PATH=$PATH:$GOPATH/bin
-fi
+export GOPATH=$HOME/go
+[[ -d $GOPATH ]] || mkdir -p $GOPATH
+[[ "$PATH" =~ "$GOPATH" ]] || export PATH=$PATH:$GOPATH/bin
 
 alias gofmt='gofmt -tabs=false -tabwidth=4 -w'
