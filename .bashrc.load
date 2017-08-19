@@ -8,10 +8,10 @@ shopt -s histverify            # Show expanded history before running it.
 shopt -s cmdhist               # Store multiline cmds as single
 
 # default editor.
-export EDITOR=vi 
+export EDITOR=vi
 
 # default project folder name.
-export PROJECT=$HOME/Projects
+export PROJECT=$HOME/src
 if [[ ! -d $PROJECT ]]; then
     mkdir $PROJECT
 fi
@@ -30,12 +30,12 @@ set -o vi
 # @see http://askubuntu.com/a/297987
 shopt -s autocd
 
-# load all the aliases or functions when you starts bash. 
-# to see all aliases, type alias. 
-# to see all functions, type declare -f. 
+# load all the aliases or functions when you starts bash.
+# to see all aliases, type alias.
+# to see all functions, type declare -f.
 #
-# to add a new alias/functions, 
-# 1. create a new filename in ~/.bash.d/name_of_the_category.sh 
+# to add a new alias/functions,
+# 1. create a new filename in ~/.bash.d/name_of_the_category.sh
 # 2. add your own aliases or functions and save the file
 # 3. reload bash by typing source .bashrc
 if [ -d ~/.bash.d ]; then

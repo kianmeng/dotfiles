@@ -1,7 +1,11 @@
-# load the existing inputrc file.
-$include /etc/inputrc
+# Load the existing inputrc file.
+# @see https://www.topbug.net/blog/2017/07/31/inputrc-for-humans
 
-# make sure any programs that use readline library support vi mode.
+$include /etc/inputrc
+"\C-p":history-search-backward
+"\C-n":history-search-forward
+
+# Make sure any programs that use readline library support vi mode.
 # @see https://news.ycombinator.com/item?id=9723743
 set editing-mode vi
 
@@ -9,9 +13,12 @@ set editing-mode vi
 # @see http://askubuntu.com/a/87066
 # @see http://hiltmon.com/blog/2013/03/12/better-bash-shell-expansion/
 # @see http://www.reddit.com/r/commandline/comments/kbeoe/you_can_make_readline_and_bash_much_more_user/
+set colored-stats On
 set completion-ignore-case on
+set completion-prefix-display-length 3
 set mark-symlinked-directories on
 set show-all-if-ambiguous on
-set completion-prefix-display-length 2
+set show-all-if-unmodified On
+set visible-stats On
 TAB: menu-complete
 "\e[Z": "\e-1\C-i"
