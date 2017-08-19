@@ -1,4 +1,8 @@
-# boxes 
+# Make sure VirtualBox remains the default provider as vagrant libvirt may
+# overwrite the default.
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+# boxes
 alias vgba='vagrant box add'
 alias vgbr='vagrant box remove'
 alias vgbl='vagrant box list'
