@@ -7,7 +7,8 @@ function bootstrap_fedora_packages () {
             python-flake8 glances subversion sensible-utils most pass \
             google-noto-sans-simplified-chinese-fonts \
             google-noto-sans-traditional-chinese-fonts \
-            shutter powertop tlp tlp-rdw the_silver_searcher youtube-dl
+            shutter powertop tlp tlp-rdw the_silver_searcher youtube-dl \
+            emacs
     fi
 }
 
