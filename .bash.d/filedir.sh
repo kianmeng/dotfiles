@@ -1,4 +1,5 @@
-# via https://www.digitalocean.com/community/articles/an-introduction-to-useful-bash-aliases-and-functions
+# Mostly via DO site
+# @see https://www.digitalocean.com/community/articles/an-introduction-to-useful-bash-aliases-and-functions
 
 # directory
 alias ..='cd ..'
@@ -18,7 +19,7 @@ alias lsa='ls -ahCF --group-directories-first';
 alias lla='ls -alh --group-directories-first';
 
 # list and find files/folders
-# see http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
+# @see http://chneukirchen.org/blog/archive/2013/07/summer-of-scripts-l-and-lr.html
 lf() {
   local p=$argv[-1]
   [[ -d $p ]] && { argv[-1]=(); } || p='.'
@@ -27,8 +28,8 @@ lf() {
 
 # search and replace
 # @see http://www.reddit.com/r/programming/comments/2tj6d6/findrep_easy_tool_to_find_and_replace/cnzy34o
-function findreplace { 
-    if [ ! $# == 2 ]; then 
+function findreplace {
+    if [ ! $# == 2 ]; then
         echo "Usage: find_replace <search_string> <replace_string>"
         return -1
     fi
@@ -60,3 +61,5 @@ function rminode() {
 
 # unrar does not work with xargs
 alias unrarall='for f in *.rar; do unrar e -y "$f"; done'
+
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
