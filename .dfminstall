@@ -1,5 +1,0 @@
-README.md skip
-.gitmodules skip
-bootstrap.sh skip
-.config recurse
-.config/terminator recurse
