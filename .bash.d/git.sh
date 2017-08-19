@@ -3,6 +3,8 @@
 alias g='git'
 complete -o default -o nospace -F _git g
 
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
 # create sample dummuy commit for testing purposes
 function git_dummy_commit() {
     for i in $(seq 1 $1);
@@ -34,7 +36,7 @@ function git_m2b() {
     git checkout master && git pull && git checkout - && git rebase master
 }
 
-# show branch name in your bash prompt 
+# show branch name in your bash prompt
 #
 # see http://www.oliverdavies.co.uk/blog/2013/04/display-git-branch-or-tag-names-your-bash-prompt
 #
