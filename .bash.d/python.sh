@@ -33,7 +33,7 @@ alias nt='nosetests'
 # via http://virtualenvwrapper.readthedocs.org/en/latest/install.html
 # via http://mkelsey.com/2013/04/30/how-i-setup-virtualenv-and-virtualenvwrapper-on-my-mac
 WRAPPER_BIN=$(command -v virtualenvwrapper.sh)
-if [ -n "$WRAPPER_BIN" ] 
+if [ -n "$WRAPPER_BIN" ]
 then
     # location of our virtual environment
     export WORKON_HOME=$HOME/.virtualenvs
@@ -51,5 +51,6 @@ then
     export PIP_RESPECT_VIRTUALENV=true
     source $WRAPPER_BIN
 else
-    echo "Missing virtualenvwrapper.sh ! Please run : pip install virtualenvwrapper."
+    # Missing virtualenvwrapper. Installing...
+    sudo -H pip install virtualenvwrapper
 fi
