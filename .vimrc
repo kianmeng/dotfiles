@@ -1,234 +1,42 @@
-" auto install Vunde if not found, for fresh install.
-" @see http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-let iCanHazVundle=0
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle...\n"
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=1
-endif
+" vim: fdm=marker ts=4 sw=4 tw=0 et:
 
-" set the runtime path to include Vundle and initialize
+" >>> General {{{
+
+" Disable vi-compatibility. This should always set first.
 set nocompatible
-filetype off   
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" keybindings
-let mapleader = ","
-imap jj <esc>
-nmap ; :
-noremap ;; ;
+" }}}
 
-" supertab
-" @see https://github.com/ervandew/supertab
-" @see http://vim.wikia.com/wiki/Omni_completion_popup_menu
-Bundle 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
-let g:SuperTabDefaultCompletionType = "context"
+" >>> Indentation {{{
 
-Bundle 'tpope/vim-markdown'
-
-" vundle
-" @see https://github.com/gmarik/Vundle.vim
-" let Vundle manage Vundle, required
-"
-" install bundle
-" - launch vim and run :BundleInstall
-" - from command line: vim +BundleInstall +qall
-"
-Bundle 'gmarik/vundle'
-
-" vim-flake8
-" @see https://github.com/nvie/vim-flake8
-" sudo pip install flake8
-"
-Bundle 'nvie/vim-flake8'
-autocmd BufWritePost *.py call Flake8()
-
-" nerdtree
-" @see https://github.com/scrooloose/nerdtree
-"
-Bundle 'scrooloose/nerdtree.git'
-nmap <leader>nn :NERDTreeToggle<CR>
-
-" vim-airline
-" @see https://github.com/bling/vim-airline
-" @see https://powerline.readthedocs.org/en/latest/installation/linux.html#font-installation
-"
-Bundle 'bling/vim-airline'
-let g:airline_powerline_fonts = 1
-"set guifont=Ubuntu\ Mono\ 12
-set ruler
-set nocompatible   " Disable vi-compatibility
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show unicode glyphs
-set t_Co=256       " Tell terminal your console support 256 colors
-
-" conque-shell
-" @see https://github.com/oplatek/Conque-Shell
-" Short to lauch several conque term tabs
-"
-Bundle 'oplatek/Conque-Shell'
-nnoremap <leader>bb :ConqueTermTab bash<CR>
-nnoremap <leader>pp :ConqueTermTab psql -U kianmeng<CR>
-nnoremap <leader>mm :ConqueTermTab mysql -u root -p<CR>
-
-" tagbar
-" @see https://github.com/majutsushi/tagbar
-"
-" works for python
-"
-Bundle 'majutsushi/tagbar'
-nmap <F8> :TagbarToggle<CR>
-
-" add support for markdown files in tagbar.
-" @see http://github.com/jszakmeister/markdown2ctags
-let g:tagbar_type_markdown = {
-    \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : '~/bin/markdown2ctags.py',
-    \ 'ctagsargs' : '-f - --sort=yes',
-    \ 'kinds' : [
-        \ 's:sections',
-        \ 'i:images'
-    \ ],
-    \ 'sro' : '|',
-    \ 'kind2scope' : {
-        \ 's' : 'section',
-    \ },
-    \ 'sort': 0,
-\ }
-
-" groovy
-let g:tagbar_type_groovy = {
-    \ 'ctagstype' : 'groovy',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'c:class',
-        \ 'i:interface',
-        \ 'f:function',
-        \ 'v:variables',
-    \ ]
-\ }
-
-" syntastic
-" @see https://github.com/scrooloose/syntastic
-" @see http://pear.phpmd.org
-"
-" Python
-" sudo apt-get install pylint
-"
-" PHP
-" sudo apt-get install php-pear
-"
-" sudo pear install PHP_CodeSniffer
-"
-" sudo pear channel-discover pear.phpmd.org
-" sudo pear channel-discover pear.pdepend.org
-" sudo pear install pear.pdepend.org/PHP_Depend
-" sudo pear install phpmd/PHP_PMD
-"
-Bundle 'scrooloose/syntastic.git'
-" overwrite by vim-flake8 plugin
-let g:syntastic_python_checkers = ['pylint', 'flake8']
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-
-Bundle 'taglist.vim'
-" taglist
-"
-" the ; search for tags file from current directory till parent directory
-" resursively until it finds a tags file
-"
-" works for php
-"
-" sudo apt-get install exuberant-ctags
-"
-set tags=tags;
-nmap <leader>t :TlistToggle<CR>
-nmap <leader>f <C-]>
-nmap <leader>g <C-T>
-nmap <leader>gt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" ----
-"  vim-hackernews
-" @see https://github.com/ryanss/vim-hackernews
-Bundle 'ryanss/vim-hackernews'
-" ----
-
-" ----
-" nimrod
-" syntax file for Nim programming language
-" @see https://github.com/zah/nimrod.vim/
-Bundle 'zah/nimrod.vim'
-" ----
-
-" ----
-"  rainbow parentheses
-"  @see https://github.com/kien/rainbow_parentheses.vim
-Bundle 'kien/rainbow_parentheses.vim'
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-" ----
-
-" ----
-" vim bundle for racket lang
-" @see https://github.com/wlangstroth/vim-racket
-Bundle 'wlangstroth/vim-racket'
-" ----
-
-" ----
-" vim bundle for vim-mkdir
-" @see https://github.com/pbrisbin/vim-mkdir
-Bundle 'pbrisbin/vim-mkdir'
-" ----
-
-" ----
-" Fuzzy file, buffer, mru, tag, etc finder.
-" @see https://github.com/kien/ctrlp.vim
-Bundle 'kien/ctrlp.vim'
-nmap <leader>o :CtrlP<CR>
-" ----
-
-" ----
-" Vim plugins for Drupal
-" @see https://www.drupal.org/node/1389448#vundle
-Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal/'}
-" ----
-
-" ----
-" No more :set paste !!!
-Bundle 'ConradIrwin/vim-bracketed-paste'
-" ----
-
-" syntax & color scheme
-syntax on
+" Enable language-dependent indenting.
 filetype plugin indent on
 
-" color scheme
-colorscheme default
-
-" wild menu. more options shown in command mode
-set wildmenu
-set wildmode=list:longest,full
-
-" omni complete
-set omnifunc=syntaxcomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-" tab settings 
+" Global indentation settings, overriden by ftplugin.
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" misc settings
+" }}}
+
+" >>> User Interfaces {{{
+
+" Syntax & color scheme
+syntax on
+
+" Tell terminal your console support 256 colors. Set before colorscheme.
+set t_Co=256
+colorscheme default
+set background=light
+
+" status bar
+set ruler
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show unicode glyphs
 set number
 set showcmd
+set showmode
 " prevent cursor stuck at top or bottom
 " @see https://news.ycombinator.com/item?id=9574469
 set scrolloff=6
@@ -239,68 +47,195 @@ set ignorecase
 set smartcase
 
 " search
-set incsearch 
+set gdefault " /g search and replace globally by default
+set incsearch
 set hlsearch
+nmap <silent> ,/ :nohlsearch<CR>
+
+" wild menu. more options shown in command mode
+set wildmenu
+
+set wildmode=list:longest,full
+
+" fold settings
+set nofoldenable
+set foldmethod=indent
+set foldlevel=1
+
+" hides buffers and don't close them
+set hidden
+
+" set filename in Tmux tab
+" @see http://stackoverflow.com/a/29693196/1935866
+autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+autocmd VimLeave * call system("tmux rename-window bash")
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
+
+" copy and paste from mouse
+" @see http://unix.stackexchange.com/a/140584
+set mouse=r
+
+" }}}
+
+" >>> Global Key Bindings {{{
+
+" leader key
+let mapleader = "\<Space>"
+
+" Key bindings which use <leader> key. In alphabetical order.
+nmap        <leader>- <C-w>-            " decrease pane size
+map         <leader>= <C-w>+            " increase pane size
+nnoremap    <Leader>/ :nohlsearch<cr>   " clear current search
+
+nmap        <Leader>e :CtrlP<cr>
+nmap        <Leader>ee :MRU<cr>
+nmap        <Leader>b :Ack<space>
+
+nmap        <Leader>ga <Plug>GitGutterStageHunk
+nmap        <leader>gj <Plug>GitGutterNextHunk
+nmap        <leader>gk <Plug>GitGutterPrevHunk
+nmap        <Leader>gr <Plug>GitGutterUndoHunk
+nmap        <Leader>gv <Plug>GitGutterPreviewHunk
+
+nnoremap    <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap    <leader>l :ls<CR>:b<space>  " flying is faster than cycling
+map         <leader>o <C-w><C-w>        " switch pane
+nnoremap    <leader>q :q<cr>            " quit
+nnoremap    <leader>s :w<cr>            " save file
+nnoremap    <leader>w :wqa<cr>          " save and quit
+
+nnoremap    <leader>xh <C-w>S<C-w>l     " split horizontally and switch over it
+nnoremap    <leader>xv <C-w>v<C-w>l     " split vertically and switch over it
+
+nnoremap    <leader>z :q!<cr>           " force quit without saving
+
+" Copy & paste to / from system clipboard.
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+vmap <Leader>p "+p
+nmap <Leader>P "+p
+
+" Tags navigation
+set autochdir
+set tags+=./tags;
+
+nmap <leader>f <C-]>
+nmap <leader>d <C-T>
+nmap <leader>tt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Save your left/right pinky.
+imap jj <esc>
+nmap ; :
+noremap ;; ;
 
 " block the usage of arrow keys
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <Left>     :echoe "Use h"<CR>
+nnoremap <Right>    :echoe "Use l"<CR>
+nnoremap <Up>       :echoe "Use k"<CR>
+nnoremap <Down>     :echoe "Use j"<CR>
 
-" tab management
-" @see https://news.ycombinator.com/item?id=9574678
-nnoremap U :tabprevious<CR>
-nnoremap I :tabnext<CR>
-nnoremap N :tabnew<CR>
-nnoremap E :tabedit
+" Prevent accidentally invoking Ex mode. You don't need it.
+" @see http://www.bestofvim.com/tip/leave-ex-mode-good/
+nnoremap Q :echoe "CAP LOCK is on!"<CR>
 
-" sudo write
-" just type :w!! when edit file that need root privileges
-ca w!! w !sudo tee >/dev/null "%"
+" Session management
+map <F2> :mksession! ~/.vim/session <CR>
+map <F3> :source ~/.vim/session <CR>
 
-" switch between paste and no paste mode fast and go into insert mode after
-" that
-" @see http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
-nnoremap <leader>p :set invpaste paste?<CR>
-set pastetoggle=<leader>p
-set showmode
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" }}}
 
-" Last file position
-" @see http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
-"
-" Tell vim to remember certain things when we exit
-"  '10  :  marks will be remembered for up to 10 previously edited files
-"  "100 :  will save up to 100 lines for each register
-"  :20  :  up to 20 lines of command-line history will be remembered
-"  %    :  saves and restores the buffer list
-"  n... :  where to save the viminfo files
-set viminfo='10,\"100,:20,%,n~/.viminfo
+" >>> Plugins {{{
 
-function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
+" Automatic vim-plug installation
+" @see https://github.com/junegunn/vim-plug/wiki/faq
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-augroup resCur
-  autocmd!
-  autocmd BufWinEnter * call ResCur()
+" Begin plugins bootstrap
+call plug#begin()
+
+Plug 'itchyny/lightline.vim'
+Plug 'derekprior/vim-trimmer'
+Plug 'airblade/vim-gitgutter'
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/syntastic'
+Plug 'myint/syntastic-extras'
+Plug 'pjcj/vim-hl-var'
+Plug 'sheerun/vim-polyglot'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tommcdo/vim-lion'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'tomtom/tcomment_vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/CycleColor'
+Plug 'yegappan/mru'
+Plug 'ervandew/supertab'
+Plug 'dietsche/vim-lastplace'
+
+" Add plugins to &runtimepath
+call plug#end()
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+" TODO: error showing up
+"set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_open            = 1
+let g:syntastic_check_on_wq              = 0
+
+let g:syntastic_make_checkers       = ['gnumake']
+let g:syntastic_python_checkers     = ['pylint', 'flake8']
+let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
+let g:syntastic_perl_checkers       = ['perl', 'podchecker']
+let g:syntastic_enable_perl_checker = 1
+let gLsyntastic_debug               = 1
+let g:syntastic_gitcommit_checkers  = ['language_check']
+let g:syntastic_svn_checkers        = ['language_check']
+
+" Vim-hl-var settings
+let g:hlvarhl="ctermbg=black ctermfg=red guifg=#ff0000 guibg=#000000 gui=bold"
+set updatetime=500
+
+" CtrlP settings
+" @see http://stackoverflow.com/a/17327372/1935866
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use Ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " Ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" supertab settings
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+let g:SuperTabDefaultCompletionType = "context"
+
+" Speed up auto-completion menu
+" @see http://stackoverflow.com/a/2460593/1935866
+set complete-=i
+
+" }}}
+
+" >>> Auto Commands {{{
+
+" Auto-reload your .vimrc
+" @see http://www.bestofvim.com/tip/auto-reload-your-vimrc/
+augroup reload_vimrc
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
 
-" flying is faster than cycling
-" @see http://of-vim-and-vigor.blogspot.com/p/vim-vigor-comic.html
-nnoremap <leader>l :ls<CR>:b<space>
-
-" auto reload ~/.vimrc file upon saving
-" disable this as it freeze vim and make vim powerline looses color
-" @see http://vim.wikia.com/wiki/Change_vimrc_with_auto_reload
-" autocmd BufWritePost .vimrc source %
-
-" auto install Vunde if not found, for fresh install.
-" @see http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-if iCanHazVundle == 1
-    echo "Installing Bundles...\n"
-    :BundleInstall
-endif
+" }}}
