@@ -1,11 +1,6 @@
-alias dsac='docker stop $(docker ps -a -q)'
-alias dkac='docker rm $(docker ps -a -q)'
-alias drun='docker run -i -t'
-alias dimg='docker images'
-alias drmi='docker rmi'
-alias dpsa='docker ps -a'
+alias dcps='docker-compose ps'
+alias dcrm='docker-compose rm -vfs'
 
-# see http://stackoverflow.com/questions/21398087/how-to-delete-dockers-images
-function dibn() {
-    docker images | grep $1 | awk '{print $3}' | xargs docker rmi
+function dup() {
+    docker images | grep -v REPO | awk '{print $1":"$2}' | xargs -n 1 docker pull
 }
