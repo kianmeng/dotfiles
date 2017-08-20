@@ -2,7 +2,7 @@
 * A collection of configuration files for the typical console programs bash,
   vim, screen, tmux, and misc.
 * Dotfiles management through Git following this [blog
-  posta](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+  post](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
   and [HN post](https://news.ycombinator.com/item?id=11070797).
 
 
@@ -13,23 +13,40 @@
 
   $ git clone --bare git@github.com:kianmeng/dotfiles.git $HOME/.cfg
 
+  # Backup all your existing dotfiles, if any.
   $ mkdir -p .config-backup && \
   config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
   xargs -I{} mv {} .config-backup/{}
 
   $ config checkout
+
+  # Reload Bash and install all the necessary packages.
+  $ source ~/.bashrc
+  $ bootstrap_packages
   ```
 
 * If you want to use [pass](http://passwordstore.org), the standard unix
   password manager. Follow these steps:
 
   ```
-  $ gpg --gen-key # generate the key
-  $ gpg -k        # verify your generated key
-  $ exec bash -l  # reload your bash
-  $ pass init 11223344 # 11223344 is your gpg id
-  $ pass generate test 12 # generate a test password
+  # generate the key
+  $ gpg --gen-key
+
+  # verify your generated key
+  $ gpg -k
+
+  # reload your bash
+  $ exec bash -l
+
+  # 11223344 is your gpg id
+  $ pass init 11223344
+
+  # generate a test password
+  $ pass generate test 12
   ```
+
+* To manage these dot files, just use the `config` alias which is a wrapper to
+  `git`.
 
 ### Vim's Key Bindings
 | Shortcuts | Description                              |
