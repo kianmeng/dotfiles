@@ -46,7 +46,7 @@
 	ll = log --oneline --decorate --graph --all
     lla = log --oneline --decorate --graph -n 15 --all
     stat-by-author = shortlog -sn
-    
+
     # opss, undo
     reword = commit --amend
 	unstage = reset HEAD --
@@ -69,7 +69,7 @@
     branch = auto
     diff = auto
     status = auto
-	ui = auto
+    ui = auto
     interactive = auto
 
 [core]
@@ -79,7 +79,7 @@
 
     # git config --global core.askpass ''
     # see http://positon.org/disable-ssh-askpass-in-git-push
-	askpass = 
+	askpass =
 
 [merge]
 	tool = meld
