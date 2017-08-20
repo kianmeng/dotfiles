@@ -1,4 +1,4 @@
-function bootstrap_fedora_packages () {
+function bootstrap_packages () {
     if [[ $(python -mplatform | grep -i fedora) ]];
     then
         sudo yum install -y git tig meld ctags xclip mercurial vim \
@@ -10,26 +10,24 @@ function bootstrap_fedora_packages () {
             shutter powertop tlp tlp-rdw the_silver_searcher youtube-dl \
             emacs
     fi
-}
 
-function bootstrap_ubuntu_packages () {
     if [[ $(python -mplatform | grep -i ubuntu) ]];
     then
         sudo apt-get install -y git git-sh tig meld exuberant-ctags xclip mercurial vim \
             tmux screen source-highlight terminator ack-grep ipython ncdu pydf \
             dstat htop speedometer aria2 subversion most i3-wm i3status i3lock \
-            ttf-dejavu fonts-droid fonts-cantarell youtube-dl \
+            ttf-dejavu fonts-droid-fallback fonts-cantarell youtube-dl \
             shutter powertop silversearcher-ag pass ppa-purge \
             libimage-exiftool-perl ranger atool
 
         echo -e "Installing TLP...\n"
         sudo add-apt-repository ppa:linrunner/tlp
         sudo apt-get update
-        sudo apt-get install tlp tlp-rdw
-        sudo apt-get install tp-smapi-dkms acpi-call-dkms
+        sudo apt-get install -y tlp tlp-rdw
+        sudo apt-get install -y tp-smapi-dkms acpi-call-dkms
 
         echo -e "Install CJK-related packages...\n"
-        sudo apt-get install fonts-wqy-* fonts-arphic-* fcitx fcitx-sunpinyin
+        sudo apt-get install -y fonts-wqy-* fonts-arphic-* fcitx fcitx-sunpinyin
 
         echo -e "Update Deb packaging details...\n"
         sudo apt-get install apt-file
