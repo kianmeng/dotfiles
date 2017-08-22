@@ -178,6 +178,7 @@ Plug 'vim-scripts/CycleColor'
 Plug 'yegappan/mru'
 Plug 'ervandew/supertab'
 Plug 'dietsche/vim-lastplace'
+Plug 'djoshea/vim-autoread'
 
 " Add plugins to &runtimepath
 call plug#end()
