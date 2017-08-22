@@ -66,6 +66,7 @@
 .wget-hsts
 .Xauthority
 .xsession-errors
+.xsession-errors.old
 .z
 
 Android/*
