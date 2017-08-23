@@ -179,6 +179,7 @@ Plug 'yegappan/mru'
 Plug 'ervandew/supertab'
 Plug 'dietsche/vim-lastplace'
 Plug 'djoshea/vim-autoread'
+Plug 'lervag/vimtex'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -227,6 +228,12 @@ let g:SuperTabDefaultCompletionType = "context"
 " Speed up auto-completion menu
 " @see http://stackoverflow.com/a/2460593/1935866
 set complete-=i
+
+" vim-latex-live-preview settings
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'evince'
+let g:livepreview_engine = 'context'
+nmap <F12> :LLPStartPreview<cr>
 
 " }}}
 
