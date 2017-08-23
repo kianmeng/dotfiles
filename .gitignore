@@ -60,6 +60,7 @@
 .node_repl_history
 .pgpass
 .profile
+.python_history
 .sudo_as_admin_successful
 .viminfo
 .vim_mru_files
