@@ -59,6 +59,7 @@
 .netrc
 .node_repl_history
 .pgpass
+.pciids-cache
 .profile
 .python_history
 .sudo_as_admin_successful
