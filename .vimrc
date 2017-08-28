@@ -180,6 +180,7 @@ Plug 'ervandew/supertab'
 Plug 'dietsche/vim-lastplace'
 Plug 'djoshea/vim-autoread'
 Plug 'lervag/vimtex'
+Plug 'ryanss/vim-hackernews'
 
 " Add plugins to &runtimepath
 call plug#end()
