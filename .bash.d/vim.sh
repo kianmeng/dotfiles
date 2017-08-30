@@ -1,5 +1,5 @@
 alias vrc='vim ~/.vimrc'
-alias vbi='vim +BundleInstall +qall'
 alias vbash='vim ~/.bashrc'
 alias vmybash='vim ~/.bashrc.load'
 alias svi='sudo vim'
+alias v='vim'
