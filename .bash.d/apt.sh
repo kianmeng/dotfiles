@@ -6,7 +6,7 @@ alias aptr='sudo apt-get -y remove'
 alias aptar='sudo apt-get -y autoremove'
 alias apts='apt-cache search'
 
-alias aptfu='apt-file update'
+alias aptfu='sudo apt-file update'
 alias aptfs='apt-file search'
 alias aptfl='apt-file list'
 
