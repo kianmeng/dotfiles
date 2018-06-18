@@ -1,7 +1,7 @@
 " @see http://vim.wikia.com/wiki/Indenting_source_code
 " @see http://stackoverflow.com/a/3682602/1935866
 set autoindent
-set noexpandtab
+set expandtab
 set tabstop=4
 set shiftwidth=4
 
