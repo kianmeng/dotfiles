@@ -8,8 +8,8 @@
 # http://stackoverflow.com/questions/11023194/git-vim-automatically-wrap-long-commit-messages
 
 [user]
-	name = Kian-Meng, Ang
-	email = kianmeng@users.noreply.github.com
+    name = Kian-Meng, Ang
+    email = kianmeng@users.noreply.github.com
 
 [alias]
     # common aliases which is similar to subversion
