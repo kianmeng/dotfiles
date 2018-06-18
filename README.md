@@ -82,32 +82,6 @@
 | j/k        | Scroll history forward or backward.               |
 | h/l        | Move cursor forward or backward in the line.      |
 
-### Emacs Usages
-```
-$ e # start emacs in console skipping site lisp
-$ ec # start emacs in console
-$ ed # start emacs in console with debugging
-$ emacs # start emacs in GUI mode
-```
-
-Or through daemon mode.
-```
-$ emacsd # start daemon
-$ ecli # connect to emacs daemon
-$ emacsdkill # kill emacs daemon
-```
-
-Using these prefixes (C-x, C-w, and C-h), there will be a list of key bindings
-shown at the bottom.
-
 ### Miscellaneous
 * In console, for quick access to regular accessed folders, just type z and
   TAB.
-
-## Inspired by
-
-- https://github.com/bling/dotemacs
-- https://github.com/bling/emacs-evil-bootstrap.git
-- https://github.com/nathantypanski/emacs.d
-- https://github.com/purcell/emacs.d
-- http://pages.sachachua.com/.emacs.d/Sacha.html
