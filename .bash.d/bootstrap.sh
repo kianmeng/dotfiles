@@ -3,19 +3,17 @@ function bootstrap_packages () {
     then
         sudo yum install -y git tig meld ctags xclip mercurial vim \
             tmux screen source-highlight terminator dstat htop aria2 \
-            aria2 python-virtualenv python-virtualenvwrapper \
-            python-flake8 glances subversion sensible-utils most pass \
+            aria2 glances subversion sensible-utils most pass \
             google-noto-sans-simplified-chinese-fonts \
             google-noto-sans-traditional-chinese-fonts \
-            shutter powertop tlp tlp-rdw the_silver_searcher youtube-dl \
-            emacs
+            shutter powertop tlp tlp-rdw the_silver_searcher youtube-dl
     fi
 
     if [[ $(python -mplatform | grep -i ubuntu) ]];
     then
         sudo apt-get install -y git git-sh tig meld exuberant-ctags xclip mercurial vim \
-            tmux screen source-highlight terminator ack-grep ipython ncdu pydf \
-            dstat htop speedometer aria2 subversion most i3-wm i3status i3lock \
+            tmux screen source-highlight terminator ack-grep pydf \
+            dstat htop speedometer aria2 subversion most \
             ttf-dejavu fonts-droid-fallback fonts-cantarell youtube-dl \
             shutter powertop silversearcher-ag pass ppa-purge \
             libimage-exiftool-perl ranger atool
@@ -27,7 +25,7 @@ function bootstrap_packages () {
         sudo apt-get install -y tp-smapi-dkms acpi-call-dkms
 
         echo -e "Install CJK-related packages...\n"
-        sudo apt-get install -y fonts-wqy-* fonts-arphic-* fcitx fcitx-sunpinyin
+        sudo apt-get install -y fonts-wqy-* fonts-arphic-* fonts-noto
 
         echo -e "Update Deb packaging details...\n"
         sudo apt-get install apt-file
@@ -35,9 +33,5 @@ function bootstrap_packages () {
 
         echo "Update font cache...\n"
         fc-cache -vf ~/.fonts
-
-        echo -e "Install essential Python modules...\n"
-        sudo apt-get install libpython-dev python-pip
-        sudo pip install awesome_print virtualenvwrapper flake8 Glances
     fi
 }
