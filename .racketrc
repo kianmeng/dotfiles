@@ -1,3 +1,0 @@
-;; The following line loads `xrepl' support
-;; @see http://docs.racket-lang.org/xrepl/index.html
-(require xrepl)
