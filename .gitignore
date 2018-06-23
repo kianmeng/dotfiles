@@ -32,6 +32,7 @@
 .parallel/*
 .password-store/*
 .pki/*
+.rustup/*
 .sane
 .shutter/*
 .ssh/*
@@ -66,6 +67,7 @@
 .mycli.log
 .myclirc
 .mysql_history
+.multirust
 .netrc
 .node_repl_history
 .pause
