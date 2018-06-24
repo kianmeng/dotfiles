@@ -76,6 +76,22 @@ set title
 " @see http://unix.stackexchange.com/a/140584
 set mouse=r
 
+" full screen when starting gvim
+" @see http://vim.wikia.com/wiki/Maximize_or_set_initial_window_size
+if has("gui_running")
+    " GUI is running or is about to start.
+    " Maximize gvim window (for an alternative on Windows, see simalt below).
+    set lines=999 columns=999
+else
+    " This is console Vim.
+    if exists("+lines")
+        set lines=50
+    endif
+    if exists("+columns")
+        set columns=100
+    endif
+endif
+
 " }}}
 
 " >>> Global Key Bindings {{{
@@ -160,26 +176,26 @@ endif
 " Begin plugins bootstrap
 call plug#begin()
 
-Plug 'itchyny/lightline.vim'
-Plug 'derekprior/vim-trimmer'
 Plug 'airblade/vim-gitgutter'
-Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/syntastic'
-Plug 'myint/syntastic-extras'
-Plug 'pjcj/vim-hl-var'
-Plug 'sheerun/vim-polyglot'
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tommcdo/vim-lion'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'tomtom/tcomment_vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-scripts/CycleColor'
-Plug 'yegappan/mru'
-Plug 'ervandew/supertab'
+Plug 'derekprior/vim-trimmer'
 Plug 'dietsche/vim-lastplace'
 Plug 'djoshea/vim-autoread'
+Plug 'ervandew/supertab'
+Plug 'flazz/vim-colorschemes'
+Plug 'itchyny/lightline.vim'
 Plug 'lervag/vimtex'
+Plug 'mileszs/ack.vim'
+Plug 'myint/syntastic-extras'
+Plug 'pjcj/vim-hl-var'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'tommcdo/vim-lion'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/CycleColor'
+Plug 'yegappan/mru'
 
 " Add plugins to &runtimepath
 call plug#end()
