@@ -92,6 +92,11 @@ else
     endif
 endif
 
+" font
+if has("gui_running")
+    set guifont=Monospace\ 14
+endif
+
 " }}}
 
 " >>> Global Key Bindings {{{
