@@ -201,6 +201,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/CycleColor'
 Plug 'yegappan/mru'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
