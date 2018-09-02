@@ -1,16 +1,20 @@
 [global_config]
   enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, Logger, LaunchpadBugURLHandler
 [keybindings]
-[profiles]
-  [[default]]
-    use_system_font = False
-    font = Monospace 13
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    cursor_color = "#aaaaaa"
+    font = Monospace 18
+    foreground_color = "#ebdbb2"
+    use_system_font = False
+    visible_bell = True
