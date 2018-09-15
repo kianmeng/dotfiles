@@ -104,6 +104,9 @@ endif
 " leader key
 let mapleader = "\<Space>"
 
+" trigger vim-which-key
+nnoremap    <silent> <leader> :WhichKey '<Space>'<CR>
+
 " Key bindings which use <leader> key. In alphabetical order.
 nmap        <leader>- <C-w>-            " decrease pane size
 map         <leader>= <C-w>+            " increase pane size
@@ -202,6 +205,7 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/CycleColor'
 Plug 'yegappan/mru'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'liuchengxu/vim-which-key'
 
 " Add plugins to &runtimepath
 call plug#end()
