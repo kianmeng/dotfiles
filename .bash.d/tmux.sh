@@ -16,3 +16,7 @@ fi
 if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
     tmux attach || tmux new; exit
 fi
+
+# Detach all tmux clients except the current one.
+# @see https://stackoverflow.com/a/19280187
+alias tmux-refresh="tmux detach -a"
