@@ -20,3 +20,7 @@ fi
 # Detach all tmux clients except the current one.
 # @see https://stackoverflow.com/a/19280187
 alias tmux-refresh="tmux detach -a"
+
+# Quickly peek a file
+# @see https://github.com/lf94/peek-for-tmux
+peek() { tmux split-window -p 33 "$EDITOR" "$@" || exit; }
