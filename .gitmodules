@@ -1,3 +1,6 @@
 [submodule ".zsh.d/antigen"]
 	path = .zsh.d/antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule ".zsh.d/zgen"]
+	path = .zsh.d/zgen
+	url = https://github.com/tarjoilija/zgen

@@ -1,14 +1,12 @@
-# Settings based on https://mgdm.net/weblog/zsh-antigen/
-ZSHA_BASE=$HOME/.zsh.d
-source $ZSHA_BASE/antigen/antigen.zsh
+source $HOME/.zsh.d/zgen/zgen.zsh
 
-antigen-use oh-my-zsh
+ZSH_TMUX_AUTOSTART=true
 
-antigen-bundle git
-antigen bundle rupa/z
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle zsh-users/zsh-history-substring-search
+# If the init script doesn't exist
+if ! zgen saved; then
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/tmux
 
-antigen-theme bira
-
-antigen-apply
+    # Generate the init script from plugins above.
+    zgen save
+fi
