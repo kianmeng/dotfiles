@@ -86,3 +86,11 @@
 
 [branch]
 	autosetuprebase = always
+
+[diff]
+    # see https://github.com/jeffkaufman/icdiff
+	tool = icdiff
+	external = icdiff-ext-tool
+
+[difftool "icdiff"]
+	cmd = icdiff --line-numbers $LOCAL $REMOTE
