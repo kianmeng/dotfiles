@@ -20,9 +20,13 @@
 
   $ config checkout
 
-  # Reload Bash and install all the necessary packages.
-  $ source ~/.bashrc
-  $ bootstrap_packages
+  # If you're running Ubuntu / Debian.
+  $ bin/bootstrap_ubuntu.sh
+  $ source ~/.zshrc
+
+  # If you're running Fedora / Centos.
+  $ bin/bootstrap_fedora.sh
+  $ source ~/.zshrc
   ```
 
 * If you want to use [pass](http://passwordstore.org), the standard unix
