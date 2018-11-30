@@ -184,6 +184,7 @@ endif
 " Begin plugins bootstrap
 call plug#begin()
 
+Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ctrlpvim/ctrlp.vim'
