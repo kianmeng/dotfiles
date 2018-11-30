@@ -50,7 +50,8 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-history-substring-search
     zgen load zsh-users/zsh-completions src
 
-    zgen oh-my-zsh themes/bira
+    zgen load denysdovhan/spaceship-prompt spaceship
+    # zgen oh-my-zsh themes/bira
 
     # Generate the init script from plugins above.
     # If you add a new plugins/themes, zgen reset && source $HOME/.zshrc
