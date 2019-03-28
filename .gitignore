@@ -4,5 +4,3 @@
 # except these folders
 !*.config/terminator/*
 !*.dzil
-!*.zsh.d
-!*.bin
