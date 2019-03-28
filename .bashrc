@@ -1,38 +1,108 @@
-# bash shell history settings
-# @see https://news.ycombinator.com/item?id=9869971
-# ignore leading whitespaces entries and dupes.
+# ignore leading whitespaces entries and dupes
 export HISTCONTROL=ignoreboth
 
-# almost infinity history size for self-analysis later.
+# almost infinity history size for self-analysis later
 export HISTSIZE=100000000000
 
 # add timestamp
 export HISTTIMEFORMAT="%F %T "
 
-# append history to file, don't overwrite.
+# append history to file, don't overwrite
 shopt -s histappend
 
-# show expanded history before running it.
+# show expanded history before running it
 shopt -s histverify
 
 # store multiline cmds as single
 shopt -s cmdhist
 
-# forget about typing cd ever again.
-# @see http://askubuntu.com/a/297987
+# no need to type 'cd' to directory
 shopt -s autocd
 
-# default editor.
+# default editor
 export EDITOR=vi
 
-# enable vi input mode.
+# enable vi input mode
 # press ESC, j or k to scroll history, i to insert
 # to confirm the setting, run set -o | grep -E "(emacs|vi)"
 set -o vi
 
+# make less readable
+export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
+
+# mysql
+export MYSQL_PS1="\u@\h [\d]> "
+export PAGER=less
+
+# tmux
+# fix the issue of X session login failure where we only want to start tmux on
+# shell start
+[[ $- != *i* ]] && return
+
+# do no proceed when tmux is not installed.
+if ! [ -x "$(command -v tmux)" ]; then
+    return
+fi
+
+# export 256color
+# @see https://wiki.archlinux.org/index.php/Tmux#Setting_the_correct_term
+[ -n "$TMUX" ] && export TERM=screen-256color
+
+# start tmux on every shell login
+# add this before aliases declaration
+# @see http://bionicraptor.co/2011/07/24/how-to-automatically-launch-tmux/
+if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+    tmux attach || tmux new; exit
+fi
+
+# common aliases
+alias c='clear'
+alias r='reset'
+alias q='exit'
+
+alias svi='sudo vim'
+alias v='vim'
+
+alias ps='ps auxf'
+
+alias xclip='xclip -selection c'
+alias download='aria2c -x 4'
+alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
+
+# file & directory
+alias ls='ls --color --group-directories-first -p -CF';
+alias ll='ls -lh --color --group-directories-first';
+alias lsa='ls -ahCF --group-directories-first';
+alias lla='ls -alh --group-directories-first';
+alias rmrf='rm -rf'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias mkdir="mkdir -pv"
+
+# apt
+alias aptu='sudo apt -y update'
+alias apti='sudo apt -y install'
+alias aptr='sudo apt -y remove'
+alias apts='apt-cache search'
+
+alias aptdu='sudo apt -y dist-upgrade'
+alias aptar='sudo apt -y autoremove'
+
+alias aptfu='sudo apt-file update'
+alias aptfs='apt-file search'
+alias aptfl='apt-file list'
+
+# git
+# autocomplete for 'g' as well
+# see http://nuclearsquid.com/writings/git-tricks-tips-workflows/
+alias g='git'
+complete -o default -o nospace -F _git g
+
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-# perl
+## perl
 cpanm --local-lib=~/perl5 local::lib \
     && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)

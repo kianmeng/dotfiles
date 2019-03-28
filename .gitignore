@@ -2,7 +2,6 @@
 /*
 
 # except these folders
-!*.bash.d
 !*.config/terminator/*
 !*.dzil
 !*.vim/after/ftplugin
