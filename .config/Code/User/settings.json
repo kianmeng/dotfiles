@@ -1,4 +1,5 @@
 {
+    "telemetry.enableTelemetry": false,
     "terminal.integrated.rendererType": "dom",
     "editor.fontSize": 16,
     "editor.cursorStyle": "block",
