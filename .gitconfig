@@ -16,21 +16,20 @@
     interactive = auto
 
 [core]
-	whitespace = trailing-space,space-before-tab
+    whitespace = trailing-space,space-before-tab
     editor = vim '+set tw=72'
 
 [merge]
-	tool = meld
+    tool = meld
 
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
 
 [diff]
-	tool = icdiff
-	external = icdiff-ext-tool
+    tool = icdiff
 
 [difftool "icdiff"]
-	cmd = icdiff --line-numbers $LOCAL $REMOTE
+    cmd = icdiff --line-numbers --highlight $LOCAL $REMOTE
 
 [pull]
-	rebase = true
+    rebase = true
