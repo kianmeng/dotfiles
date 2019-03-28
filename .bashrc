@@ -30,19 +30,10 @@ set -o vi
 # make less readable
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 
-# mysql
-export MYSQL_PS1="\u@\h [\d]> "
-export PAGER=less
-
 # tmux
 # fix the issue of X session login failure where we only want to start tmux on
 # shell start
 [[ $- != *i* ]] && return
-
-# do no proceed when tmux is not installed.
-if ! [ -x "$(command -v tmux)" ]; then
-    return
-fi
 
 # export 256color
 # @see https://wiki.archlinux.org/index.php/Tmux#Setting_the_correct_term
