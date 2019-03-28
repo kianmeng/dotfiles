@@ -20,33 +20,8 @@
 
   $ config checkout
 
-  # If you're running Ubuntu / Debian.
-  $ bin/bootstrap_ubuntu.sh
-  $ source ~/.zshrc
-
-  # If you're running Fedora / Centos.
-  $ bin/bootstrap_fedora.sh
-  $ source ~/.zshrc
-  ```
-
-* If you want to use [pass](http://passwordstore.org), the standard unix
-  password manager. Follow these steps:
-
-  ```
-  # generate the key
-  $ gpg --gen-key
-
-  # verify your generated key
-  $ gpg -k
-
-  # reload your bash
-  $ exec bash -l
-
-  # 11223344 is your gpg id
-  $ pass init 11223344
-
-  # generate a test password
-  $ pass generate test 12
+  # Reload Bash and install all the necessary packages.
+  $ source ~/.bashrc
   ```
 
 * To manage these dot files, just use the `config` alias which is a wrapper to
