@@ -14,7 +14,7 @@
   [[default]]
     background_color = "#282828"
     cursor_color = "#aaaaaa"
-    font = Monospace 18
+    font = Monospace 20
     foreground_color = "#ebdbb2"
     use_system_font = False
     visible_bell = True
