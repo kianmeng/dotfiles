@@ -1,13 +1,12 @@
 ## About
-* A collection of configuration files for the typical console programs bash,
-  vim, screen, tmux, and misc.
-* Dotfiles management through Git following this [blog
-  post](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
-  and [HN post](https://news.ycombinator.com/item?id=11070797).
+A collection of configuration files for the typical console programs bash, vim,
+screen, tmux, and misc.
 
+Dotfiles management through Git following this [blog post](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/) and [HN post](https://news.ycombinator.com/item?id=11070797).
 
 ### Installation
-* Clone and repository.
+Clone and repository.
+
   ```
   $ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -24,8 +23,8 @@
   $ source ~/.bashrc
   ```
 
-* To manage these dot files, just use the `config` alias which is a wrapper to
-  `git`.
+To manage these dot files, just use the `config` alias which is a wrapper to
+`git`.
 
 ### Vim's Key Bindings
 | Shortcuts | Description                              |
@@ -60,7 +59,3 @@
 | ESC        | Toggle Vi editing mode.                           |
 | j/k        | Scroll history forward or backward.               |
 | h/l        | Move cursor forward or backward in the line.      |
-
-### Miscellaneous
-* In console, for quick access to regular accessed folders, just type z and
-  TAB.
