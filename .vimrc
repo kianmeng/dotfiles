@@ -122,7 +122,7 @@ nmap        <leader>gk <Plug>GitGutterPrevHunk
 nmap        <Leader>gr <Plug>GitGutterUndoHunk
 nmap        <Leader>gv <Plug>GitGutterPreviewHunk
 
-nnoremap    <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+noremap    <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap    <leader>l :ls<CR>:b<space>  " flying is faster than cycling
 map         <leader>o <C-w><C-w>        " switch pane
 nnoremap    <leader>q :q<cr>            " quit
@@ -266,5 +266,14 @@ augroup reload_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
+
+" }}}
+
+" >>> Perl {{{
+autocmd FileType perl set autoindent
+autocmd FileType perl set expandtab
+autocmd FileType perl set tabstop=4
+autocmd FileType perl set shiftwidth=4
+autocmd FileType perl let g:syntastic_perl_lib_path = ['.']
 
 " }}}

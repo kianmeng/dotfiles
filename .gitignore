@@ -4,6 +4,5 @@
 # except these folders
 !*.config/terminator/*
 !*.dzil
-!*.vim/after/ftplugin
 !*.zsh.d
 !*.bin
