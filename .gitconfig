@@ -1,69 +1,12 @@
-# Inspired by:
-# http://wiki.gnome.org/Git/Tips
-# http://oli.jp/2012/git-powerup
-# http://mislav.uniqpath.com/2010/07/git-tips
-# http://jeremyherve.com/2012/09/23/my-gitconfig-file
-# http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks
-# http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git
-# http://stackoverflow.com/questions/11023194/git-vim-automatically-wrap-long-commit-messages
-
 [user]
     name = Kian-Meng, Ang
     email = kianmeng@users.noreply.github.com
 
 [alias]
-    # common aliases which is similar to subversion
-    co = checkout
-    br = branch
-	ci = commit
-    cm = commit -m
-    df = diff --word-diff
-    up = rebase
-
-    # edit/view this config file
-    cg = config --list --global
-    ca = config --global
-    ed = config --global --edit
-
-    # always rebase, no merging
-    ft = fetch
-    pl = pull
-    ps = push
-
-    # on master branch, two steps
-    # git fetch origin
-    # git rebase origin/master [3]
-    pr = pull --rebase
-
     url = remote -v
-
-    # status
-    ss = status -sb
     st = status
-
-    # colourful log
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	ll = log --oneline --decorate --graph --all
-    lla = log --oneline --decorate --graph -n 15 --all
-    stat-by-author = shortlog -sn
-
-    # opss, undo
-    reword = commit --amend
-	unstage = reset HEAD --
-
-    # push
     pom = push origin master
-    pos = push origin source # octopress
-
-    # when i last did something?
-    last = log -1 HEAD
-    last-fix = show :/fix
-    last-merge = show :/^Merge
-
-    # opps, undo stuff
-    # via http://sethrobertson.github.io/GitFixUm/fixup.html
-    undo-merge = merge --abort
-    undo-rebase = rebase --abort
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [color]
     branch = auto
@@ -74,12 +17,7 @@
 
 [core]
 	whitespace = trailing-space,space-before-tab
-    # automatically wrap long commit messges [6]
     editor = vim '+set tw=72'
-
-    # git config --global core.askpass ''
-    # see http://positon.org/disable-ssh-askpass-in-git-push
-	askpass =
 
 [merge]
 	tool = meld
@@ -88,9 +26,11 @@
 	autosetuprebase = always
 
 [diff]
-    # see https://github.com/jeffkaufman/icdiff
 	tool = icdiff
 	external = icdiff-ext-tool
 
 [difftool "icdiff"]
 	cmd = icdiff --line-numbers $LOCAL $REMOTE
+
+[pull]
+	rebase = true
