@@ -3,6 +3,7 @@
     email = kianmeng@users.noreply.github.com
 
 [alias]
+    a = add
     url = remote -v
     st = status
     pom = push origin master
