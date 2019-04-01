@@ -258,17 +258,6 @@ set complete-=i
 
 " }}}
 
-" >>> Auto Commands {{{
-
-" Auto-reload your .vimrc
-" @see http://www.bestofvim.com/tip/auto-reload-your-vimrc/
-augroup reload_vimrc
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END
-
-" }}}
-
 " >>> Perl {{{
 autocmd FileType perl set autoindent
 autocmd FileType perl set expandtab
@@ -278,8 +267,7 @@ autocmd FileType perl let g:syntastic_perl_lib_path = ['.']
 
 " }}}
 
-
-" >>> Templates {{{
+" >>> Auto Commands {{{
 if has("autocmd")
     augroup templates
         au BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
