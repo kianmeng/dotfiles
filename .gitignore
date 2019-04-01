@@ -2,5 +2,4 @@
 /*
 
 # except these folders
-!*.config/terminator/*
 !*.dzil
