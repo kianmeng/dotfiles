@@ -277,3 +277,14 @@ autocmd FileType perl set shiftwidth=4
 autocmd FileType perl let g:syntastic_perl_lib_path = ['.']
 
 " }}}
+
+
+" >>> Templates {{{
+if has("autocmd")
+    augroup templates
+        au BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
+    augroup END
+endif
+
+" }}}
+

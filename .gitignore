@@ -3,3 +3,4 @@
 
 # except these folders
 !*.dzil
+!*.vim/templates
