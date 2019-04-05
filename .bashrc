@@ -55,6 +55,7 @@ alias svi='sudo vim'
 alias v='vim'
 
 alias ps='ps auxf'
+alias grepi='grep -i'
 
 alias xclip='xclip -selection c'
 alias download='aria2c -x 4'
