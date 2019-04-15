@@ -196,9 +196,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'lervag/vimtex'
 Plug 'mileszs/ack.vim'
-Plug 'myint/syntastic-extras'
 Plug 'pjcj/vim-hl-var'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tommcdo/vim-lion'
 Plug 'tomtom/tcomment_vim'
@@ -207,29 +205,17 @@ Plug 'vim-scripts/CycleColor'
 Plug 'yegappan/mru'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'liuchengxu/vim-which-key'
+Plug 'w0rp/ale'
 
 " Add plugins to &runtimepath
 call plug#end()
 
-" Syntastic settings
-set statusline+=%#warningmsg#
-" TODO: error showing up
-"set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list            = 1
-let g:syntastic_check_on_open            = 1
-let g:syntastic_check_on_wq              = 0
-
-let g:syntastic_make_checkers       = ['gnumake']
-let g:syntastic_python_checkers     = ['pylint', 'flake8']
-let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
-let g:syntastic_perl_checkers       = ['perl', 'podchecker']
-let g:syntastic_enable_perl_checker = 1
-let gLsyntastic_debug               = 1
-let g:syntastic_gitcommit_checkers  = ['language_check']
-let g:syntastic_svn_checkers        = ['language_check']
+" Ale settings
+let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
+let g:ale_perl_perlcritic_showrules = 1
+let g:ale_type_map = {
+\ 'perlcritic': {'ES': 'WS', 'E': 'W'},
+\}
 
 " Vim-hl-var settings
 let g:hlvarhl="ctermbg=black ctermfg=red guifg=#ff0000 guibg=#000000 gui=bold"
