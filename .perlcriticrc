@@ -4,4 +4,14 @@ verbose = %f: [%p] %m at line %l, column %c (Severity %s).\n%d\n
 [ControlStructures::ProhibitPostfixControls]
 allow = for if until
 
+[Documentation::RequirePodSections]
+lib_sections = NAME | SYNOPSIS | DESCRIPTION | DEVELOPMENT | METHODS | LICENSE AND COPYRIGHT | AUTHOR
+
+[Documentation::PodSpelling]
+spell_command = aspell list
+stop_words = mocean moceansms milla sms kian meng ang
+
+[CodeLayout::RequireTidyCode]
+perltidyrc =
+
 [-ValuesAndExpressions::ProhibitEmptyQuotes]
