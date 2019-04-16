@@ -217,6 +217,9 @@ let g:ale_type_map = {
 \ 'perlcritic': {'ES': 'WS', 'E': 'W'},
 \}
 
+nmap <silent> <leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <leader>j <Plug>(ale_next_wrap)
+
 " Vim-hl-var settings
 let g:hlvarhl="ctermbg=black ctermfg=red guifg=#ff0000 guibg=#000000 gui=bold"
 set updatetime=500
