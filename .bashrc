@@ -95,6 +95,27 @@ complete -o default -o nospace -F _git g
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# docker
+alias dm='docker-machine'
+alias dmls='docker-machine ls'
+alias dmenv='env | grep -i ^DOCKER'
+
+function dmstopall() {
+    local names=$(docker-machine ls | grep Running | awk '{print $1}')
+    docker-machine stop $names
+    docker-machine ls
+}
+
+function dmswitch() {
+    local name="${1:-default}"
+    local status=$(docker-machine status $name)
+    if [ "$status" = "Stopped" ]; then
+        docker-machine start $name
+    fi
+    eval $(docker-machine env $name)
+    env | grep -i ^DOCKER
+}
+
 ## perl
 cpanm --local-lib=~/perl5 local::lib \
     && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
