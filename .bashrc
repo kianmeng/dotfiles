@@ -98,7 +98,7 @@ if [ -e '/etc/bash_completion.d/git-prompt' ]; then
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWSTASHSTATE=1
     export GIT_PS1_SHOWUNTRACKEDFILES=1
-    export GIT_PS1_SHOWUPSTREAM="auto"
+    export GIT_PS1_SHOWUPSTREAM="auto verbose"
     export PS1='\u@\h: \w$(__git_ps1 " (%s)")\$ '
 fi
 
