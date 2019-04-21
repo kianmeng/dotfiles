@@ -92,6 +92,13 @@ alias aptfl='apt-file list'
 alias g='git'
 complete -o default -o nospace -F _git g
 
+# git prompt. Only in Ubuntu.
+if [ -e '/etc/bash_completion.d/git-prompt' ]; then
+    source /etc/bash_completion.d/git-prompt
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    export PS1='\u@\h: \w$(__git_ps1 " (%s)")\$ '
+fi
+
 # dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
