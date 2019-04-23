@@ -253,6 +253,7 @@ autocmd FileType perl set expandtab
 autocmd FileType perl set tabstop=4
 autocmd FileType perl set shiftwidth=4
 autocmd FileType perl let g:syntastic_perl_lib_path = ['.']
+au FileType perl nmap <F12> :%!perltidy<CR>
 
 " }}}
 
