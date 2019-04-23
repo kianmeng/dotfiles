@@ -5,11 +5,11 @@ verbose = %f: [%p] %m at line %l, column %c (Severity %s).\n%d\n
 allow = for if until
 
 [Documentation::RequirePodSections]
-lib_sections = NAME | SYNOPSIS | DESCRIPTION | DEVELOPMENT | METHODS | LICENSE AND COPYRIGHT | AUTHOR
+lib_sections = NAME | SYNOPSIS | DESCRIPTION | DEVELOPMENT | METHODS | COPYRIGHT AND LICENSE | AUTHOR
 
 [Documentation::PodSpelling]
 spell_command = aspell list
-stop_words = kian meng ang milla md
+stop_words = kian meng ang milla md undef
 
 [-CodeLayout::RequireTidyCode]
 perltidyrc = $HOME/.perltidyrc
