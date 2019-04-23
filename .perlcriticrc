@@ -9,9 +9,13 @@ lib_sections = NAME | SYNOPSIS | DESCRIPTION | DEVELOPMENT | METHODS | LICENSE A
 
 [Documentation::PodSpelling]
 spell_command = aspell list
-stop_words = mocean moceansms milla sms kian meng ang
+stop_words = kian meng ang milla md
 
-[CodeLayout::RequireTidyCode]
-perltidyrc =
+[-CodeLayout::RequireTidyCode]
+perltidyrc = $HOME/.perltidyrc
+severity = 5
 
 [-ValuesAndExpressions::ProhibitEmptyQuotes]
+
+[Subroutines::ProhibitUnusedPrivateSubroutines]
+allow_name_regex = _build_\w+
