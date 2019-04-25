@@ -67,6 +67,7 @@ alias ll='ls -lh --color --group-directories-first';
 alias lsa='ls -ahCF --group-directories-first';
 alias lla='ls -alh --group-directories-first';
 alias rmrf='rm -rf'
+alias repo='cd $HOME/src'
 
 alias ..='cd ..'
 alias ...='cd ../..'
