@@ -2,7 +2,7 @@ severity = 1
 verbose = %f: [%p] %m at line %l, column %c (Severity %s).\n%d\n
 
 [ControlStructures::ProhibitPostfixControls]
-allow = for if until
+allow = for if until unless
 
 [Documentation::RequirePodSections]
 lib_sections = NAME | SYNOPSIS | DESCRIPTION | DEVELOPMENT | METHODS | COPYRIGHT AND LICENSE | AUTHOR
@@ -16,6 +16,7 @@ perltidyrc = $HOME/.perltidyrc
 severity = 5
 
 [-ValuesAndExpressions::ProhibitEmptyQuotes]
+[-Subroutines::RequireArgUnpacking]
 
 [Subroutines::ProhibitUnusedPrivateSubroutines]
 allow_name_regex = _build_\w+
