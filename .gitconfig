@@ -7,6 +7,8 @@
     url = remote -v
     st = status
     pom = push origin master
+    pomf = push origin master --force-with-lease
+    diffc = diff --cached
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [color]
