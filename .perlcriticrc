@@ -23,4 +23,14 @@ allow_name_regex = _build_\w+
 
 [InputOutput::RequireCheckedSyscalls]
 functions = :builtins
-exclude_functions = print
+exclude_functions = print say
+
+[InputOutput::RequireBriefOpen]
+lines = 15
+
+# Not necesary to have `s`, `m`, and `x` flag to all regex.
+[-RegularExpressions::RequireExtendedFormatting]
+[-RegularExpressions::RequireDotMatchAnything]
+[-RegularExpressions::RequireLineBoundaryMatching]
+
+[-Modules::RequireVersionVar]
