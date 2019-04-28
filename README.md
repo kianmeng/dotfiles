@@ -1,4 +1,4 @@
-## About
+## There is no place like $HOME
 A collection of configuration files for the typical console programs bash, vim,
 screen, tmux, and misc.
 
