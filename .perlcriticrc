@@ -34,3 +34,4 @@ lines = 15
 [-RegularExpressions::RequireLineBoundaryMatching]
 
 [-Modules::RequireVersionVar]
+[-ControlStructures::ProhibitUnlessBlocks]
