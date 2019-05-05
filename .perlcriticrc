@@ -9,7 +9,7 @@ lib_sections = NAME | SYNOPSIS | DESCRIPTION | DEVELOPMENT | METHODS | COPYRIGHT
 
 [Documentation::PodSpelling]
 spell_command = aspell list
-stop_words = kian meng ang milla md undef webservice json https ipv4 ipv6
+stop_words = kian meng ang milla md undef webservice json https ipv4 ipv6 cpan
 
 [-CodeLayout::RequireTidyCode]
 perltidyrc = $HOME/.perltidyrc
