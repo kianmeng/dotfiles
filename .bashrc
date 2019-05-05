@@ -59,6 +59,7 @@ alias grepi='grep -i'
 
 alias xclip='xclip -selection c'
 alias download='aria2c -x 4'
+alias yt='youtube-dl'
 alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
 
 # file & directory
@@ -130,3 +131,4 @@ function dmswitch() {
 ## perl
 cpanm --local-lib=~/perl5 local::lib \
     && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+alias mtar='milla test --author --release'
