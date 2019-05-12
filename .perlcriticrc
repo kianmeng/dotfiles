@@ -2,7 +2,7 @@ severity = 1
 verbose = %f: [%p] %m at line %l, column %c (Severity %s).\n%d\n
 
 [ControlStructures::ProhibitPostfixControls]
-allow = for if until unless
+allow = for if until unless foreach
 
 [Documentation::RequirePodSections]
 lib_sections = NAME | SYNOPSIS | DESCRIPTION | DEVELOPMENT | METHODS | COPYRIGHT AND LICENSE | AUTHOR
@@ -35,3 +35,4 @@ lines = 15
 
 [-Modules::RequireVersionVar]
 [-ControlStructures::ProhibitUnlessBlocks]
+[-ValuesAndExpressions::ProhibitConstantPragma]
