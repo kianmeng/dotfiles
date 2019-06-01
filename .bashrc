@@ -27,6 +27,9 @@ export EDITOR=vi
 # to confirm the setting, run set -o | grep -E "(emacs|vi)"
 set -o vi
 
+# personal binary path
+[[ -d $HOME/bin ]] && PATH=$PATH:$HOME/bin
+
 # make less readable
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
 
@@ -129,6 +132,6 @@ function dmswitch() {
 }
 
 ## perl
+alias mtar='milla test --author --release'
 cpanm --local-lib=~/perl5 local::lib \
     && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-alias mtar='milla test --author --release'
