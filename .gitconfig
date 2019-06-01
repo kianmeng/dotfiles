@@ -23,7 +23,7 @@
 [core]
     whitespace = trailing-space,space-before-tab
     editor = vim '+set tw=72'
-	excludesfile = /home/ang/.gitexcludes
+	excludesfile = ~/.gitignore_global
 
 [merge]
     tool = meld

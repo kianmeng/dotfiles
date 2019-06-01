@@ -1,3 +1,0 @@
-# Always exclude these files regardless of repos.
-# git config --global core.excludesfile ~/.gitexcludes
-*.swp
