@@ -256,6 +256,14 @@ autocmd FileType perl let g:syntastic_perl_lib_path = ['.']
 au FileType perl nmap <F12> :%!perltidy<CR>
 
 " }}}
+"
+" >>> Ruby {{{
+autocmd FileType ruby set autoindent
+autocmd FileType ruby set expandtab
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
+
+" }}}
 
 " >>> Auto Commands {{{
 if has("autocmd")
