@@ -133,5 +133,10 @@ function dmswitch() {
 
 ## perl
 alias mtar='milla test --author --release'
+alias mt='milla test'
+alias mc='milla clean'
+alias mb='milla build'
+alias mr='milla release'
+
 cpanm --local-lib=~/perl5 local::lib \
     && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
