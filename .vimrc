@@ -204,7 +204,6 @@ Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/CycleColor'
 Plug 'yegappan/mru'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'liuchengxu/vim-which-key'
 Plug 'w0rp/ale'
 
 " Add plugins to &runtimepath
@@ -262,6 +261,55 @@ autocmd FileType ruby set autoindent
 autocmd FileType ruby set expandtab
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
+
+" }}}
+"
+" >>> Elixir {{{
+autocmd FileType elixir set autoindent
+autocmd FileType elixir set expandtab
+autocmd FileType elixir set tabstop=2
+autocmd FileType elixir set shiftwidth=2
+
+" }}}
+
+" }}}
+"
+" >>> Vue {{{
+autocmd FileType vue set autoindent
+autocmd FileType vue set expandtab
+autocmd FileType vue set tabstop=2
+autocmd FileType vue set shiftwidth=2
+
+" }}}
+
+" }}}
+"
+" >>> Javascript {{{
+autocmd FileType javascript set autoindent
+autocmd FileType javascript set expandtab
+autocmd FileType javascript set tabstop=2
+autocmd FileType javascript set shiftwidth=2
+
+" }}}
+
+" }}}
+"
+" >>> JSON {{{
+autocmd FileType json set autoindent
+autocmd FileType json set expandtab
+autocmd FileType json set tabstop=2
+autocmd FileType json set shiftwidth=2
+
+" }}}
+
+" }}}
+"
+" >>> HTML {{{
+autocmd FileType html set autoindent
+autocmd FileType html set expandtab
+autocmd FileType html set tabstop=2
+autocmd FileType html set shiftwidth=2
+autocmd BufRead,BufNewFile *.foo set filetype=html
 
 " }}}
 
