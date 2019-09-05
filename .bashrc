@@ -29,6 +29,7 @@ set -o vi
 
 # personal binary path
 [[ -d $HOME/bin ]] && PATH=$PATH:$HOME/bin
+[[ -d $HOME/.local/bin ]] && PATH=$PATH:$HOME/.local/bin
 
 # make less readable
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
