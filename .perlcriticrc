@@ -36,3 +36,4 @@ lines = 15
 [-Modules::RequireVersionVar]
 [-ControlStructures::ProhibitUnlessBlocks]
 [-ValuesAndExpressions::ProhibitConstantPragma]
+[-Variables::ProhibitReusedNames]
