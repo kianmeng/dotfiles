@@ -205,6 +205,7 @@ Plug 'vim-scripts/CycleColor'
 Plug 'yegappan/mru'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'w0rp/ale'
+Plug 'davidbeckingsale/writegood.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -322,3 +323,10 @@ endif
 
 " }}}
 
+" >>> Writing {{{
+" z= to show suggestion
+autocmd FileType gitcommit setlocal spell spelllang=en_gb
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
+set complete+=kspell
+
+" }}}
