@@ -29,6 +29,7 @@ set -o vi
 
 # personal binary path
 [[ -d $HOME/bin ]] && PATH=$PATH:$HOME/bin
+[[ -d $HOME/go/bin ]] && PATH=$PATH:$HOME/go/bin
 [[ -d $HOME/.local/bin ]] && PATH=$PATH:$HOME/.local/bin
 
 # make less readable
