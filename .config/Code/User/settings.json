@@ -58,5 +58,7 @@
     "editor.fontLigatures": true,
     "files.insertFinalNewline": true,
     "editor.formatOnType": true,
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "telemetry.enableCrashReporter": false,
+    "editor.fontWeight": "bold"
 }

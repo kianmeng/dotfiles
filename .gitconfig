@@ -4,6 +4,7 @@
 
 [alias]
     a = add
+    cs = commit -s
     url = remote -v
     st = status
     pom = push origin master

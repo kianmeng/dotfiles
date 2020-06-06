@@ -74,6 +74,7 @@ alias lsa='ls -ahCF --group-directories-first';
 alias lla='ls -alh --group-directories-first';
 alias rmrf='rm -rf'
 alias repo='cd $HOME/src'
+alias df='df -hx "squashfs"' # snap is polluting my df
 
 alias ..='cd ..'
 alias ...='cd ../..'
