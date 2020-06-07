@@ -54,7 +54,6 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " wild menu. more options shown in command mode
 set wildmenu
-
 set wildmode=list:longest,full
 
 " fold settings
@@ -83,9 +82,6 @@ set mouse=r
 " leader key
 let mapleader = "\<Space>"
 
-" trigger vim-which-key
-nnoremap    <silent> <leader> :WhichKey '<Space>'<CR>
-
 " Key bindings which use <leader> key. In alphabetical order.
 nmap        <leader>- <C-w>-            " decrease pane size
 map         <leader>= <C-w>+            " increase pane size
@@ -93,7 +89,7 @@ nnoremap    <Leader>/ :nohlsearch<cr>   " clear current search
 
 nmap        <Leader>e :CtrlP<cr>
 nmap        <Leader>ee :MRU<cr>
-nmap        <Leader>b :Ack<space>
+nmap        <Leader>b :Rg<space>
 
 nmap        <Leader>ga <Plug>GitGutterStageHunk
 nmap        <leader>gj <Plug>GitGutterNextHunk
@@ -101,7 +97,7 @@ nmap        <leader>gk <Plug>GitGutterPrevHunk
 nmap        <Leader>gr <Plug>GitGutterUndoHunk
 nmap        <Leader>gv <Plug>GitGutterPreviewHunk
 
-noremap    <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+noremap     <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap    <leader>l :ls<CR>:b<space>  " flying is faster than cycling
 map         <leader>o <C-w><C-w>        " switch pane
 nnoremap    <leader>q :q<cr>            " quit
@@ -162,6 +158,9 @@ endif
 
 " Begin plugins bootstrap
 call plug#begin()
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
