@@ -47,6 +47,9 @@ alias rl='source ~/.bashrc'
 
 alias svi='sudo vim'
 alias v='vim'
+alias vf='vim $(fzf)'
+alias nv='vim'
+alias nvf='vim $(fzf)'
 
 alias ps='ps auxf'
 alias grep='grep -i'

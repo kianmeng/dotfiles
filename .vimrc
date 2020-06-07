@@ -87,15 +87,8 @@ nmap        <leader>- <C-w>-            " decrease pane size
 map         <leader>= <C-w>+            " increase pane size
 nnoremap    <Leader>/ :nohlsearch<cr>   " clear current search
 
-nmap        <Leader>e :CtrlP<cr>
-nmap        <Leader>ee :MRU<cr>
+nmap        <Leader>e :FZF<cr>
 nmap        <Leader>b :Rg<space>
-
-nmap        <Leader>ga <Plug>GitGutterStageHunk
-nmap        <leader>gj <Plug>GitGutterNextHunk
-nmap        <leader>gk <Plug>GitGutterPrevHunk
-nmap        <Leader>gr <Plug>GitGutterUndoHunk
-nmap        <Leader>gv <Plug>GitGutterPreviewHunk
 
 noremap     <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap    <leader>l :ls<CR>:b<space>  " flying is faster than cycling
@@ -103,9 +96,6 @@ map         <leader>o <C-w><C-w>        " switch pane
 nnoremap    <leader>q :q<cr>            " quit
 nnoremap    <leader>s :w<cr>            " save file
 nnoremap    <leader>w :wqa<cr>          " save and quit
-
-nnoremap    <leader>xh <C-w>S<C-w>l     " split horizontally and switch over it
-nnoremap    <leader>xv <C-w>v<C-w>l     " split vertically and switch over it
 
 nnoremap    <leader>z :q!<cr>           " force quit without saving
 
@@ -138,10 +128,6 @@ nnoremap <Down>     :echoe "Use j"<CR>
 " @see http://www.bestofvim.com/tip/leave-ex-mode-good/
 nnoremap Q :echoe "CAP LOCK is on!"<CR>
 
-" Session management
-map <F2> :mksession! ~/.vim/session <CR>
-map <F3> :source ~/.vim/session <CR>
-
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }}}
@@ -165,7 +151,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'derekprior/vim-trimmer'
 Plug 'dietsche/vim-lastplace'
 Plug 'djoshea/vim-autoread'
@@ -201,19 +186,6 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 " Vim-hl-var settings
 let g:hlvarhl="ctermbg=black ctermfg=red guifg=#ff0000 guibg=#000000 gui=bold"
 set updatetime=500
-
-" CtrlP settings
-" @see http://stackoverflow.com/a/17327372/1935866
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use Ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " Ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
 
 " supertab settings
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
