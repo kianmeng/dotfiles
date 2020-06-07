@@ -4,15 +4,25 @@
 
 [alias]
     a = add
+    ca = commit --amend -s
+    cm = commit
+    co = checkout
+    cpn = cherry-pick -n
     cs = commit -s
-    url = remote -v
-    st = status
+    cs = commit -s
+    dc = diff --cached
+    fu = fetch upstream
+    lg = log --graph --abbrev-commit \
+        --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    po = push origin
     pom = push origin master
     pomf = push origin master --force-with-lease
-    fu = fetch upstream
+    pr = pull --rebase
     rum = rebase upstream/master
-    diffc = diff --cached
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    st = status
+    st = status
+    url = remote -v
+    url = remote -v
 
 [color]
     branch = auto
@@ -29,9 +39,6 @@
 [merge]
     tool = meld
 
-[branch]
-    autosetuprebase = always
-
 [diff]
     tool = icdiff
 
@@ -39,4 +46,4 @@
     cmd = icdiff --line-numbers --highlight $LOCAL $REMOTE
 
 [pull]
-    rebase = true
+    rebase = false # use git pr
