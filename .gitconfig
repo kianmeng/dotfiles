@@ -20,8 +20,6 @@
     pr = pull --rebase
     rum = rebase upstream/master
     st = status
-    st = status
-    url = remote -v
     url = remote -v
 
 [color]
