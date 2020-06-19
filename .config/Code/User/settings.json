@@ -60,5 +60,6 @@
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
     "telemetry.enableCrashReporter": false,
-    "editor.fontWeight": "bold"
+    "editor.fontWeight": "bold",
+    "gitlens.advanced.telemetry.enabled": false
 }
