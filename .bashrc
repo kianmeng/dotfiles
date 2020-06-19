@@ -2,6 +2,7 @@
 export HISTCONTROL=ignoreboth   # ignore leading whitespaces entries and dupes
 export HISTSIZE=100000000000    # almost infinity history size for self-analysis later
 export HISTTIMEFORMAT="%F %T "  # add timestamp
+PROMPT_DIRTRIM=2                # shorter prompt path
 
 shopt -s histappend # append history to file, don't overwrite
 shopt -s histverify # show expanded history before running it
@@ -98,6 +99,8 @@ if [ -e '/etc/bash_completion.d/git-prompt' ]; then
     export GIT_PS1_SHOWSTASHSTATE=1
     export GIT_PS1_SHOWUNTRACKEDFILES=1
     export GIT_PS1_SHOWUPSTREAM="auto verbose"
+    export GIT_PS1_HIDE_IF_PWD_IGNORED=true
+    export GIT_PS1_SHOWCOLORHINTS=true
     export PS1='\u@\h: \w$(__git_ps1 " (%s)")\$ '
 fi
 
@@ -111,8 +114,8 @@ alias mc='milla clean'
 alias mb='milla build'
 alias mr='milla release'
 
-cpanm --local-lib=~/perl5 local::lib \
-    && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+# cpanm --local-lib=~/perl5 local::lib \
+#     && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 
 ## elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
