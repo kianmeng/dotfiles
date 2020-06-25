@@ -75,6 +75,13 @@ set title
 " @see http://unix.stackexchange.com/a/140584
 set mouse=r
 
+" show and remove trailing spaces
+" @see https://vi.stackexchange.com/a/843
+highlight ws ctermbg=red guibg=red
+match ws /\s\+$/
+autocmd BufWinEnter * match ws /\s\+$/
+autocmd BufWritePre * :%s/\s\+$//ge
+
 " }}}
 
 " >>> Global Key Bindings {{{
