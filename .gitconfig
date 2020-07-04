@@ -5,10 +5,9 @@
 [alias]
     a = add
     ca = commit --amend -s
-    cm = commit
+    c = commit
     co = checkout
     cpn = cherry-pick -n
-    cs = commit -s
     cs = commit -s
     dc = diff --cached
     fu = fetch upstream
@@ -18,8 +17,11 @@
     pom = push origin master
     pomf = push origin master --force-with-lease
     pr = pull --rebase
+    r = restore
+    rs = restore --staged
     rum = rebase upstream/master
-    st = status
+    s = status
+    sw = switch
     url = remote -v
 
 [color]
