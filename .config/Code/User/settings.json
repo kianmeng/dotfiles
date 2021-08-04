@@ -2,7 +2,7 @@
     "telemetry.enableTelemetry": false,
     "terminal.integrated.rendererType": "dom",
     "editor.fontSize": 16,
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
     "vim.easymotion": true,
     "vim.hlsearch": true,
     "vim.sneak": true,
@@ -61,5 +61,15 @@
     "editor.formatOnPaste": true,
     "telemetry.enableCrashReporter": false,
     "editor.fontWeight": "bold",
-    "gitlens.advanced.telemetry.enabled": false
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.views.repositories.files.layout": "tree",
+    "editor.formatOnSave": true,
+    "elixirLS.fetchDeps": false,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "files.autoGuessEncoding": true,
+    "editor.tabCompletion": "on"
 }
