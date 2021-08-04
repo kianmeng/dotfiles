@@ -3,8 +3,12 @@
 
 from __future__ import print_function
 
-def main():
-    pass
+import sys
+
+
+def main(*args):
+    print(str(args))
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
