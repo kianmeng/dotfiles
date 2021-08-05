@@ -6,9 +6,15 @@
     a = add
     ca = commit --amend -s
     c = commit
+    cma = commit -a
+    cmam = commit -am
+    cfu = commit --fixup
     co = checkout
+    com = checkout master
+    cob = checkout -b
     cpn = cherry-pick -n
     cs = commit -s
+    d = diff
     dc = diff --cached
     fu = fetch upstream
     lg = log --graph --abbrev-commit \
@@ -19,10 +25,16 @@
     pr = pull --rebase
     r = restore
     rs = restore --staged
-    rum = rebase upstream/master
     s = status
     sw = switch
     url = remote -v
+    fu = fetch upstream
+    rim = rebase -i master
+    rum = rebase upstream/master
+    rro = remote remove origin
+    rao = remote add origin
+    rau = remote add upstream
+    rru = remove remove upstream
 
 [color]
     branch = auto
@@ -35,15 +47,22 @@
     whitespace = trailing-space,space-before-tab
     editor = vim '+set tw=72'
 	excludesfile = ~/.gitignore_global
+    hooksPath = ~/.hooks
 
 [merge]
     tool = meld
 
 [diff]
     tool = icdiff
+    # tool = meld
 
 [difftool "icdiff"]
     cmd = icdiff --line-numbers --highlight $LOCAL $REMOTE
 
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+
 [pull]
     rebase = false # use git pr
+[push]
+	default = current
