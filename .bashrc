@@ -17,9 +17,8 @@ set -o vi
 
 # personal binary path
 [[ -d $HOME/bin ]] && PATH=$PATH:$HOME/bin
-[[ -d $HOME/go/bin ]] && PATH=$PATH:$HOME/go/bin
 [[ -d $HOME/.local/bin ]] && PATH=$PATH:$HOME/.local/bin
-[[ -d $HOME/.cargo/bin ]] && PATH=$PATH:$HOME/.cargo/bin
+[[ -d $MIX_HOME ]] && PATH=$PATH:$MIX_HOME
 
 # make less readable
 export LESS='--quit-if-one-screen --ignore-case --status-column --LONG-PROMPT --RAW-CONTROL-CHARS --HILITE-UNREAD --tabs=4 --no-init --window=-4'
@@ -49,8 +48,8 @@ alias rl='source ~/.bashrc'
 alias svi='sudo vim'
 alias v='vim'
 alias vf='vim $(fzf)'
-alias nv='vim'
-alias nvf='vim $(fzf)'
+alias nv='nvim'
+alias nvf='nvim $(fzf)'
 
 alias ps='ps auxf'
 alias grep='grep -i'
@@ -90,6 +89,7 @@ alias aptfl='apt-file list'
 # autocomplete for 'g' as well
 # see http://nuclearsquid.com/writings/git-tricks-tips-workflows/
 alias g='git'
+alias gtd="git tag -l --sort=-creatordate --format='## %(refname:short) (%(creatordate:short))'"
 complete -o default -o nospace -F _git g
 
 # git prompt, only in Ubuntu.
@@ -105,17 +105,7 @@ if [ -e '/etc/bash_completion.d/git-prompt' ]; then
 fi
 
 # dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-## perl
-alias mtar='milla test --author --release'
-alias mt='milla test'
-alias mc='milla clean'
-alias mb='milla build'
-alias mr='milla release'
-
-# cpanm --local-lib=~/perl5 local::lib \
-#     && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 ## elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
