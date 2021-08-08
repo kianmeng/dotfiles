@@ -1,13 +1,49 @@
 " vim: fdm=marker ts=4 sw=4 tw=0 et:
 
-" >>> General {{{
+" Automatic vim-plug installation
+" @see https://github.com/junegunn/vim-plug/wiki/faq
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+" Begin plugins bootstrap
+call plug#begin()
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'davidbeckingsale/writegood.vim'
+Plug 'dense-analysis/ale'
+Plug 'derekprior/vim-trimmer'
+Plug 'dietsche/vim-lastplace'
+Plug 'djoshea/vim-autoread'
+Plug 'ervandew/supertab'
+Plug 'flazz/vim-colorschemes'
+Plug 'itchyny/lightline.vim'
+Plug 'lervag/vimtex'
+Plug 'mileszs/ack.vim'
+Plug 'pjcj/vim-hl-var'
+Plug 'sheerun/vim-polyglot'
+Plug 'tomasr/molokai'
+Plug 'tommcdo/vim-lion'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-sensible'
+Plug 'vim-scripts/CycleColor'
+Plug 'voldikss/vim-floaterm'
+Plug 'yegappan/mru'
+
+" Add plugins to &runtimepath
+call plug#end()
 
 " Disable vi-compatibility. This should always set first.
 set nocompatible
-
-" }}}
-
-" >>> Indentation {{{
 
 " Enable language-dependent indenting.
 filetype plugin indent on
@@ -18,75 +54,71 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-" }}}
-
-" >>> User Interfaces {{{
-
 " Syntax & color scheme
 syntax on
 
 " Tell terminal your console support 256 colors. Set before colorscheme.
 set t_Co=256
-colorscheme default
+silent! colorscheme molokai
 set background=light
 
-" status bar
+" Status bar
 set ruler
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
 set number
 set showcmd
 set showmode
-" prevent cursor stuck at top or bottom
+" Prevent cursor stuck at top or bottom
 " @see https://news.ycombinator.com/item?id=9574469
 set scrolloff=6
 
-" ignore case when in ex (command) mode
+" Ignore case when in ex (command) mode
 " @see http://stackoverflow.com/a/10308100
 set ignorecase
 set smartcase
 
-" search
+" Search
 set gdefault " /g search and replace globally by default
 set incsearch
 set hlsearch
 nmap <silent> ,/ :nohlsearch<CR>
 
-" wild menu. more options shown in command mode
+" Wild menu. more options shown in command mode
 set wildmenu
 set wildmode=list:longest,full
 
-" fold settings
+" Speed up auto-completion menu
+" @see http://stackoverflow.com/a/2460593/1935866
+set complete-=i
+
+" Fold settings
 set nofoldenable
 set foldmethod=indent
 set foldlevel=1
 
-" hides buffers and don't close them
+" Hides buffers and don't close them
 set hidden
 
-" set filename in Tmux tab
+" Set filename in Tmux tab
 " @see http://stackoverflow.com/a/29693196/1935866
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux rename-window bash")
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
 
-" copy and paste from mouse
+" Copy and paste from mouse
 " @see http://unix.stackexchange.com/a/140584
 set mouse=r
 
-" show and remove trailing spaces
+" Show and remove trailing spaces
 " @see https://vi.stackexchange.com/a/843
 highlight ws ctermbg=red guibg=red
 match ws /\s\+$/
 autocmd BufWinEnter * match ws /\s\+$/
 autocmd BufWritePre * :%s/\s\+$//ge
 
-" }}}
-
-" >>> Global Key Bindings {{{
-
-" leader key
+" Leader key
 let mapleader = "\<Space>"
 
 " Key bindings which use <leader> key. In alphabetical order.
@@ -135,56 +167,19 @@ nnoremap <Down>     :echoe "Use j"<CR>
 " @see http://www.bestofvim.com/tip/leave-ex-mode-good/
 nnoremap Q :echoe "CAP LOCK is on!"<CR>
 
-" bind K to grep word under cursor
+" Bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }}}
 
-" >>> Plugins {{{
-
-" Automatic vim-plug installation
-" @see https://github.com/junegunn/vim-plug/wiki/faq
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-" Begin plugins bootstrap
-call plug#begin()
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-Plug 'tpope/vim-sensible'
-Plug 'airblade/vim-gitgutter'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'derekprior/vim-trimmer'
-Plug 'dietsche/vim-lastplace'
-Plug 'djoshea/vim-autoread'
-Plug 'ervandew/supertab'
-Plug 'flazz/vim-colorschemes'
-Plug 'itchyny/lightline.vim'
-Plug 'lervag/vimtex'
-Plug 'mileszs/ack.vim'
-Plug 'pjcj/vim-hl-var'
-Plug 'sheerun/vim-polyglot'
-Plug 'tommcdo/vim-lion'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-commentary'
-Plug 'vim-scripts/CycleColor'
-Plug 'yegappan/mru'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'w0rp/ale'
-Plug 'davidbeckingsale/writegood.vim'
-
-" Add plugins to &runtimepath
-call plug#end()
 
 " Ale settings
-let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
-let g:ale_perl_perlcritic_showrules = 1
-let g:ale_type_map = {
-\ 'perlcritic': {'ES': 'WS', 'E': 'W'},
+let g:ale_linters = {
+\   'text': ['proselint']
+\}
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
 
 nmap <silent> <leader>k <Plug>(ale_previous_wrap)
@@ -194,96 +189,19 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 let g:hlvarhl="ctermbg=black ctermfg=red guifg=#ff0000 guibg=#000000 gui=bold"
 set updatetime=500
 
-" supertab settings
+" Supertab settings
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let g:SuperTabDefaultCompletionType = "context"
 
-" Speed up auto-completion menu
-" @see http://stackoverflow.com/a/2460593/1935866
-set complete-=i
-
-" }}}
-
-" >>> Perl {{{
-autocmd FileType perl set autoindent
-autocmd FileType perl set expandtab
-autocmd FileType perl set tabstop=4
-autocmd FileType perl set shiftwidth=4
-autocmd FileType perl let g:syntastic_perl_lib_path = ['.']
-au FileType perl nmap <F12> :%!perltidy<CR>
-
-" }}}
-"
-" >>> Ruby {{{
-autocmd FileType ruby set autoindent
-autocmd FileType ruby set expandtab
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set shiftwidth=2
-
-" }}}
-"
-" >>> Elixir {{{
-autocmd FileType elixir set autoindent
-autocmd FileType elixir set expandtab
-autocmd FileType elixir set tabstop=2
-autocmd FileType elixir set shiftwidth=2
-
-" }}}
-
-" }}}
-"
-" >>> Vue {{{
-autocmd FileType vue set autoindent
-autocmd FileType vue set expandtab
-autocmd FileType vue set tabstop=2
-autocmd FileType vue set shiftwidth=2
-
-" }}}
-
-" }}}
-"
-" >>> Javascript {{{
-autocmd FileType javascript set autoindent
-autocmd FileType javascript set expandtab
-autocmd FileType javascript set tabstop=2
-autocmd FileType javascript set shiftwidth=2
-
-" }}}
-
-" }}}
-"
-" >>> JSON {{{
-autocmd FileType json set autoindent
-autocmd FileType json set expandtab
-autocmd FileType json set tabstop=2
-autocmd FileType json set shiftwidth=2
-
-" }}}
-
-" }}}
-"
-" >>> HTML {{{
-autocmd FileType html set autoindent
-autocmd FileType html set expandtab
-autocmd FileType html set tabstop=2
-autocmd FileType html set shiftwidth=2
-autocmd BufRead,BufNewFile *.foo set filetype=html
-
-" }}}
-
-" >>> Auto Commands {{{
+" Default template based on file type.
 if has("autocmd")
     augroup templates
         au BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
     augroup END
 endif
 
-" }}}
-
-" >>> Writing {{{
+" Spelling
 " z= to show suggestion
 autocmd FileType gitcommit setlocal spell spelllang=en_gb
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
 set complete+=kspell
-
-" }}}
