@@ -5,25 +5,35 @@ screen, tmux, and misc.
 Dotfiles management through Git following this [blog post](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/) and [HN post](https://news.ycombinator.com/item?id=11070797).
 
 ### Installation
-Clone and repository.
 
-  ```
-  $ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+Setup the alias:
+```bash
+$ alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```
 
-  $ git clone --bare git@github.com:kianmeng/dotfiles.git $HOME/.cfg
+Clone the repository:
+```bash
+$ hgit clone --bare git@github.com:kianmeng/dotfiles.git $HOME/.cfg
+```
 
-  # Backup all your existing dotfiles, if any.
-  $ mkdir -p .config-backup && \
-  config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-  xargs -I{} mv {} .config-backup/{}
+Backup all your existing dotfiles, if any:
+```bash
+$ mkdir -p .config-backup && \
+config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+xargs -I{} mv {} .config-backup/{}
+```
 
-  $ config checkout
+Pull all dotfiles:
+```bash
+$ hgit checkout
+```
 
-  # Reload Bash and install all the necessary packages.
-  $ source ~/.bashrc
-  ```
+Reload Bash and install all the necessary packages:
+```bash
+$ source ~/.bashrc
+```
 
-To manage these dot files, just use the `config` alias which is a wrapper to
+To manage these dot files, just use the `hgit` alias which is a wrapper to
 `git`.
 
 ### Vim's Key Bindings
