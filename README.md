@@ -37,35 +37,14 @@ To manage these dot files, just use the `hgit` alias which is a wrapper to
 `git`.
 
 ### Vim's Key Bindings
-| Shortcuts | Description                              |
-|-----------|------------------------------------------|
-| ,         | Leader key                               |
-| jj        | Exist from insert mode into normal mode. |
-| ,p        | Toggle between Paste and normal mode.    |
-| ,l        | Cycle between buffers.                   |
-| :w!!      | Save file with root privileges.          |
+
+- `<space>`, leader key
+- `jj`, exit from insert mode into normal mode
+- `<space>p`, toggle between paste mode and normal mode
+- ``
 
 ### Tmux's Key Bindings
-| Shortcuts  | Description                              |
-|------------|------------------------------------------|
-| `          | Prefix key (backtick)                    |
-| ``         | Type backtick in console.                |
-| Alt+j      | Switch to left tab.                      |
-| Alt+k      | Switch to right tab.                     |
-| `\         | Split window vertically.                 |
-| `-         | Split window horizontally.               |
-| `j         | Move up to top window.                   |
-| `k         | Move down to down window.                |
-| `h         | Move to left window.                     |
-| `l         | Move to right window.                    |
-| `/         | Split a new window and man page for cmd. |
-| `~         | Split a new window and run htop.         |
-| `r         | Reload your .tmux.conf config file.      |
-| Shift+PgUp | Show previous page.                      |
-
-### Bash's Key Bindings
-| Shortcuts  | Description                                       |
-|------------|---------------------------------------------------|
-| ESC        | Toggle Vi editing mode.                           |
-| j/k        | Scroll history forward or backward.               |
-| h/l        | Move cursor forward or backward in the line.      |
+- ```, prefix key (backtick)
+- `<alt>j`, switch to left tab
+- `<alt>k`, switch to right tab
+- `<shift>pgup`, scroll previous page
