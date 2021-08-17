@@ -41,10 +41,9 @@ To manage these dot files, just use the `hgit` alias which is a wrapper to
 - `<space>`, leader key
 - `jj`, exit from insert mode into normal mode
 - `<space>p`, toggle between paste mode and normal mode
-- ``
 
 ### Tmux's Key Bindings
-- ```, prefix key (backtick)
+- `` ` ``, prefix key (backtick)
 - `<alt>j`, switch to left tab
 - `<alt>k`, switch to right tab
 - `<shift>pgup`, scroll previous page
