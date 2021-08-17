@@ -205,3 +205,6 @@ endif
 autocmd FileType gitcommit setlocal spell spelllang=en_gb
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
 set complete+=kspell
+
+" View chinese encoded file
+set fileencodings=utf8,cp936,gb18030,big5
