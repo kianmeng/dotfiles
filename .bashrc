@@ -45,15 +45,6 @@ alias r='reset'
 alias q='exit'
 alias rl='source ~/.bashrc'
 
-alias svi='sudo vim'
-alias v='vim'
-alias vf='vim $(fzf)'
-alias nv='nvim'
-alias nvf='nvim $(fzf)'
-
-alias ps='ps auxf'
-alias grep='grep -i'
-
 alias xclip='xclip -selection c'
 alias download='aria2c -x 4'
 alias yt='youtube-dl'
