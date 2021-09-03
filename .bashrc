@@ -76,14 +76,16 @@ alias aptfu='sudo apt-file update'
 alias aptfs='apt-file search'
 alias aptfl='apt-file list'
 
-## git
-# autocomplete for 'g' as well
-# see http://nuclearsquid.com/writings/git-tricks-tips-workflows/
-alias g='git'
-alias gtd="git tag -l --sort=-creatordate --format='## %(refname:short) (%(creatordate:short))'"
+# git
 complete -o default -o nospace -F _git g
 
-# git prompt, only in Ubuntu.
+## autocomplete for 'g' as well
+## see http://nuclearsquid.com/writings/git-tricks-tips-workflows/
+alias g='git'
+alias gtd="git tag -l --sort=-creatordate --format='## %(refname:short) (%(creatordate:short))'"
+alias gitk='gitk&'
+
+## git prompt, only in Ubuntu.
 if [ -e '/etc/bash_completion.d/git-prompt' ]; then
     source /etc/bash_completion.d/git-prompt
     export GIT_PS1_SHOWDIRTYSTATE=1
@@ -95,15 +97,31 @@ if [ -e '/etc/bash_completion.d/git-prompt' ]; then
     export PS1='\u@\h: \w$(__git_ps1 " (%s)")\$ '
 fi
 
-# dotfiles
+## Switch Git repo URL to my own account origin.
+## from: https://github.com/lxc/linuxcontainers.org.git
+## to: git@github.com:kianmeng/linuxcontainers.org.git
+function git_switch_url {
+    echo "Before: ---"
+    git remote -v
+
+    origin_url=$(git remote get-url origin)
+    new_origin_url=$(echo $origin_url | sed 's/https:\/\/github.com\/\w*/git@github\.com:kianmeng/g')
+    git remote add upstream $origin_url
+    git remote set-url origin $new_origin_url
+
+    echo -e "\nAfter: ---"
+    git remote -v
+}
+
+## repo for my own dotfiles
 alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-## elixir
+# elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 alias iex='EDITOR=vi iex'
 alias iexm='EDITOR=vi iex -S mix'
 
-## custom bash settings
+# custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
     source "$HOME/.bashrc.personal"
 fi
