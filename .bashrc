@@ -77,12 +77,10 @@ alias aptfs='apt-file search'
 alias aptfl='apt-file list'
 
 # git
-complete -o default -o nospace -F _git g
-
 ## autocomplete for 'g' as well
 ## see http://nuclearsquid.com/writings/git-tricks-tips-workflows/
+complete -o default -o nospace -F _git g
 alias g='git'
-alias gtd="git tag -l --sort=-creatordate --format='## %(refname:short) (%(creatordate:short))'"
 alias gitk='gitk&'
 
 ## git prompt, only in Ubuntu.

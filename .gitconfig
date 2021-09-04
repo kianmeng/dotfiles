@@ -27,6 +27,7 @@
     rs = restore --staged
     s = status
     sw = switch
+    tl = "tag -l --sort=-creatordate --format='## %(refname:short) (%(creatordate:short))'"
     url = remote -v
     fu = fetch upstream
     rim = rebase -i master
