@@ -14,6 +14,7 @@ shopt -s autocd     # no need to type 'cd' to directory
 # to confirm the setting, run set -o | grep -E "(emacs|vi)"
 export EDITOR=vi
 set -o vi
+alias vv='vim -u NONE -U NONE -N -i NONE'
 
 # personal binary path
 [[ -d $HOME/bin ]] && PATH=$PATH:$HOME/bin
