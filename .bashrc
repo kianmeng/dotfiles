@@ -120,6 +120,10 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 alias iex='EDITOR=vi iex'
 alias iexm='EDITOR=vi iex -S mix'
 
+# python
+alias ipy='ipython3'
+alias psql='pgcli'
+
 # custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
     source "$HOME/.bashrc.personal"
