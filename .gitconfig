@@ -31,6 +31,7 @@
     url = remote -v
     fu = fetch upstream
     rim = rebase -i master
+    rir = rebase -i --root
     rum = rebase upstream/master
     rro = remote remove origin
     rao = remote add origin
