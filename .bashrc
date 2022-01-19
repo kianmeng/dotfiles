@@ -45,6 +45,8 @@ alias c='clear'
 alias r='reset'
 alias q='exit'
 alias rl='source ~/.bashrc'
+alias rg='rg --pretty'
+alias rgl='rg -l'
 
 alias xclip='xclip -selection c'
 alias download='aria2c -x 4'
@@ -123,6 +125,8 @@ alias iexm='EDITOR=vi iex -S mix'
 # python
 alias ipy='ipython3'
 alias psql='pgcli'
+alias pycov='pytest --cov-report term-missing --cov=xsget --cov-report html tests'
+alias pycovi='pycov && epiphany htmlcov/index.html &'
 
 # custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
