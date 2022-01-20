@@ -125,7 +125,7 @@ alias iexm='EDITOR=vi iex -S mix'
 # python
 alias ipy='ipython3'
 alias psql='pgcli'
-alias pycov='pytest --cov-report term-missing --cov=xsget --cov-report html tests'
+alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
 
 # custom bash settings
