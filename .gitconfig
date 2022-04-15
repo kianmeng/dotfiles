@@ -1,5 +1,5 @@
 [user]
-    name = Kian-Meng, Ang
+    name = Kian-Meng Ang
     email = kianmeng@cpan.org
 
 [alias]
@@ -32,6 +32,7 @@
     url = remote -v
     fu = fetch upstream
     rim = rebase -i master
+    rimi = rebase -i main
     rir = rebase -i --root
     rum = rebase upstream/master
     rumi = rebase upstream/main
