@@ -123,6 +123,8 @@ alias iex='EDITOR=vi iex'
 alias iexm='EDITOR=vi iex -S mix'
 
 # erlang
+alias redoci='rebar3 ex_doc; epiphany doc/index.html&'
+alias redoc='rebar3 ex_doc&'
 
 # python
 alias ipy='ipython3'
