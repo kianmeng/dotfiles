@@ -122,11 +122,19 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 alias iex='EDITOR=vi iex'
 alias iexm='EDITOR=vi iex -S mix'
 
+# erlang
+
 # python
 alias ipy='ipython3'
 alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
+
+if [[ -d $HOME/.pyenv ]]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+fi
 
 # custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
