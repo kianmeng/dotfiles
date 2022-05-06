@@ -11,6 +11,7 @@
     cfu = commit --fixup
     co = checkout
     com = checkout master
+    comi = checkout main
     cob = checkout -b
     cpn = cherry-pick -n
     cs = commit -s
@@ -33,6 +34,7 @@
     rim = rebase -i master
     rir = rebase -i --root
     rum = rebase upstream/master
+    rumi = rebase upstream/main
     rro = remote remove origin
     rao = remote add origin
     rau = remote add upstream
