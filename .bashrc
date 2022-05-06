@@ -138,6 +138,12 @@ if [[ -d $HOME/.pyenv ]]; then
     eval "$(pyenv init -)"
 fi
 
+# asdf
+if [[ -d $HOME/.asdf ]]; then
+    source $HOME/.asdf/asdf.sh
+    source $HOME/.asdf/completions/asdf.bash
+fi
+
 # custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
     source "$HOME/.bashrc.personal"
