@@ -6,6 +6,11 @@ Dotfiles management through Git following this [blog post](https://developer.atl
 
 ### Installation
 
+Install Git and Tmux first:
+```bash
+apt install git tmux
+```
+
 Setup the alias:
 ```bash
 alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
