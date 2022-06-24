@@ -8,29 +8,29 @@ Dotfiles management through Git following this [blog post](https://developer.atl
 
 Setup the alias:
 ```bash
-$ alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 ```
 
 Clone the repository:
 ```bash
-$ hgit clone --bare git@github.com:kianmeng/dotfiles.git $HOME/.cfg
+hgit clone --bare git@github.com:kianmeng/dotfiles.git $HOME/.cfg
 ```
 
 Backup all your existing dotfiles, if any:
 ```bash
-$ mkdir -p .config-backup && \
+mkdir -p .config-backup && \
 config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
 xargs -I{} mv {} .config-backup/{}
 ```
 
 Pull all dotfiles:
 ```bash
-$ hgit checkout
+hgit checkout
 ```
 
 Reload Bash and install all the necessary packages:
 ```bash
-$ source ~/.bashrc
+source ~/.bashrc
 ```
 
 To manage these dot files, just use the `hgit` alias which is a wrapper to
