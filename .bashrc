@@ -65,6 +65,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias mkdir="mkdir -pv"
 
+if [ -e "/usr/share/autojump/autojump.sh" ]; then
+    source /usr/share/autojump/autojump.sh
+fi
+
 # apt
 alias aptu='sudo apt -y update'
 alias apti='sudo apt -y install'

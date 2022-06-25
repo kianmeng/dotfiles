@@ -6,9 +6,9 @@ Dotfiles management through Git following this [blog post](https://developer.atl
 
 ### Installation
 
-Install Git and Tmux first:
+Install essential tools first:
 ```bash
-apt install git tmux
+apt install git tmux autojump
 ```
 
 Setup the alias:
