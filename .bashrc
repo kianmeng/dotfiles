@@ -123,6 +123,7 @@ alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
+alias m='mix'
 alias iex='EDITOR=vi iex'
 alias iexm='EDITOR=vi iex -S mix'
 
@@ -130,22 +131,23 @@ alias iexm='EDITOR=vi iex -S mix'
 alias redoci='rebar3 ex_doc; epiphany doc/index.html&'
 alias redoc='rebar3 ex_doc&'
 
+# asdf
+if [[ -d $HOME/.asdf ]]; then
+    source $HOME/.asdf/asdf.sh
+    source $HOME/.asdf/completions/asdf.bash
+fi
+
 # python
 alias ipy='ipython3'
 alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
+alias csi='codespell -i3 -w '
 
 if [[ -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
-fi
-
-# asdf
-if [[ -d $HOME/.asdf ]]; then
-    source $HOME/.asdf/asdf.sh
-    source $HOME/.asdf/completions/asdf.bash
 fi
 
 # custom bash settings
