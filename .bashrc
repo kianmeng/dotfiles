@@ -138,11 +138,12 @@ if [[ -d $HOME/.asdf ]]; then
 fi
 
 # python
+alias csi='codespell -i3 -w '
+alias fis='flit install --symlink'
 alias ipy='ipython3'
 alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
-alias csi='codespell -i3 -w '
 
 if [[ -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
