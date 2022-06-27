@@ -68,8 +68,10 @@
     cmd = meld "$LOCAL" "$REMOTE"
 
 [pull]
-    rebase = false # use git pr
+	rebase = true
 [push]
 	default = current
 [init]
 	defaultBranch = master
+[rebase]
+	autoStash = true
