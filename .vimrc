@@ -200,3 +200,9 @@ set complete+=kspell
 
 " View chinese encoded file
 set fileencodings=utf8,cp936,gb18030,big5
+
+" Custome local config
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+    source $LOCALFILE
+endif
