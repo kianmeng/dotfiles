@@ -8,7 +8,7 @@ Dotfiles management through Git following this [blog post](https://developer.atl
 
 Install essential tools first:
 ```bash
-apt install git tmux autojump apt-file inotify-tools ripgrep chromium-chromedriver pgcli vim fswatch
+apt install git tmux autojump apt-file inotify-tools ripgrep chromium-chromedriver pgcli vim fswatch fzf
 ```
 
 Setup the alias:
