@@ -11,25 +11,18 @@ endif
 " Begin plugins bootstrap
 call plug#begin()
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'airblade/vim-gitgutter'
-Plug 'davidbeckingsale/writegood.vim'
-Plug 'dense-analysis/ale'
-Plug 'derekprior/vim-trimmer'
-Plug 'dietsche/vim-lastplace'
-Plug 'djoshea/vim-autoread'
-Plug 'ervandew/supertab'
-Plug 'itchyny/lightline.vim'
-Plug 'pjcj/vim-hl-var'
-Plug 'sheerun/vim-polyglot'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-sensible'
-Plug 'yegappan/mru'
+Plug 'ConradIrwin/vim-bracketed-paste' "No need :set paste
+Plug 'airblade/vim-gitgutter' "Show Git status marker on the left
+Plug 'davidbeckingsale/writegood.vim' "Highlight passive voice and weasel words
+Plug 'dense-analysis/ale' "Syntax checking semantic errors
+Plug 'farmergreg/vim-lastplace' "Reopen file at last position
+Plug 'djoshea/vim-autoread' "Reload buffer of file written to disk
+Plug 'ervandew/supertab' "Insert completion
+Plug 'itchyny/lightline.vim' "Colourful statusline at bottom
+Plug 'sheerun/vim-polyglot' "Collection of language packs
+Plug 'tpope/vim-commentary' "Comment stuff out
+Plug 'tpope/vim-sensible' "Sensible defaults
+Plug 'yegappan/mru' "Most recent used files
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -58,9 +51,9 @@ set background=light
 set ruler
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show unicode glyphs
+set noshowmode     " Lightline plugin already show mode
 set number
 set showcmd
-set showmode
 " Prevent cursor stuck at top or bottom
 " @see https://news.ycombinator.com/item?id=9574469
 set scrolloff=6
@@ -118,7 +111,7 @@ nmap        <leader>- <C-w>-            " decrease pane size
 map         <leader>= <C-w>+            " increase pane size
 nnoremap    <Leader>/ :nohlsearch<cr>   " clear current search
 
-nmap        <Leader>e :FZF<cr>
+nmap        <Leader>e :MRU<space>
 nmap        <Leader>b :Rg<space>
 
 noremap     <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -163,7 +156,6 @@ nnoremap Q :echoe "CAP LOCK is on!"<CR>
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }}}
 
-
 " Ale settings
 let g:ale_linters = {
 \   'text': ['proselint']
@@ -176,10 +168,6 @@ let g:ale_fixers = {
 
 nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
-
-" Vim-hl-var settings
-let g:hlvarhl="ctermbg=black ctermfg=red guifg=#ff0000 guibg=#000000 gui=bold"
-set updatetime=500
 
 " Supertab settings
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
