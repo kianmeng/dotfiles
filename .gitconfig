@@ -52,7 +52,6 @@
     whitespace = trailing-space,space-before-tab
     editor = vim '+set tw=72'
 	excludesfile = ~/.gitignore_global
-    hooksPath = ~/.hooks
 
 [merge]
     tool = meld
