@@ -142,6 +142,7 @@ alias csi='codespell -i3 -w '
 alias fis='flit install --symlink'
 alias ipy='ipython3'
 alias psql='pgcli'
+alias pcr='pre-commit run --all-files'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
 
