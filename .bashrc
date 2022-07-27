@@ -50,8 +50,6 @@ alias rgl='rg -l'
 
 alias xclip='xclip -selection c'
 alias download='aria2c -x 4'
-alias yt='youtube-dl'
-alias ytmp3='youtube-dl --extract-audio --audio-format mp3'
 
 # file & directory
 alias ls='ls --color --group-directories-first -p -ahCFX';
