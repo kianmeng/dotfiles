@@ -47,6 +47,7 @@ alias q='exit'
 alias rl='source ~/.bashrc'
 alias rg='rg --pretty'
 alias rgl='rg -l'
+alias cpd='cp -rv'
 
 alias xclip='xclip -selection c'
 alias download='aria2c -x 4'
