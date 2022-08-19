@@ -137,6 +137,7 @@ if [[ -d $HOME/.asdf ]]; then
 fi
 
 # python
+alias piu='pip install --upgrade'
 alias csi='codespell -i3 -w '
 alias fis='flit install --symlink'
 alias ipy='ipython3'
