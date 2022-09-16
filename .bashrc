@@ -137,12 +137,13 @@ if [[ -d $HOME/.asdf ]]; then
 fi
 
 # python
-alias piu='pip install --upgrade'
 alias csi='codespell -i3 -w '
 alias fis='flit install --symlink'
 alias ipy='ipython3'
-alias psql='pgcli'
 alias pcr='pre-commit run --all-files'
+alias piu='python -m pip install --upgrade'
+alias pip='python -m pip'
+alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
 
