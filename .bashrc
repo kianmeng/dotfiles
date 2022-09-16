@@ -120,6 +120,12 @@ function git_switch_url {
 ## repo for my own dotfiles
 alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# asdf
+if [[ -d $HOME/.asdf ]]; then
+    source $HOME/.asdf/asdf.sh
+    source $HOME/.asdf/completions/asdf.bash
+fi
+
 # elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 alias m='mix'
@@ -130,19 +136,13 @@ alias iexm='EDITOR=vi iex -S mix'
 alias redoci='rebar3 ex_doc; epiphany doc/index.html&'
 alias redoc='rebar3 ex_doc&'
 
-# asdf
-if [[ -d $HOME/.asdf ]]; then
-    source $HOME/.asdf/asdf.sh
-    source $HOME/.asdf/completions/asdf.bash
-fi
-
 # python
 alias csi='codespell -i3 -w '
 alias fis='flit install --symlink'
 alias ipy='ipython3'
 alias pcr='pre-commit run --all-files'
-alias piu='python -m pip install --upgrade'
-alias pip='python -m pip'
+alias pipi='python -m pip'
+alias pipu='python -m pip install --upgrade'
 alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
