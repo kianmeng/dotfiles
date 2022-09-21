@@ -147,6 +147,9 @@ alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
 
+# rust
+alias typos='typos --format brief'
+
 if [[ -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
