@@ -156,6 +156,10 @@ if [[ -d $HOME/.pyenv ]]; then
     eval "$(pyenv init -)"
 fi
 
+if [[ -d $HOME/.cargo/env ]]; then
+    source "$HOME/.cargo/env"
+fi
+
 # custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
     source "$HOME/.bashrc.personal"
