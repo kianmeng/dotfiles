@@ -164,3 +164,7 @@ fi
 if [ -e "$HOME/.bashrc.personal" ]; then
     source "$HOME/.bashrc.personal"
 fi
+
+if [ -e "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
