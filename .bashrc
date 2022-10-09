@@ -147,15 +147,14 @@ alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
 
-# rust
-alias typos='typos --format brief'
-
 if [[ -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 fi
 
+# rust
+alias typos='typos --format brief'
 if [[ -d $HOME/.cargo/env ]]; then
     source "$HOME/.cargo/env"
 fi
@@ -163,8 +162,4 @@ fi
 # custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
     source "$HOME/.bashrc.personal"
-fi
-
-if [ -e "$HOME/.cargo/env" ]; then
-    source "$HOME/.cargo/env"
 fi
