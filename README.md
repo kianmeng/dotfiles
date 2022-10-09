@@ -13,7 +13,13 @@ Install essential tools first:
 
 ```bash
 apt install git tmux autojump apt-file inotify-tools ripgrep \
-chromium-chromedriver pgcli vim fswatch fzf gitk
+chromium-chromedriver pgcli vim fswatch fzf gitk epiphany-browser
+```
+
+Only if Rust and Cargo are available:
+
+```bash
+cargo install hgrep
 ```
 
 Setup the alias:
