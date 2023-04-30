@@ -18,6 +18,7 @@ alias vv='vim -u NONE -U NONE -N -i NONE'
 
 # personal binary path
 [[ -d $HOME/bin ]] && PATH=$PATH:$HOME/bin
+[[ -d $HOME/go/bin ]] && PATH=$PATH:$HOME/go/bin
 [[ -d $HOME/.local/bin ]] && PATH=$PATH:$HOME/.local/bin
 [[ -d $HOME/.cargo/bin ]] && PATH=$PATH:$HOME/.cargo/bin
 
@@ -146,6 +147,7 @@ alias pipu='python -m pip install --upgrade'
 alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
+alias ppt='pytest --numprocesses auto'
 
 if [[ -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
