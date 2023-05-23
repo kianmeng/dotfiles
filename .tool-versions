@@ -1,4 +1,4 @@
-erlang 25.2
-elixir 1.14.2-otp-25
-nodejs 18.4.0
-rebar 3.19.0
+erlang 26.0
+elixir 1.14.5-otp-26
+nodejs 20.2.0
+rebar 3.21.0
