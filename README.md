@@ -14,7 +14,7 @@ Install essential tools first:
 ```bash
 apt install git tmux autojump apt-file inotify-tools ripgrep \
 chromium-chromedriver pgcli vim fswatch fzf gitk epiphany-browser \
-shellcheck
+shellcheck hub hyperfine
 ```
 
 Only if Rust and Cargo are available:
