@@ -123,8 +123,10 @@ alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # asdf
 if [[ -d $HOME/.asdf ]]; then
-    source $HOME/.asdf/asdf.sh
-    source $HOME/.asdf/completions/asdf.bash
+    source "$HOME/.asdf/asdf.sh"
+    source "$HOME/.asdf/completions/asdf.bash"
+else
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
 fi
 
 # elixir
