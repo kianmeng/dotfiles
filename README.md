@@ -14,7 +14,7 @@ Install essential console tools:
 ```bash
 apt install git tmux curl vim autojump apt-file inotify-tools \
 ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
-gcc
+gcc automake autoconf
 ```
 
 Only if Rust and Cargo are available:
