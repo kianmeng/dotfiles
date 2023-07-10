@@ -35,7 +35,7 @@ Clone the repository:
 hgit clone --bare git@github.com:kianmeng/dotfiles.git $HOME/.cfg
 ```
 
-Backup all your existing dotfiles, if any:
+Backup all your existing dotfiles, if any (not needed for fresh install):
 
 ```bash
 mkdir -p .config-backup && \
