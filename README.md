@@ -9,18 +9,25 @@ and [HN post](https://news.ycombinator.com/item?id=11070797).
 
 ## Installation
 
-Install essential tools first:
+Install essential console tools:
 
 ```bash
-apt install git tmux autojump apt-file inotify-tools ripgrep \
-chromium-chromedriver pgcli vim fswatch fzf gitk epiphany-browser \
-shellcheck hub hyperfine
+apt install git tmux curl vim autojump apt-file inotify-tools \
+ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
+gcc
 ```
 
 Only if Rust and Cargo are available:
 
 ```bash
 cargo install hgrep
+```
+
+Install essential graphical tools:
+
+```bash
+apt install gitk chromium-chromedriver epiphany-browser \
+chromium-browser gnome-tweak gnome-shell-extensions
 ```
 
 Setup the alias:
