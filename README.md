@@ -13,7 +13,7 @@ Install essential console tools:
 
 ```bash
 apt install git tmux curl vim autojump apt-file inotify-tools \
-ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
+aria2 ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
 python-is-python3 gcc automake autoconf pipx gettext
 ```
 
