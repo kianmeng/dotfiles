@@ -14,7 +14,7 @@ Install essential console tools:
 ```bash
 apt install git tmux curl vim autojump apt-file inotify-tools \
 aria2 ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
-python-is-python3 gcc automake autoconf pipx gettext
+python-is-python3 gcc automake autoconf pipx gettext htop
 ```
 
 Only if Rust and Cargo are available:
@@ -27,7 +27,8 @@ Install essential graphical tools:
 
 ```bash
 apt install gitk gedit chromium-chromedriver epiphany-browser \
-chromium-browser gnome-tweak gnome-shell-extensions gnome-browser-connector
+chromium-browser gnome-tweak gnome-shell-extensions \
+gnome-browser-connector meld
 ```
 
 Setup the alias:
