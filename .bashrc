@@ -133,6 +133,7 @@ fi
 # elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 alias m='mix'
+alias mdu='mix deps.unlock --check-unused'
 alias iex='EDITOR=vi iex'
 alias iexm='EDITOR=vi iex -S mix'
 
@@ -141,7 +142,7 @@ alias redoci='rebar3 ex_doc; epiphany doc/index.html&'
 alias redoc='rebar3 ex_doc&'
 
 # python
-alias csi='codespell -i3 -w '
+alias csi='codespell -i3 -w -H '
 alias fis='flit install --symlink'
 alias ipy='ipython3'
 alias pcr='pre-commit run --all-files'
@@ -153,6 +154,7 @@ alias psql='pgcli'
 alias pycov='pytest --cov-report term-missing --cov=$(basename `pwd`) --cov-report html tests'
 alias pycovi='pycov && epiphany htmlcov/index.html &'
 alias ppt='pytest --numprocesses auto'
+alias pytv='pytest -vvv'
 
 if [[ -d $HOME/.pyenv ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
@@ -166,8 +168,13 @@ else
     cd ~/.pyenv && src/configure && make -C src
 fi
 
+# podman/docker
+alias pcu='podman-compose up'
+alias pcd='podman-compose down'
+alias pcud='podman-compose up -d'
+
 # rust
-alias typos='typos --format brief'
+alias typos='typos --hidden --format brief'
 if [[ -d $HOME/.cargo/env ]]; then
     source "$HOME/.cargo/env"
 fi

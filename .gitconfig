@@ -58,7 +58,6 @@
 
 [diff]
     tool = icdiff
-    # tool = meld
 
 [difftool "icdiff"]
     cmd = icdiff --line-numbers --highlight $LOCAL $REMOTE
