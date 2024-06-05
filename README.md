@@ -12,7 +12,7 @@ and [HN post](https://news.ycombinator.com/item?id=11070797).
 Install essential console tools:
 
 ```bash
-apt install git tmux curl vim autojump apt-file inotify-tools \
+sudo apt install git tmux curl vim autojump apt-file inotify-tools \
 aria2 ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
 python-is-python3 gcc automake autoconf pipx gettext htop httpie
 ```
@@ -26,8 +26,8 @@ cargo install hgrep
 Install essential graphical tools:
 
 ```bash
-apt install gitk gedit chromium-chromedriver epiphany-browser \
-chromium-browser gnome-tweak gnome-shell-extensions \
+sudo apt install gitk gedit chromium-chromedriver epiphany-browser \
+chromium-browser gnome-shell-extensions \
 gnome-browser-connector gnome-shell-extension-manager meld
 ```
 
