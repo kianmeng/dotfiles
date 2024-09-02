@@ -142,7 +142,7 @@ alias redoci='rebar3 ex_doc; epiphany doc/index.html&'
 alias redoc='rebar3 ex_doc&'
 
 # python
-alias csi='codespell -i3 -w -H '
+alias csi='codespell -i3 -w '
 alias fis='flit install --symlink'
 alias ipy='ipython3'
 alias pcr='pre-commit run --all-files'
@@ -167,6 +167,8 @@ else
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     cd ~/.pyenv && src/configure && make -C src
 fi
+
+eval "$(register-python-argcomplete nox)"
 
 # podman/docker
 alias pcu='podman-compose up'
