@@ -39,7 +39,7 @@
     rro = remote remove origin
     rao = remote add origin
     rau = remote add upstream
-    rru = remove remove upstream
+    rru = remote remove upstream
 
 [color]
     branch = auto
