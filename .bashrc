@@ -127,13 +127,14 @@ if [[ -d $HOME/.asdf ]]; then
     source "$HOME/.asdf/completions/asdf.bash"
 else
     sudo apt install automake autoconf libncurses5-dev
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
+    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
 fi
 
 # elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
 alias m='mix'
 alias mdu='mix deps.unlock --check-unused'
+alias hout='mix hex.outdated --sort status'
 alias iex='EDITOR=vi iex'
 alias iexm='EDITOR=vi iex -S mix'
 
