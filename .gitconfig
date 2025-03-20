@@ -40,6 +40,7 @@
     rao = remote add origin
     rau = remote add upstream
     rru = remote remove upstream
+    logut = !git log $(git describe --tags --abbrev=0 HEAD^ 2>/dev/null)..HEAD --pretty=format:"'- %s'" | tr -s ' '
 
 [color]
     branch = auto
