@@ -122,13 +122,8 @@ function git_switch_url {
 alias hgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # asdf
-if [[ -d $HOME/.asdf ]]; then
-    source "$HOME/.asdf/asdf.sh"
-    source "$HOME/.asdf/completions/asdf.bash"
-else
-    sudo apt install automake autoconf libncurses5-dev
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
-fi
+export ASDF_DATA_DIR=$HOME/.asdf
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 
 # elixir
 export ERL_AFLAGS="-kernel shell_history enabled"
