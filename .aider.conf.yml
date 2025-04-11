@@ -10,6 +10,7 @@ commit-prompt: |
   Review the diffs carefully.
   Generate a one-line commit message for those changes.
   Ensure the commit message in imperative mood and does not exceed 72 characters.
+  Do not prepend any text to the commit message.
   Do no need to end the commit message with period.
   Reply only with the one-line commit message, without any additional text, explanations, \
   or line breaks.
