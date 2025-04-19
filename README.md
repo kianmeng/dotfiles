@@ -21,7 +21,7 @@ nala
 Only if Rust and Cargo are available:
 
 ```bash
-cargo install hgrep
+cargo install hgrep typos-cli
 ```
 
 Install essential graphical tools:
