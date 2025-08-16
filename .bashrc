@@ -171,6 +171,9 @@ alias pcu='podman-compose up'
 alias pcd='podman-compose down'
 alias pcud='podman-compose up -d'
 
+# ollama
+export OLLAMA_API_BASE=http://localhost:11434
+
 # rust
 alias typos='typos --hidden --format brief'
 if [[ -d $HOME/.cargo/env ]]; then
