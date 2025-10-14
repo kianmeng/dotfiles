@@ -110,7 +110,7 @@ function git_switch_url {
     git remote -v
 
     origin_url=$(git remote get-url origin)
-    new_origin_url=$(echo "$origin_url" | sed 's/https:\/\/github.com\/[^\/]\+/git@github.com:kianmeng/g')
+    new_origin_url=$(echo "$origin_url" | sed 's/https:\/\/github.com\/[^\/]\+/git@github.com:myfloss/g')
     git remote add upstream "$origin_url"
     git remote set-url origin "$new_origin_url"
 
