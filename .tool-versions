@@ -1,5 +1,5 @@
 erlang 28.1
-elixir 1.18.4-otp-28
-ruby 3.3.0
-nodejs 24.8.0
+elixir 1.19.0-otp-28
+ruby 3.4.7
+nodejs 24.10.0
 rebar 3.25.1
