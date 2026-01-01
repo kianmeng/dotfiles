@@ -49,7 +49,7 @@ alias rl='source ~/.bashrc'
 alias rg='rg --pretty'
 alias rgl='rg -l'
 alias cpd='cp -rv'
-alias nl="nl -w 1 -b a -s ' '"
+alias nl="nl -w 2 -n rz -b a -s ' '"
 
 alias xclip='xclip -selection c'
 alias download='aria2c -x 4'
