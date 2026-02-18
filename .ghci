@@ -1,6 +1,3 @@
--- Better Prompt: Shows loaded modules in a clean format
-:set prompt "\ESC[1;32mλ> \ESC[m"
-
 -- Enable multi-line input (useful for pasting code)
 :set +m
 
@@ -16,9 +13,6 @@
 :set -O0
 
 -- Common imports (available in every session)
-import Data.List     -- list processing
-import Data.Maybe    -- handle optional values
-import Control.Monad -- combinators like when, forever, and void
 import Debug.Trace   -- print value with function signature to IO
 
 -- Custom command: :cls to clear the screen
