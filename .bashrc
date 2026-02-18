@@ -153,18 +153,6 @@ alias pycovi='pycov && epiphany htmlcov/index.html &'
 alias ppt='pytest --numprocesses auto'
 alias pytv='pytest -vvv'
 
-if [[ -d $HOME/.pyenv ]]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-else
-    # see https://www.kianmeng.org/2022/06/packages-needed-for-pyenv-in-ubuntu-2204.html
-    sudo apt install libbz2-dev libffi-dev liblzma-dev libreadline-dev \
-        libsqlite3-dev libssl-dev tk-dev zlib1g-dev
-    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-    cd ~/.pyenv && src/configure && make -C src
-fi
-
 eval "$(register-python-argcomplete nox)"
 
 # podman/docker
@@ -180,6 +168,9 @@ alias typos='typos --hidden --format brief'
 if [[ -d $HOME/.cargo/env ]]; then
     source "$HOME/.cargo/env"
 fi
+
+# haskell
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
 # custom bash settings
 if [ -e "$HOME/.bashrc.personal" ]; then
