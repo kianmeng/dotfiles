@@ -155,6 +155,12 @@ alias pytv='pytest -vvv'
 
 eval "$(register-python-argcomplete nox)"
 
+if [ -f "$HOME/.local/share/bash-completion/completions/uv" ]; then
+    . "$HOME/.local/share/bash-completion/completions/uv"
+elif command -v uv >/dev/null; then
+    eval "$(uv generate-shell-completion bash)"
+fi
+
 # podman/docker
 alias pcu='podman-compose up'
 alias pcd='podman-compose down'
