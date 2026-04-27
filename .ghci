@@ -4,11 +4,6 @@
 -- Show the types of expressions after evaluation
 :set +t
 
--- Useful language extensions for interactive play
-:set -XOverloadedStrings
-:set -XTypeApplications
-:set -XScopedTypeVariables
-
 -- Performance: Use -O0 for faster loading in REPL
 :set -O0
 
