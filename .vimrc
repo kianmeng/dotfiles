@@ -1,195 +1,133 @@
 " vim: fdm=marker ts=4 sw=4 tw=0 et:
 
+" --- Core Initialization ---
+set nocompatible
+filetype plugin indent on
+syntax on
+
 " Automatic vim-plug installation
-" @see https://github.com/junegunn/vim-plug/wiki/faq
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-" Begin plugins bootstrap
+" --- Plugins ---
 call plug#begin()
-
-Plug 'ConradIrwin/vim-bracketed-paste' "No need :set paste
-Plug 'airblade/vim-gitgutter' "Show Git status marker on the left
-Plug 'davidbeckingsale/writegood.vim' "Highlight passive voice and weasel words
-Plug 'dense-analysis/ale' "Syntax checking semantic errors
-Plug 'farmergreg/vim-lastplace' "Reopen file at last position
-Plug 'djoshea/vim-autoread' "Reload buffer of file written to disk
-Plug 'ervandew/supertab' "Insert completion
-Plug 'itchyny/lightline.vim' "Colourful statusline at bottom
-Plug 'sheerun/vim-polyglot' "Collection of language packs
-Plug 'tpope/vim-commentary' "Comment stuff out
-Plug 'tpope/vim-sensible' "Sensible defaults
-Plug 'yegappan/mru' "Most recent used files
-
-" Add plugins to &runtimepath
+Plug 'ConradIrwin/vim-bracketed-paste' " No need :set paste
+Plug 'airblade/vim-gitgutter'          " Git status in sign column
+Plug 'davidbeckingsale/writegood.vim'  " Prose linter
+Plug 'dense-analysis/ale'              " Async Linting/Fixing
+Plug 'farmergreg/vim-lastplace'        " Reopen at last position
+Plug 'djoshea/vim-autoread'            " Reload file on change
+Plug 'ervandew/supertab'               " Tab completion
+Plug 'itchyny/lightline.vim'           " Lightweight statusline
+Plug 'sheerun/vim-polyglot'            " Language pack
+Plug 'tpope/vim-commentary'            " gc to comment
+Plug 'tpope/vim-sensible'              " Standard defaults
+Plug 'yegappan/mru'                    " Most Recently Used
 call plug#end()
 
-" Disable vi-compatibility. This should always set first.
-set nocompatible
+" --- UI & Appearance ---
+set t_Co=256
+silent! colorscheme molokai
+set background=light    " Preferred light for constrast
+set number              " Show line numbers
+set ruler               " Show cursor position
+set laststatus=2        " Always show status bar
+set noshowmode          " Lightline handles this
+set scrolloff=6         " Keep context above/below cursor
+set title               " Set terminal title
+set encoding=utf-8      " Support unicode
+set list                " Show invisible characters
+set listchars=tab:»\ ,trail:· " Visually show trailing spaces and tabs
 
-" Enable language-dependent indenting.
-filetype plugin indent on
-
-" Global indentation settings, overriden by ftplugin.
+" --- Indentation & Formatting ---
 set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set hidden              " Allow switching buffers without saving
 
-" Syntax & color scheme
-syntax on
-
-" Tell terminal your console support 256 colors. Set before colorscheme.
-set t_Co=256
-silent! colorscheme molokai
-set background=light
-
-" Status bar
-set ruler
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show unicode glyphs
-set noshowmode     " Lightline plugin already show mode
-set number
-set showcmd
-" Prevent cursor stuck at top or bottom
-" @see https://news.ycombinator.com/item?id=9574469
-set scrolloff=6
-
-" Ignore case when in ex (command) mode
-" @see http://stackoverflow.com/a/10308100
+" --- Search ---
 set ignorecase
-set smartcase
+set smartcase           " Case-sensitive if uppercase used
+set gdefault            " Global replace by default
+set incsearch           " Incremental search
+set hlsearch            " Highlight results
+set complete-=i         " Don't scan included files for completion (faster)
 
-" Search
-set gdefault " /g search and replace globally by default
-set incsearch
-set hlsearch
-nmap <silent> ,/ :nohlsearch<CR>
-
-" Wild menu. more options shown in command mode
-set wildmenu
-set wildmode=list:longest,full
-
-" Speed up auto-completion menu
-" @see http://stackoverflow.com/a/2460593/1935866
-set complete-=i
-
-" Fold settings
-set nofoldenable
-set foldmethod=indent
-set foldlevel=1
-
-" Hides buffers and don't close them
-set hidden
-
-" Set filename in Tmux tab
-" @see http://stackoverflow.com/a/29693196/1935866
-autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
-autocmd VimLeave * call system("tmux rename-window bash")
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
-set title
-
-" Copy and paste from mouse
-" @see http://unix.stackexchange.com/a/140584
-set mouse=r
-
-" Show and remove trailing spaces
-" @see https://vi.stackexchange.com/a/843
-highlight ws ctermbg=red guibg=red
-match ws /\s\+$/
-autocmd BufWinEnter * match ws /\s\+$/
-autocmd BufWritePre * :%s/\s\+$//ge
-
-" Leader key
+" --- Mappings ---
 let mapleader = "\<Space>"
 
-" Key bindings which use <leader> key. In alphabetical order.
-nmap        <leader>- <C-w>-            " decrease pane size
-map         <leader>= <C-w>+            " increase pane size
-nnoremap    <Leader>/ :nohlsearch<cr>   " clear current search
+" System Clipboard (Syncs default register with OS)
+if has('unnamedplus')
+    set clipboard=unnamedplus
+endif
 
-nmap        <Leader>e :MRU<space>
-nmap        <Leader>b :Rg<space>
-
-noremap     <leader>k :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap    <leader>l :ls<CR>:b<space>  " flying is faster than cycling
-map         <leader>o <C-w><C-w>        " switch pane
-nnoremap    <leader>q :q<cr>            " quit
-nnoremap    <leader>s :w<cr>            " save file
-nnoremap    <leader>w :wqa<cr>          " save and quit
-
-nnoremap    <leader>z :q!<cr>           " force quit without saving
-
-" Copy & paste to / from system clipboard.
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-vmap <Leader>p "+p
-nmap <Leader>P "+p
-
-" Tags navigation
-set autochdir
-set tags+=./tags;
-
-nmap <leader>f <C-]>
-nmap <leader>d <C-T>
-nmap <leader>tt :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" Save your left/right pinky.
+" Utilities
+nmap <silent> <leader>/ :nohlsearch<CR>
 imap jj <esc>
 nmap ; :
 noremap ;; ;
 
-" block the usage of arrow keys
-nnoremap <Left>     :echoe "Use h"<CR>
-nnoremap <Right>    :echoe "Use l"<CR>
-nnoremap <Up>       :echoe "Use k"<CR>
-nnoremap <Down>     :echoe "Use j"<CR>
+" Navigation & Windows
+nnoremap <leader>o <C-w><C-w>
+nnoremap <leader>l :ls<CR>:b<space>
+nmap <leader>- <C-w>-
+nmap <leader>= <C-w>+
 
-" Prevent accidentally invoking Ex mode. You don't need it.
-" @see http://www.bestofvim.com/tip/leave-ex-mode-good/
-nnoremap Q :echoe "CAP LOCK is on!"<CR>
+" Quick Actions
+nnoremap <leader>s :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :wqa<cr>
+nnoremap <leader>z :q!<cr>
 
-" Bind K to grep word under cursor
+" Grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-" }}}
+nnoremap <leader>e :MRU<space>
 
-" Ale settings
-let g:ale_linters = {
-\   'text': ['proselint']
-\}
+" Anti-Bad-Habits
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+nnoremap Q       :echoe "Ex mode disabled"<CR>
+
+" --- Autocommands ---
+if has("autocmd")
+    " Tmux integration
+    if $TMUX != ""
+        autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+        autocmd VimLeave * call system("tmux rename-window bash")
+    endif
+
+    " Clean trailing whitespace on save
+    autocmd BufWritePre * :%s/\s\+$//ge
+
+    " Templates
+    augroup templates
+        autocmd!
+        autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
+    augroup END
+
+    " Spellcheck for specific files
+    autocmd FileType gitcommit,markdown setlocal spell spelllang=en_gb
+endif
+
+" --- Plugin Configuration ---
+" ALE
+let g:ale_linters = {'text': ['proselint']}
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
 let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace']
-\}
-
 nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
 
-" Supertab settings
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+" Supertab
 let g:SuperTabDefaultCompletionType = "context"
 
-" Default template based on file type.
-if has("autocmd")
-    augroup templates
-        au BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
-    augroup END
-endif
-
-" Spelling
-" z= to show suggestion
-autocmd FileType gitcommit setlocal spell spelllang=en_gb
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_gb
-set complete+=kspell
-
-" View chinese encoded file
-set fileencodings=utf8,cp936,gb18030,big5
-
-" Custome local config
+" --- Local Overrides ---
 let $LOCALFILE=expand("~/.vimrc_local")
 if filereadable($LOCALFILE)
     source $LOCALFILE
