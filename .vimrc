@@ -6,25 +6,23 @@ filetype plugin indent on
 syntax on
 
 " Automatic vim-plug installation
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " --- Plugins ---
 call plug#begin()
-Plug 'ConradIrwin/vim-bracketed-paste' " No need :set paste
 Plug 'airblade/vim-gitgutter'          " Git status in sign column
-Plug 'davidbeckingsale/writegood.vim'  " Prose linter
 Plug 'dense-analysis/ale'              " Async Linting/Fixing
 Plug 'farmergreg/vim-lastplace'        " Reopen at last position
-Plug 'djoshea/vim-autoread'            " Reload file on change
 Plug 'ervandew/supertab'               " Tab completion
+Plug 'djoshea/vim-autoread'            " Reload file on change
 Plug 'itchyny/lightline.vim'           " Lightweight statusline
 Plug 'sheerun/vim-polyglot'            " Language pack
 Plug 'tpope/vim-commentary'            " gc to comment
-Plug 'tpope/vim-sensible'              " Standard defaults
 Plug 'yegappan/mru'                    " Most Recently Used
 call plug#end()
 
@@ -114,6 +112,9 @@ if has("autocmd")
     " Spellcheck for specific files
     autocmd FileType gitcommit,markdown setlocal spell spelllang=en_gb
 endif
+
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 
 " --- Plugin Configuration ---
 " ALE
