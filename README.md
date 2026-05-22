@@ -15,7 +15,7 @@ Install essential console tools:
 sudo apt install git tmux curl vim autojump apt-file inotify-tools aria2 \
 ripgrep pgcli fswatch fzf hyperfine flatpak gcc automake autoconf gettext \
 htop httpie nala bash-completion cargo lm-sensors xclip golang haskell-stack
-pkg-config
+pkg-config python-is-python3
 ```
 
 Only if Rust and Cargo are available:
