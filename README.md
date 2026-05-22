@@ -15,13 +15,13 @@ Install essential console tools:
 sudo apt install git tmux curl vim autojump apt-file inotify-tools \
 aria2 ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
 python-is-python3 gcc automake autoconf pipx gettext htop httpie \
-nala bash-completion
+nala bash-completion cargo
 ```
 
 Only if Rust and Cargo are available:
 
 ```bash
-cargo install hgrep typos-cli dua-cli
+cargo install --locked hgrep typos-cli dua-cli typst-cli
 ```
 
 Install essential graphical tools:
@@ -47,9 +47,8 @@ hgit clone --bare git@github.com:kianmeng/dotfiles.git $HOME/.cfg
 Backup all your existing dotfiles, if any (not needed for fresh install):
 
 ```bash
-mkdir -p .config-backup && \
-config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-xargs -I{} mv {} .config-backup/{}
+mkdir -p .config-backup
+hgit checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
 ```
 
 Pull all dotfiles:
