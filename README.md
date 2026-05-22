@@ -12,16 +12,27 @@ and [HN post](https://news.ycombinator.com/item?id=11070797).
 Install essential console tools:
 
 ```bash
-sudo apt install git tmux curl vim autojump apt-file inotify-tools \
-aria2 ripgrep pgcli fswatch fzf shellcheck hub hyperfine flatpak \
-python-is-python3 gcc automake autoconf pipx gettext htop httpie \
-nala bash-completion cargo lm-sensors
+sudo apt install git tmux curl vim autojump apt-file inotify-tools aria2 \
+ripgrep pgcli fswatch fzf hyperfine flatpak gcc automake autoconf gettext \
+htop httpie nala bash-completion cargo lm-sensors xclip golang haskell-stack
+pkg-config
 ```
 
 Only if Rust and Cargo are available:
 
 ```bash
 cargo install --locked hgrep typos-cli dua-cli typst-cli
+```
+
+Only if Go are available:
+
+```bash
+go install github.com/asdf-vm/asdf/cmd/asdf@v0.19.0
+```
+
+```bash
+asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 ```
 
 Install essential graphical tools:

@@ -175,6 +175,10 @@ if [[ -d $HOME/.cargo/env ]]; then
     source "$HOME/.cargo/env"
 fi
 
+# golang
+export PATH="$HOME/.go/bin:$PATH"
+source <(asdf completion bash)
+
 # haskell
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 
