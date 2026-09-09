@@ -27,7 +27,7 @@ cargo install --locked hgrep typos-cli dua-cli typst-cli
 Only if Go are available:
 
 ```bash
-go install github.com/asdf-vm/asdf/cmd/asdf@v0.19.0
+go install github.com/asdf-vm/asdf/cmd/asdf@v0.20.0
 ```
 
 ```bash
