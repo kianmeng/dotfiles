@@ -40,7 +40,8 @@ Install essential graphical tools:
 ```bash
 sudo apt install gitk gedit chromium-chromedriver epiphany-browser \
 chromium-browser gnome-shell-extensions \
-gnome-browser-connector gnome-shell-extension-manager meld
+gnome-browser-connector gnome-shell-extension-manager meld \
+gnumeric gnome-tweak ubuntu-restricted-extras showtime
 ```
 
 Setup the alias:
