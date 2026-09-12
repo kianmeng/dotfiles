@@ -42,7 +42,7 @@ Install essential graphical tools:
 sudo apt install gitk gedit chromium-chromedriver epiphany-browser \
 chromium-browser gnome-shell-extensions \
 gnome-browser-connector gnome-shell-extension-manager meld \
-gnumeric gnome-tweak ubuntu-restricted-extras showtime
+gnumeric gnome-tweak ubuntu-restricted-extras showtime warp
 ```
 
 Setup the alias:
